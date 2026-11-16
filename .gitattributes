@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.csv text eol=crlf
+*.step -text -diff
+*.stl -text -diff
+/DDR-R1-3D.html -text -diff
+/viewer/three.min.js -text -diff

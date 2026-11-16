@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DDR R1 · 单人脚台装配</title>
+<style>
+:root{color-scheme:dark;--ink:#eef3fc;--muted:#aabacd;--edge:#29394c;--panel:#121d2b;--blue:#8fbcff}
+*{box-sizing:border-box}body{margin:0;background:#0b131e;color:var(--ink);font:14px/1.5 "Segoe UI","Microsoft YaHei",sans-serif}
+main{max-width:1560px;margin:auto;padding:24px 26px}
+header{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}
+h1{font-size:clamp(24px,4vw,36px);margin:0;font-weight:650;letter-spacing:-.035em}
+header p,.help,.context,#detail,#selected{color:var(--muted);margin:4px 0 0}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.files{display:flex;gap:14px;flex-wrap:wrap}
+.controls{display:flex;gap:7px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 10px}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+button,select{font:inherit;border-radius:6px;border:1px solid var(--edge);cursor:pointer;background:var(--panel);color:var(--ink);padding:7px 11px}
+button:hover,select:hover{border-color:#7895b6}button[aria-pressed=true]{background:#1d3a60;border-color:#76aaff;color:#fff}
+button:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.viewport{position:relative;min-height:440px;height:min(70vh,880px);background:#101e30;border-radius:11px;overflow:hidden;border:1px solid var(--edge)}
+canvas{display:block;touch-action:none;position:absolute;inset:0;cursor:grab}canvas:active{cursor:grabbing}
+.over{position:absolute;top:13px;left:14px;z-index:1;padding:8px 11px;background:#0b1524da;border:1px solid var(--edge);border-radius:7px;pointer-events:none;max-width:calc(100% - 30px)}
+.over b{display:block}.mini{font-size:12px;color:var(--muted)}
+#notice{position:absolute;inset:45% 10%;text-align:center;font-weight:bold;pointer-events:none}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.card{background:var(--panel);border:1px solid var(--edge);border-radius:8px;padding:12px 14px;min-height:86px}
+.card h2{margin:0;font-size:14px;letter-spacing:.02em}
+.key{display:flex;gap:7px 15px;flex-wrap:wrap;margin-top:9px}
+.key span{display:flex;align-items:center;gap:5px;white-space:nowrap;color:var(--muted)}i{height:10px;width:10px;border-radius:3px;display:inline-block}
+.help{font-size:12px;margin-top:10px}
+@media(max-width:780px){main{padding:16px 12px}header{align-items:start;flex-direction:column;gap:8px}.grid{grid-template-columns:1fr}.viewport{height:64vh;min-height:380px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div><h1>DDR R1 单人脚台</h1><p>890 × 1080 mm 壳体 · 840 × 840 mm 踩踏区 · 920 mm 踏面至握把</p></div>
+<nav class="files" aria-label="交付文件">
+<a href="out/DDR-R1-assembly.step">装配 STEP</a>
+<a href="out/DDR-R1-exploded.step">爆炸 STEP</a>
+<a href="BOM-octagon.csv">零件清单</a>
+<a href="README.md">设计说明</a>
+</nav>
+</header>
+<section class="controls" aria-label="显示控制">
+<div class="row" id="views">
+<button data-view="full" aria-pressed="true">全台</button>
+<button data-view="frame" aria-pressed="false">骨架</button>
+<button data-view="module" aria-pressed="false">单箭头</button>
+<button data-view="sensor" aria-pressed="false">传感器截面</button>
+<button data-view="rear" aria-pressed="false">扶手节点</button>
+<button data-view="center" aria-pressed="false">控制器</button>
+</div>
+<div class="row">
+<select id="module" aria-label="箭头方向">
+<option value="F">前箭头</option><option value="L">左箭头</option>
+<option value="R">右箭头</option><option value="B">后箭头</option>
+</select>
+<button id="explode" aria-pressed="false">爆炸</button>
+<button id="home">重置视角</button>
+</div>
+</section>
+<section class="viewport" id="viewport" aria-label="可旋转 3D 脚台">
+<div class="over"><b id="viewTitle">全台</b><span class="mini" id="viewHint">左前角为坐标原点</span></div>
+<div id="notice" role="status">正在载入实体网格…</div>
+</section>
+<div class="grid">
+<section class="card"><h2>部件</h2><div id="selected" aria-live="polite">点选实体查看部件名称和料号。</div>
+<div class="key"><span><i style="background:#a2b5c8"></i>2020</span><span><i style="background:#ab855e"></i>海洋板</span><span><i style="background:#ee9a36"></i>FSR</span><span><i style="background:#b974ee"></i>回位件</span><span><i style="background:#78daca"></i>POM 定位</span></div></section>
+<section class="card"><h2>当前视图</h2><p class="context" id="detail"></p></section>
+</div>
+<p class="help">拖动旋转 · 滚轮缩放 · Shift 或右键拖动平移 · 点选部件。尺寸按 R1 名义值，孔位、公差和载荷按样件校准。</p>
+</main>
+<script>/*__VENDOR__*/</script>
+<script>
+"use strict";
+const PARTS = /*__PARTS__*/;
+const POSITIONS = /*__POSITIONS__*/;
+const host=document.getElementById('viewport');
+const notice=document.getElementById('notice');
+const title=document.getElementById('viewTitle');
+const hint=document.getElementById('viewHint');
+const detail=document.getElementById('detail');
+const selected=document.getElementById('selected');
+const explodeButton=document.getElementById('explode');
+const moduleSelect=document.getElementById('module');
+const v=(x,y,z)=>new THREE.Vector3(x,y,z);
+const viewCopy={
+  full:['全台','890 × 1080 · 壳体 z0–44','固定面 z44，箭头面 z43。扶手握把外顶 z964。壳内满铺 10 mm 底板和 2 mm 防滑橡胶。'],
+  frame:['骨架','886 × 1076 · z10–30','四个箭头下各有一个 2020 十字撑。左右最外箭头各有一根 260 mm 内并轨，托住外侧挡块。'],
+  module:['单箭头','274 × 274 × 10 · 八边形 PC','四边中点各一个 FSR。10 mm PC 只切八边外廓。外角三角压片和内角菱形压片各用 1 mm 垫片，四周钢边条为直边。'],
+  sensor:['传感器截面','0.225 mm 空载间隙 · 0.50 mm 至硬挡','剖切前箭头近边中点。四个感应圆心关于踏板中轴镜像对称。软头顶 z32.775，硬挡顶 z32.5，PC 底 z33。打开爆炸可逐层点选。'],
+  rear:['扶手节点','Ø38 × 3 · 双柱距 410','共用 40 × 20 × 3 横管、两条 250 mm 纵臂和嵌平背板。隐藏后上边带，保留法兰、穿栓及焊接套管。'],
+  center:['控制器','中格下 · GP26–29','检修盖由四个沉头螺钉固定。托板挂在木件下方，电路板朝下，控制器、四个模拟多路器和线束可单独维护。']
+}
+const cent={F:[445,222],L:[165,502],R:[725,502],B:[445,782]};
+const graphics={F:[445,222,0],L:[165,502,-Math.PI/2],R:[725,502,Math.PI/2],B:[445,782,Math.PI]};
+const sensors=new Set(['rail','pc','wood','carrier','fsr','return','stopshim','stop']);
+const scene=new THREE.Scene();
+scene.background=new THREE.Color('#132235');
+const objects=[];
+let view='full', exploded=false, active=null, framePending=false;
+let renderer,camera,distance=1800,theta=.8,phi=.95, target=v(445,540,300);
+let grid,arrowDrawings=[];
+const raycaster=new THREE.Raycaster();
+const materialCache=new Map();
+const byName=new Map();
+const pointerSet=new Map();
+const cursor=new THREE.Vector2();
+
+function material(color,alpha){
+  const key=color+':'+alpha;
+  if(!materialCache.has(key)){
+    materialCache.set(key,new THREE.MeshStandardMaterial({
+      color,roughness:.67,metalness:.14,transparent:alpha<1,opacity:alpha,depthWrite:alpha===1,
+      clippingPlanes:[],side:alpha<1?THREE.DoubleSide:THREE.FrontSide
+    }));
+  }
+  return materialCache.get(key);
+}
+const highlight = new THREE.MeshStandardMaterial({color:'#ffe3a1',emissive:'#a76622',emissiveIntensity:.28,
+                                                 roughness:.6,side:THREE.DoubleSide});
+function apply(){
+  const m=moduleSelect.value;
+  const [mx,my]=cent[m];
+  const [label,line,description]=viewCopy[view];
+  title.textContent=label+(exploded?' · 爆炸':'');
+  hint.textContent=line;
+  detail.textContent=description;
+  moduleSelect.style.visibility=view==='module'?'visible':'hidden';
+  const clip=[];
+  if(view==='module'&&!exploded){
+    clip.push(new THREE.Plane(v(1,0,0),-(mx-178)),new THREE.Plane(v(-1,0,0),mx+178),
+              new THREE.Plane(v(0,1,0),-(my-178)),new THREE.Plane(v(0,-1,0),my+178));
+  }
+  if(view==='sensor'){
+    clip.push(new THREE.Plane(v(1,0,0),-428),new THREE.Plane(v(-1,0,0),564),
+              new THREE.Plane(v(0,1,0),-86.3),new THREE.Plane(v(0,-1,0),116));
+  }
+  if(view==='rear')clip.push(new THREE.Plane(v(0,0,-1),exploded?495:155));
+  if(view==='center'){
+    clip.push(new THREE.Plane(v(1,0,0),-305),new THREE.Plane(v(-1,0,0),585),
+              new THREE.Plane(v(0,1,0),-361),new THREE.Plane(v(0,-1,0),643));
+  }
+  renderer.clippingPlanes=clip;
+  for(const mesh of objects){
+    const [name,label,sku,group,layer,color,offset]=mesh.userData.part;
+    const bb=mesh.geometry.boundingBox;
+    let show=true;
+    if(view==='frame') show=['base','floor','rail','join','rear','rearHardware'].includes(layer)
+      && !name.startsWith('Base_Screw');
+    if(view==='module'){
+      const nearby=bb.min.x<mx+178 && bb.max.x>mx-178 && bb.min.y<my+178 && bb.max.y>my-178;
+      show=group===m || (nearby && (group==='Retainers'||(!exploded && ['rail','wood','top'].includes(layer))));
+    }
+    if(view==='sensor') show=sensors.has(layer) && (group==='F' || group==='Frame' || group==='Edge_F')
+      && bb.min.x<564 && bb.max.x>428 && bb.min.y<116 && bb.max.y>60;
+    if(view==='rear') show=(group==='Rear'||name.startsWith('Edge_B')) &&
+      !['wood','top'].includes(layer);
+    if(view==='center') show=group==='Center'||group==='C';
+    mesh.visible=show;
+    mesh.position.fromArray(exploded?offset:[0,0,0]);
+    const transparent=layer==='pc' && view!=='full' && !exploded;
+    const ghostTop=view==='center'&&group==='C'&&['wood','top'].includes(layer)&&!exploded;
+    const displayColor=layer==='guide'&&(view!=='full'||exploded)?'#78daca':color;
+    mesh.material=(active===mesh)?highlight:material(displayColor,transparent?(view==='sensor'?.17:.34):ghostTop?.22:1);
+  }
+  for(const graphic of arrowDrawings){
+    graphic.visible=(view==='full'||(view==='module'&&graphic.userData.module===m));
+    graphic.position.z=43.55+(exploded?233:0);
+  }
+  grid.visible=!['sensor','center','module'].includes(view)&&!exploded;
+  if(active&&!active.visible){active=null;selected.textContent='点选实体查看部件名称和料号。';}
+  draw();
+}
+
+function fit(){
+  const [mx,my]=cent[moduleSelect.value];
+  const fitData={
+    full: [445,540,exploded?510:398,exploded?2810:2420,.70,.98],
+    frame:[445,540,exploded?140:15,exploded?2200:1930,.62,.83],
+    module:[mx,my,exploded?185:22,exploded?820:595,.54,.67],
+    sensor:[496,91,exploded?123:24,exploded?515:210,.35,1.48],
+    rear:[445,905,exploded?158:23,exploded?1300:1060,.59,.94],
+    center:[445,502,exploded?190:25,exploded?770:520,.55,1.92],
+  };
+  const [x,y,z,r,t,p]=fitData[view];
+  target.set(x,y,z);
+  distance=r*Math.max(1,1.06/camera.aspect);
+  theta=t;phi=p;
+  draw();
+}
+function draw(){
+  if(framePending)return;
+  framePending=true;
+  requestAnimationFrame(()=>{
+    framePending=false;
+    const s=Math.sin(phi);
+    camera.position.set(target.x+distance*Math.sin(theta)*s,
+                        target.y-distance*Math.cos(theta)*s,
+                        target.z+distance*Math.cos(phi));
+    camera.lookAt(target);
+    renderer.render(scene,camera);
+  });
+}
+function resize(){
+  const w=host.clientWidth,h=host.clientHeight;
+  camera.aspect=w/h;camera.updateProjectionMatrix();
+  renderer.setSize(w,h);draw();
+}
+function click(x,y){
+  const r=renderer.domElement.getBoundingClientRect();
+  cursor.set(2*(x-r.left)/r.width-1,1-2*(y-r.top)/r.height);
+  raycaster.setFromCamera(cursor,camera);
+  const clips=renderer.clippingPlanes;
+  const hit=raycaster.intersectObjects(objects.filter(o=>o.visible))
+    .find(h=>clips.every(p=>p.distanceToPoint(h.point)>=-0.001));
+  if(!hit){active=null;selected.textContent='点选实体查看部件名称和料号。';}
+  else {
+    active=hit.object;
+    const [name,label,sku]=active.userData.part;
+    selected.textContent=label+' · '+sku+' · '+name;
+  }
+  apply();
+}
+function pan(dx,dy){
+  camera.updateMatrixWorld();
+  const right=v(0,0,0).setFromMatrixColumn(camera.matrixWorld,0);
+  const up=v(0,0,0).setFromMatrixColumn(camera.matrixWorld,1);
+  const scale=2*distance*Math.tan(camera.fov*Math.PI/360)/host.clientHeight;
+  target.addScaledVector(right,-dx*scale).addScaledVector(up,dy*scale);
+}
+let moved=0;
+function gestures(){
+  const c=renderer.domElement;
+  c.addEventListener('contextmenu',e=>e.preventDefault());
+  c.addEventListener('pointerdown',e=>{
+    if(pointerSet.size===0)moved=0;
+    c.setPointerCapture(e.pointerId);
+    pointerSet.set(e.pointerId,[e.clientX,e.clientY,e.shiftKey||e.button===2]);
+  });
+  c.addEventListener('pointermove',e=>{
+    const prior=pointerSet.get(e.pointerId);
+    if(!prior)return;
+    const dx=e.clientX-prior[0],dy=e.clientY-prior[1];
+    moved+=Math.hypot(dx,dy);
+    if(pointerSet.size===2){
+      const other=[...pointerSet.entries()].find(([id])=>id!==e.pointerId)[1];
+      const before=Math.hypot(prior[0]-other[0],prior[1]-other[1]);
+      const after=Math.hypot(e.clientX-other[0],e.clientY-other[1]);
+      if(before>4&&after>4)distance=THREE.MathUtils.clamp(distance*before/after,18,7200);
+      pan(dx*.5,dy*.5);
+    } else if(prior[2]||e.shiftKey)pan(dx,dy);
+    else {theta-=dx*.007;phi=THREE.MathUtils.clamp(phi-dy*.007,.025,Math.PI-.025);}
+    pointerSet.set(e.pointerId,[e.clientX,e.clientY,prior[2]]);
+    draw();
+  });
+  c.addEventListener('pointerup',e=>{
+    if(pointerSet.size===1&&moved<4&&e.button===0)click(e.clientX,e.clientY);
+    pointerSet.delete(e.pointerId);
+  });
+  c.addEventListener('pointercancel',e=>pointerSet.delete(e.pointerId));
+  c.addEventListener('wheel',e=>{
+    e.preventDefault();
+    distance=THREE.MathUtils.clamp(distance*Math.exp(e.deltaY*.0011),18,7200);
+    draw();
+  },{passive:false});
+}
+function arrows(){
+  const s=new THREE.Shape();
+  s.moveTo(0,-93);s.lineTo(89,-5);s.lineTo(43,-5);s.lineTo(43,78);
+  s.lineTo(-43,78);s.lineTo(-43,-5);s.lineTo(-89,-5);s.closePath();
+  const g=new THREE.ShapeGeometry(s);
+  for(const [module,[x,y,rotation]] of Object.entries(graphics)){
+    const mat=new THREE.MeshBasicMaterial({color:module==='F'||module==='B'?'#1b4d8b':'#7e1745',
+      transparent:true,opacity:.92,side:THREE.DoubleSide,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-4});
+    const mesh=new THREE.Mesh(g,mat);
+    mesh.userData.module=module;
+    mesh.position.set(x,y,43.55);
+    mesh.rotation.z=rotation;
+    arrowDrawings.push(mesh);scene.add(mesh);
+  }
+}
+function init(){
+  renderer=new THREE.WebGLRenderer({antialias:true,logarithmicDepthBuffer:true,powerPreference:'high-performance'});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.75));
+  renderer.outputColorSpace=THREE.SRGBColorSpace;
+  renderer.setClearColor('#132235');
+  host.prepend(renderer.domElement);
+  camera=new THREE.PerspectiveCamera(40,1,3,10000);
+  camera.up.set(0,0,1);
+  scene.add(new THREE.HemisphereLight('#dfebff','#546980',2.17));
+  const light=new THREE.DirectionalLight('#fff2dc',2.35);
+  light.position.set(180,-400,1000);scene.add(light);
+  const back=new THREE.DirectionalLight('#96bfff',1.25);
+  back.position.set(-760,1120,380);scene.add(back);
+  grid=new THREE.GridHelper(1600,16,'#59758e','#334a63');
+  grid.rotation.x=Math.PI/2;grid.position.set(445,540,-3.3);scene.add(grid);
+  const data=atob(POSITIONS);
+  const bytes=new Uint8Array(data.length);
+  for(let i=0;i<data.length;i++)bytes[i]=data.charCodeAt(i);
+  const coordinates=new Float32Array(bytes.buffer);
+  for(const part of PARTS){
+    const [name,label,sku,group,layer,color,offset,start,count]=part;
+    const geometry=new THREE.BufferGeometry();
+    geometry.setAttribute('position',new THREE.BufferAttribute(coordinates.subarray(start*3,(start+count)*3),3));
+    geometry.computeVertexNormals();geometry.computeBoundingBox();geometry.computeBoundingSphere();
+    const mesh=new THREE.Mesh(geometry,material(color,1));
+    mesh.userData.part=part;objects.push(mesh);byName.set(name,mesh);scene.add(mesh);
+  }
+  arrows();gestures();
+  new ResizeObserver(resize).observe(host);
+  resize();apply();fit();
+  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{
+    view=b.dataset.view;
+    document.querySelectorAll('[data-view]').forEach(other=>other.setAttribute('aria-pressed',String(other===b)));
+    active=null;selected.textContent='点选实体查看部件名称和料号。';
+    apply();fit();
+  }));
+  explodeButton.addEventListener('click',()=>{
+    exploded=!exploded;explodeButton.setAttribute('aria-pressed',String(exploded));
+    explodeButton.textContent=exploded?'收拢':'爆炸';apply();fit();
+  });
+  document.getElementById('home').addEventListener('click',fit);
+  moduleSelect.addEventListener('change',()=>{active=null;apply();fit();});
+  notice.hidden=true;host.dataset.status='ready';
+}
+try{init();}catch(err){
+  host.dataset.status='error';
+  notice.textContent='无法打开 WebGL 预览。可从上方打开 STEP 文件。';
+  console.error(err);
+}
+</script>
+</body>
+</html>

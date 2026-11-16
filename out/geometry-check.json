@@ -1,0 +1,1411 @@
+{
+  "bracket_joints": [
+    [
+      "Outer_F",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Outer_F",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Outer_B",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Outer_B",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Grid_long_L",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Grid_long_L",
+      998,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Rear_link_L",
+      1038,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Rear_link_L",
+      1058,
+      "双槽螺母"
+    ],
+    [
+      "Grid_long_R",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Grid_long_R",
+      998,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Rear_link_R",
+      1038,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Rear_link_R",
+      1058,
+      "双槽螺母"
+    ],
+    [
+      "Grid_45_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Grid_45_1",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Grid_45_2",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "Grid_45_2",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "Grid_45_3",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Grid_45_3",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Grid_82_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Grid_82_1",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Grid_82_2",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "Grid_82_2",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "Grid_82_3",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Grid_82_3",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Grid_362_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Grid_362_1",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Grid_362_2",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "Grid_362_2",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "Grid_362_3",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Grid_362_3",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Grid_642_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Grid_642_1",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Grid_642_2",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "Grid_642_2",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "Grid_642_3",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Grid_642_3",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Grid_922_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Grid_922_1",
+      220,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Grid_922_2",
+      260,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Grid_922_2",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Grid_922_3",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "Grid_922_3",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "Grid_922_4",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Grid_922_4",
+      630,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Grid_922_5",
+      670,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Grid_922_5",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "F_Cross_Long",
+      92,
+      "双槽螺母"
+    ],
+    [
+      "F_Cross_Long",
+      352,
+      "双槽螺母"
+    ],
+    [
+      "F_Cross_Left",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "F_Cross_Left",
+      435,
+      "双槽螺母"
+    ],
+    [
+      "F_Cross_Right",
+      455,
+      "双槽螺母"
+    ],
+    [
+      "F_Cross_Right",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "L_Cross_Long",
+      372,
+      "双槽螺母"
+    ],
+    [
+      "L_Cross_Long",
+      632,
+      "双槽螺母"
+    ],
+    [
+      "L_Cross_Left",
+      42,
+      "双槽螺母"
+    ],
+    [
+      "L_Cross_Left",
+      155,
+      "双槽螺母"
+    ],
+    [
+      "L_Cross_Right",
+      175,
+      "双槽螺母"
+    ],
+    [
+      "L_Cross_Right",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "R_Cross_Long",
+      372,
+      "双槽螺母"
+    ],
+    [
+      "R_Cross_Long",
+      632,
+      "双槽螺母"
+    ],
+    [
+      "R_Cross_Left",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "R_Cross_Left",
+      715,
+      "双槽螺母"
+    ],
+    [
+      "R_Cross_Right",
+      735,
+      "双槽螺母"
+    ],
+    [
+      "R_Cross_Right",
+      848,
+      "双槽螺母"
+    ],
+    [
+      "B_Cross_Long",
+      652,
+      "双槽螺母"
+    ],
+    [
+      "B_Cross_Long",
+      912,
+      "双槽螺母"
+    ],
+    [
+      "B_Cross_Left",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "B_Cross_Left",
+      435,
+      "双槽螺母"
+    ],
+    [
+      "B_Cross_Right",
+      455,
+      "双槽螺母"
+    ],
+    [
+      "B_Cross_Right",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "L_Stop_Outer_Rail",
+      372,
+      "双槽螺母"
+    ],
+    [
+      "L_Stop_Outer_Rail",
+      632,
+      "双槽螺母"
+    ],
+    [
+      "R_Stop_Outer_Rail",
+      372,
+      "双槽螺母"
+    ],
+    [
+      "R_Stop_Outer_Rail",
+      632,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_157_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_157_1",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_157_2",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_157_2",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_287_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_287_1",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_287_2",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_287_2",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_717_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_717_1",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_717_2",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_717_2",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_847_1",
+      22,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_847_1",
+      220,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Fixed_rib_847_2",
+      260,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Fixed_rib_847_2",
+      295,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_847_3",
+      595,
+      "双槽螺母"
+    ],
+    [
+      "Fixed_rib_847_3",
+      630,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Fixed_rib_847_4",
+      670,
+      "钢侧螺纹连接待实配"
+    ],
+    [
+      "Fixed_rib_847_4",
+      868,
+      "双槽螺母"
+    ],
+    [
+      "Center_rib_450",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "Center_rib_450",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "Center_rib_554",
+      315,
+      "双槽螺母"
+    ],
+    [
+      "Center_rib_554",
+      575,
+      "双槽螺母"
+    ],
+    [
+      "Rear_outboard_100",
+      932,
+      "双槽螺母"
+    ],
+    [
+      "Rear_outboard_100",
+      1058,
+      "双槽螺母"
+    ],
+    [
+      "Rear_outboard_790",
+      932,
+      "双槽螺母"
+    ],
+    [
+      "Rear_outboard_790",
+      1058,
+      "双槽螺母"
+    ]
+  ],
+  "bracket_unplaced": [],
+  "perimeter_steel_relief_count": {
+    "Edge_L": 0,
+    "Edge_R": 0,
+    "Edge_F": 0,
+    "Edge_B1": 0,
+    "Edge_B2": 0
+  },
+  "part_count": 1122,
+  "solid_count": 1122,
+  "rail_count": 53,
+  "rail_bounds_mm": [
+    2.0,
+    888.0,
+    2.0,
+    1078.0,
+    10.0,
+    30.0
+  ],
+  "body_bounds_mm": [
+    -0.0,
+    890.0,
+    -0.0,
+    1080.0,
+    -2.0,
+    44.5
+  ],
+  "full_bounds_mm": [
+    -0.0,
+    890.0,
+    -0.0,
+    1080.0,
+    -2.0,
+    964.0
+  ],
+  "exploded_bounds_mm": [
+    -294.0,
+    1184.0,
+    -285.6,
+    1374.0,
+    -145.0,
+    1294.0
+  ],
+  "invalid_parts": [],
+  "mass_kg": {
+    "base": 7.37,
+    "carrier": 0.104,
+    "clip": 0.03,
+    "clipshim": 0.071,
+    "diff": 0.028,
+    "electronics": 0.054,
+    "fixing": 0.373,
+    "flange": 0.37,
+    "floor": 2.193,
+    "fsr": 0.004,
+    "guide": 0.03,
+    "handrail": 5.58,
+    "join": 0.764,
+    "led": 0.118,
+    "pc": 3.598,
+    "rail": 8.159,
+    "rear": 2.937,
+    "rearHardware": 0.411,
+    "return": 0.005,
+    "skin": 2.723,
+    "stop": 0.821,
+    "stopshim": 0.051,
+    "top": 9.84,
+    "wood": 4.744
+  },
+  "total_geom_mass_kg": 50.378,
+  "cg_mm": [
+    444.95,
+    625.54,
+    84.44
+  ],
+  "rigid_pc_travel": [
+    {
+      "module": "F",
+      "pose": "flat travel",
+      "down_mm": 0.5,
+      "tilt_degrees": [
+        0,
+        0
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "F",
+      "pose": "corner -1:-1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        -0.08,
+        -0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "F",
+      "pose": "corner -1:1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        -0.08,
+        0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "F",
+      "pose": "corner 1:-1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        0.08,
+        -0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "F",
+      "pose": "corner 1:1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        0.08,
+        0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "L",
+      "pose": "flat travel",
+      "down_mm": 0.5,
+      "tilt_degrees": [
+        0,
+        0
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "L",
+      "pose": "corner -1:-1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        -0.08,
+        -0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "L",
+      "pose": "corner -1:1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        -0.08,
+        0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "L",
+      "pose": "corner 1:-1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        0.08,
+        -0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "L",
+      "pose": "corner 1:1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        0.08,
+        0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "R",
+      "pose": "flat travel",
+      "down_mm": 0.5,
+      "tilt_degrees": [
+        0,
+        0
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "R",
+      "pose": "corner -1:-1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        -0.08,
+        -0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "R",
+      "pose": "corner -1:1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        -0.08,
+        0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "R",
+      "pose": "corner 1:-1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        0.08,
+        -0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "R",
+      "pose": "corner 1:1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        0.08,
+        0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "B",
+      "pose": "flat travel",
+      "down_mm": 0.5,
+      "tilt_degrees": [
+        0,
+        0
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "B",
+      "pose": "corner -1:-1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        -0.08,
+        -0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "B",
+      "pose": "corner -1:1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        -0.08,
+        0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "B",
+      "pose": "corner 1:-1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        0.08,
+        -0.08
+      ],
+      "rigid_overlap_mm3": []
+    },
+    {
+      "module": "B",
+      "pose": "corner 1:1",
+      "down_mm": 0.108,
+      "tilt_degrees": [
+        0.08,
+        0.08
+      ],
+      "rigid_overlap_mm3": []
+    }
+  ],
+  "arrow_geometry": {
+    "F": [
+      308.0,
+      582.0,
+      85.0,
+      359.0,
+      33.0,
+      43.0
+    ],
+    "L": [
+      28.0,
+      302.0,
+      365.0,
+      639.0,
+      33.0,
+      43.0
+    ],
+    "R": [
+      588.0,
+      862.0,
+      365.0,
+      639.0,
+      33.0,
+      43.0
+    ],
+    "B": [
+      308.0,
+      582.0,
+      645.0,
+      919.0,
+      33.0,
+      43.0
+    ]
+  },
+  "pc_corner_cut_leg_mm": 8,
+  "pc_plate_thickness_mm": {
+    "F": 10,
+    "L": 10,
+    "R": 10,
+    "B": 10
+  },
+  "sensor_actuator_centers_mm": {
+    "F": {
+      "N": [
+        445.0,
+        95.0,
+        32.775
+      ],
+      "E": [
+        572.0,
+        222.0,
+        32.775
+      ],
+      "S": [
+        445.0,
+        349.0,
+        32.775
+      ],
+      "W": [
+        318.0,
+        222.0,
+        32.775
+      ]
+    },
+    "L": {
+      "N": [
+        165.0,
+        375.0,
+        32.775
+      ],
+      "E": [
+        292.0,
+        502.0,
+        32.775
+      ],
+      "S": [
+        165.0,
+        629.0,
+        32.775
+      ],
+      "W": [
+        38.0,
+        502.0,
+        32.775
+      ]
+    },
+    "R": {
+      "N": [
+        725.0,
+        375.0,
+        32.775
+      ],
+      "E": [
+        852.0,
+        502.0,
+        32.775
+      ],
+      "S": [
+        725.0,
+        629.0,
+        32.775
+      ],
+      "W": [
+        598.0,
+        502.0,
+        32.775
+      ]
+    },
+    "B": {
+      "N": [
+        445.0,
+        655.0,
+        32.775
+      ],
+      "E": [
+        572.0,
+        782.0,
+        32.775
+      ],
+      "S": [
+        445.0,
+        909.0,
+        32.775
+      ],
+      "W": [
+        318.0,
+        782.0,
+        32.775
+      ]
+    }
+  },
+  "nominal_z_gaps_mm": {
+    "sensor_neutral": 0.225,
+    "stop_neutral": 0.5,
+    "silicone_compression_at_flat_stops": 0.275,
+    "anti_lift": 0.5,
+    "LED_at_flat_stops": 16.5
+  },
+  "stop_support": {
+    "F_N_Stop_Shim_1": [
+      [
+        "Grid_82_2",
+        467.0
+      ],
+      [
+        "F_N_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "F_N_Stop_Shim_2": [
+      [
+        "Grid_82_2",
+        467.0
+      ],
+      [
+        "F_N_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "F_E_Stop_Shim_1": [
+      [
+        "Grid_long_R",
+        467.0
+      ],
+      [
+        "F_E_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "F_E_Stop_Shim_2": [
+      [
+        "Grid_long_R",
+        467.0
+      ],
+      [
+        "F_E_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "F_S_Stop_Shim_1": [
+      [
+        "Grid_362_2",
+        467.0
+      ],
+      [
+        "F_S_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "F_S_Stop_Shim_2": [
+      [
+        "Grid_362_2",
+        467.0
+      ],
+      [
+        "F_S_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "F_W_Stop_Shim_1": [
+      [
+        "Grid_long_L",
+        467.0
+      ],
+      [
+        "F_W_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "F_W_Stop_Shim_2": [
+      [
+        "Grid_long_L",
+        467.0
+      ],
+      [
+        "F_W_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "L_N_Stop_Shim_1": [
+      [
+        "Grid_362_1",
+        467.0
+      ],
+      [
+        "L_N_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "L_N_Stop_Shim_2": [
+      [
+        "Grid_362_1",
+        467.0
+      ],
+      [
+        "L_N_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "L_E_Stop_Shim_1": [
+      [
+        "Grid_long_L",
+        467.0
+      ],
+      [
+        "L_E_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "L_E_Stop_Shim_2": [
+      [
+        "Grid_long_L",
+        467.0
+      ],
+      [
+        "L_E_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "L_S_Stop_Shim_1": [
+      [
+        "Grid_642_1",
+        467.0
+      ],
+      [
+        "L_S_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "L_S_Stop_Shim_2": [
+      [
+        "Grid_642_1",
+        467.0
+      ],
+      [
+        "L_S_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "L_W_Stop_Shim_1": [
+      [
+        "Outer_L",
+        199.3
+      ],
+      [
+        "L_Stop_Outer_Rail",
+        547.6
+      ]
+    ],
+    "L_W_Stop_Shim_2": [
+      [
+        "Outer_L",
+        199.3
+      ],
+      [
+        "L_Stop_Outer_Rail",
+        547.6
+      ]
+    ],
+    "R_N_Stop_Shim_1": [
+      [
+        "Grid_362_3",
+        467.0
+      ],
+      [
+        "R_N_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "R_N_Stop_Shim_2": [
+      [
+        "Grid_362_3",
+        467.0
+      ],
+      [
+        "R_N_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "R_E_Stop_Shim_1": [
+      [
+        "Outer_R",
+        199.3
+      ],
+      [
+        "R_Stop_Outer_Rail",
+        547.6
+      ]
+    ],
+    "R_E_Stop_Shim_2": [
+      [
+        "Outer_R",
+        199.3
+      ],
+      [
+        "R_Stop_Outer_Rail",
+        547.6
+      ]
+    ],
+    "R_S_Stop_Shim_1": [
+      [
+        "Grid_642_3",
+        467.0
+      ],
+      [
+        "R_S_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "R_S_Stop_Shim_2": [
+      [
+        "Grid_642_3",
+        467.0
+      ],
+      [
+        "R_S_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "R_W_Stop_Shim_1": [
+      [
+        "Grid_long_R",
+        467.0
+      ],
+      [
+        "R_W_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "R_W_Stop_Shim_2": [
+      [
+        "Grid_long_R",
+        467.0
+      ],
+      [
+        "R_W_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "B_N_Stop_Shim_1": [
+      [
+        "Grid_642_2",
+        467.0
+      ],
+      [
+        "B_N_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "B_N_Stop_Shim_2": [
+      [
+        "Grid_642_2",
+        467.0
+      ],
+      [
+        "B_N_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "B_E_Stop_Shim_1": [
+      [
+        "Grid_long_R",
+        467.0
+      ],
+      [
+        "B_E_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "B_E_Stop_Shim_2": [
+      [
+        "Grid_long_R",
+        467.0
+      ],
+      [
+        "B_E_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "B_S_Stop_Shim_1": [
+      [
+        "Grid_922_3",
+        467.0
+      ],
+      [
+        "B_S_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "B_S_Stop_Shim_2": [
+      [
+        "Grid_922_3",
+        467.0
+      ],
+      [
+        "B_S_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ],
+    "B_W_Stop_Shim_1": [
+      [
+        "Grid_long_L",
+        467.0
+      ],
+      [
+        "B_W_Solid_Stop_Backup_1",
+        311.6
+      ]
+    ],
+    "B_W_Stop_Shim_2": [
+      [
+        "Grid_long_L",
+        467.0
+      ],
+      [
+        "B_W_Solid_Stop_Backup_2",
+        311.6
+      ]
+    ]
+  },
+  "corner_seat_support_mm2": {
+    "Corner_585_362_Support": 68.4,
+    "Corner_305_362_Support": 68.4,
+    "Corner_305_642_Support": 68.4,
+    "Corner_585_642_Support": 68.4
+  },
+  "retainer_shim_thickness_mm": {
+    "Corner_305_82_Shim": 1.0,
+    "Corner_585_82_Shim": 1.0,
+    "Corner_585_362_Shim": 1.0,
+    "Corner_305_362_Shim": 1.0,
+    "Corner_25_362_Shim": 1.0,
+    "Corner_305_642_Shim": 1.0,
+    "Corner_25_642_Shim": 1.0,
+    "Corner_865_362_Shim": 1.0,
+    "Corner_865_642_Shim": 1.0,
+    "Corner_585_642_Shim": 1.0,
+    "Corner_585_922_Shim": 1.0,
+    "Corner_305_922_Shim": 1.0
+  },
+  "retainer_top_above_steel_mm": 0.5,
+  "square_retainer_size_mm": 26,
+  "square_retainer_orientation_deg": {
+    "585,362": 45,
+    "305,362": 45,
+    "305,642": 45,
+    "585,642": 45
+  },
+  "square_retainer_centers_mm": {
+    "585,362": [
+      585.0,
+      362.0
+    ],
+    "305,362": [
+      305.0,
+      362.0
+    ],
+    "305,642": [
+      305.0,
+      642.0
+    ],
+    "585,642": [
+      585.0,
+      642.0
+    ]
+  },
+  "square_retainer_coverage_mm2": {
+    "585,362": {
+      "F": 44.69,
+      "R": 44.69
+    },
+    "305,362": {
+      "F": 44.69,
+      "L": 44.69
+    },
+    "305,642": {
+      "L": 44.69,
+      "B": 44.69
+    },
+    "585,642": {
+      "R": 44.69,
+      "B": 44.69
+    }
+  },
+  "outer_retainer_coverage_mm2": {
+    "305,82": {
+      "F": 57.78
+    },
+    "585,82": {
+      "F": 57.78
+    },
+    "25,362": {
+      "L": 57.78
+    },
+    "25,642": {
+      "L": 57.78
+    },
+    "865,362": {
+      "R": 57.78
+    },
+    "865,642": {
+      "R": 57.78
+    },
+    "585,922": {
+      "B": 57.78
+    },
+    "305,922": {
+      "B": 57.78
+    }
+  },
+  "outer_retainer_grid_edge_gap_mm": {
+    "305,82": 0.7,
+    "585,82": 0.7,
+    "25,362": 0.7,
+    "25,642": 0.7,
+    "865,362": 0.7,
+    "865,642": 0.7,
+    "585,922": 0.7,
+    "305,922": 0.7
+  },
+  "outer_retainer_triangle_leg_mm": 18,
+  "outer_retainer_triangle_edges": {
+    "305,82": 3,
+    "585,82": 3,
+    "25,362": 3,
+    "25,642": 3,
+    "865,362": 3,
+    "865,642": 3,
+    "585,922": 3,
+    "305,922": 3
+  },
+  "outer_retainer_post_xy_travel_overlap_mm3": {
+    "305,82": 0.0,
+    "585,82": 0.0,
+    "25,362": 0.0,
+    "25,642": 0.0,
+    "865,362": 0.0,
+    "865,642": 0.0,
+    "585,922": 0.0,
+    "305,922": 0.0
+  },
+  "pc_primary_stop_contact_mm2": {
+    "F_N_Hard_Stop_1": 582.8,
+    "F_N_Hard_Stop_2": 582.8,
+    "F_E_Hard_Stop_1": 582.8,
+    "F_E_Hard_Stop_2": 582.8,
+    "F_S_Hard_Stop_1": 582.8,
+    "F_S_Hard_Stop_2": 582.8,
+    "F_W_Hard_Stop_1": 582.8,
+    "F_W_Hard_Stop_2": 582.8,
+    "L_N_Hard_Stop_1": 582.8,
+    "L_N_Hard_Stop_2": 582.8,
+    "L_E_Hard_Stop_1": 582.8,
+    "L_E_Hard_Stop_2": 582.8,
+    "L_S_Hard_Stop_1": 582.8,
+    "L_S_Hard_Stop_2": 582.8,
+    "L_W_Hard_Stop_1": 566.3,
+    "L_W_Hard_Stop_2": 566.3,
+    "R_N_Hard_Stop_1": 582.8,
+    "R_N_Hard_Stop_2": 582.8,
+    "R_E_Hard_Stop_1": 566.3,
+    "R_E_Hard_Stop_2": 566.3,
+    "R_S_Hard_Stop_1": 582.8,
+    "R_S_Hard_Stop_2": 582.8,
+    "R_W_Hard_Stop_1": 582.8,
+    "R_W_Hard_Stop_2": 582.8,
+    "B_N_Hard_Stop_1": 582.8,
+    "B_N_Hard_Stop_2": 582.8,
+    "B_E_Hard_Stop_1": 582.8,
+    "B_E_Hard_Stop_2": 582.8,
+    "B_S_Hard_Stop_1": 582.8,
+    "B_S_Hard_Stop_2": 582.8,
+    "B_W_Hard_Stop_1": 582.8,
+    "B_W_Hard_Stop_2": 582.8
+  },
+  "assembled_candidate_pairs": 1784,
+  "assembled_overlap_mm3": [],
+  "exploded_candidate_pairs": 4,
+  "exploded_overlap_mm3": []
+}
