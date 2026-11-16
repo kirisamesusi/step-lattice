@@ -122,7 +122,7 @@
     ]
   ],
   "bracket_unplaced": [],
-  "base_screws_per_rail": 2.0,
+  "base_screws_per_rail": 1.208955223880597,
   "perimeter_steel_relief_count": {
     "Edge_L": 0,
     "Edge_R": 0,
@@ -130,8 +130,8 @@
     "Edge_B1": 0,
     "Edge_B2": 0
   },
-  "part_count": 1166,
-  "solid_count": 1166,
+  "part_count": 1060,
+  "solid_count": 1060,
   "rail_count": 67,
   "rail_bounds_mm": [
     2.0,
@@ -167,7 +167,7 @@
   ],
   "invalid_parts": [],
   "mass_kg": {
-    "base": 7.555,
+    "base": 7.423,
     "carrier": 0.104,
     "clip": 0.03,
     "clipshim": 0.071,
@@ -179,7 +179,7 @@
     "fsr": 0.005,
     "guide": 0.03,
     "handrail": 5.58,
-    "join": 0.672,
+    "join": 0.574,
     "led": 0.118,
     "pc": 3.598,
     "rail": 9.106,
@@ -192,11 +192,11 @@
     "top": 9.84,
     "wood": 4.744
   },
-  "total_geom_mass_kg": 51.412,
+  "total_geom_mass_kg": 51.182,
   "cg_mm": [
-    444.92,
-    623.22,
-    83.07
+    444.94,
+    623.87,
+    83.4
   ],
   "rigid_pc_travel": [
     {
@@ -1015,7 +1015,7 @@
     "B_W_Hard_Stop_1": 599.6,
     "B_W_Hard_Stop_2": 599.6
   },
-  "assembled_candidate_pairs": 2028,
+  "assembled_candidate_pairs": 1816,
   "assembled_overlap_mm3": [],
   "exploded_candidate_pairs": 4,
   "exploded_overlap_mm3": []

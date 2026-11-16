@@ -351,7 +351,7 @@ def rail_hardware_items():
     item("M5-D", "踏面和边带沉头螺钉", "M5×18 起选，90° 头", "购买",
          "304 M5 18 十字/内六角沉头", "5", "实配槽腔末端。选低头内六角，板件孔按实物刀型。")
     item("M5-B", "底板沉头螺钉", "M5×14，90° 头", "购买",
-         "M5×14 90度沉头 螺丝", "5", "每根型材由底板螺钉定位锁紧。木面沉头齐平，装前在型材试螺纹和孔深。")
+         "M5×14 90度沉头 螺丝", "5", "每根短型材 1 颗、长型材 3–4 颗，压住型材并防滑移。木面沉头齐平，装前在型材试螺纹和孔深。")
     item("M5-S", "侧板沉头螺钉", "M5×6 或实配短牙，90° 头", "购买",
          "M5×6 平头沉头螺钉 短螺丝", "4", "2 mm 壁需验证锥孔，必要时改低矮圆头并记录壳外尺寸。")
     item("M3-F", "托片与挡块齐平螺钉", "M3 沉头 90°，长 5/6 按叠厚选", "购买",
@@ -393,19 +393,18 @@ def pocketed(body,cuts):
     return remove(body,filt_cuts(body,cuts))
 
 def base_fix_points():
-    # The routed base is the jig for the frame. Every rail is located and held by
-    # screws from below: one for a stub, two for a cell-length rail, about every
-    # 250 mm on the long ones. Stations stay clear of the inlaid steel plates.
+    # Butted rails set each other's position, so the base only has to hold them
+    # down and stop them sliding: one screw at mid-length for every rail up to a
+    # cell long, three or four on the long ones, all through 6 mm clearance holes
+    # that can be drilled by hand. Stations stay clear of the inlaid steel plates.
     plates = [(x-35,x+35,710,1060) for x in POSTS]
     points = []
     for name,axis,start,end,cross,_,_ in RAILS:
         length = end-start
-        if length < 140:
+        if length <= 300:
             stations = [(start+end)/2]
-        elif length <= 300:
-            stations = [start+30,end-30]
         else:
-            n = round(length/250)+1
+            n = round(length/300)
             stations = [start+40+i*(length-80)/(n-1) for i in range(n)]
         for s in stations:
             # A stub beside a backing plate takes its screw at the far end instead.
@@ -420,7 +419,7 @@ def base_fix_points():
 
 def base():
     item("BASE-P", "一体底板", "886×1076×10", "CNC/自制",
-         "10mm 海洋胶合板 外用桦木船板", "", "全部型材定位孔由 CNC 一次打出，底板即骨架治具。背板局部反面铣深3；封边防潮。")
+         "10mm 海洋胶合板 外用桦木船板", "", "型材螺钉孔为 Ø6 过孔带沉头，可手钻；型材位置由互相顶靠决定。背板局部反面铣深3；封边防潮。")
     item("BASE-R", "满铺密实防滑底橡胶", "886×1076×2", "自制裁切",
          "2mm 密实防滑橡胶片 耐磨 平整", "", "地面 z−2。实际摩擦和地面平整度需测试。")
     bottom = [bevel_rect(x-35.12,x+35.12,709.88,1060.12,-1,3,4.12) for x in POSTS]
@@ -428,7 +427,7 @@ def base():
     fix = base_fix_points()
     CHECKS["base_screws_per_rail"] = len(fix)/len(RAILS)
     for x,y in fix:
-        bottom += [cyl(x,y,2.75,-1,10.1),tip(x,y,5,2.75,0,2.35)]
+        bottom += [cyl(x,y,3,-1,10.1),tip(x,y,5.2,3,0,2.2)]
     add("Base_Plywood","BASE-P",remove(box(2,888,2,1078,0,10),bottom),"ply","base","Base")
     add("Base_Rubber","BASE-R",box(2,888,2,1078,-2,0),"rubber","floor","Base")
     for i,(x,y) in enumerate(fix,1):

@@ -1,7 +1,7 @@
 {
   "DDR-R1-assembly.step": {
-    "assembly_components": 1166,
-    "readback_solids": 1166,
+    "assembly_components": 1060,
+    "readback_solids": 1060,
     "bounds_mm": [
       -0.0,
       890.0,
@@ -12,8 +12,8 @@
     ]
   },
   "DDR-R1-exploded.step": {
-    "assembly_components": 1166,
-    "readback_solids": 1166,
+    "assembly_components": 1060,
+    "readback_solids": 1060,
     "bounds_mm": [
       -294.0,
       1184.0,
