@@ -24,20 +24,34 @@ Grid_922_2,AL-0035,骨架,rail,2020 铝型材,0.017455
 Grid_922_3,AL-0260,骨架,rail,2020 铝型材,0.129665
 Grid_922_4,AL-0035,骨架,rail,2020 铝型材,0.017455
 Grid_922_5,AL-0198,骨架,rail,2020 铝型材,0.098745
-F_Cross_Long,AL-0260,前箭头,rail,2020 铝型材,0.129665
-F_Cross_Left,AL-0120,前箭头,rail,2020 铝型材,0.059845
-F_Cross_Right,AL-0120,前箭头,rail,2020 铝型材,0.059845
-L_Cross_Long,AL-0260,左箭头,rail,2020 铝型材,0.129665
-L_Cross_Left,AL-0113,左箭头,rail,2020 铝型材,0.056354
-L_Cross_Right,AL-0120,左箭头,rail,2020 铝型材,0.059845
-R_Cross_Long,AL-0260,右箭头,rail,2020 铝型材,0.129665
-R_Cross_Left,AL-0120,右箭头,rail,2020 铝型材,0.059845
-R_Cross_Right,AL-0113,右箭头,rail,2020 铝型材,0.056354
-B_Cross_Long,AL-0260,后箭头,rail,2020 铝型材,0.129665
-B_Cross_Left,AL-0120,后箭头,rail,2020 铝型材,0.059845
-B_Cross_Right,AL-0120,后箭头,rail,2020 铝型材,0.059845
 L_Stop_Outer_Rail,AL-0260,左箭头,rail,2020 铝型材,0.129665
 R_Stop_Outer_Rail,AL-0260,右箭头,rail,2020 铝型材,0.129665
+F_Ring_N,AL-0260,前箭头,rail,2020 铝型材,0.129665
+F_Ring_S,AL-0260,前箭头,rail,2020 铝型材,0.129665
+F_Ring_W,AL-0220,前箭头,rail,2020 铝型材,0.109716
+F_Ring_E,AL-0220,前箭头,rail,2020 铝型材,0.109716
+F_Cross_Long,AL-0220,前箭头,rail,2020 铝型材,0.109716
+F_Cross_Left,AL-0100,前箭头,rail,2020 铝型材,0.049871
+F_Cross_Right,AL-0100,前箭头,rail,2020 铝型材,0.049871
+L_Ring_N,AL-0253,左箭头,rail,2020 铝型材,0.126174
+L_Ring_S,AL-0253,左箭头,rail,2020 铝型材,0.126174
+L_Ring_E,AL-0220,左箭头,rail,2020 铝型材,0.109716
+L_Cross_Long,AL-0220,左箭头,rail,2020 铝型材,0.109716
+L_Cross_Left,AL-0113,左箭头,rail,2020 铝型材,0.056354
+L_Cross_Right,AL-0100,左箭头,rail,2020 铝型材,0.049871
+R_Ring_N,AL-0253,右箭头,rail,2020 铝型材,0.126174
+R_Ring_S,AL-0253,右箭头,rail,2020 铝型材,0.126174
+R_Ring_W,AL-0220,右箭头,rail,2020 铝型材,0.109716
+R_Cross_Long,AL-0220,右箭头,rail,2020 铝型材,0.109716
+R_Cross_Left,AL-0100,右箭头,rail,2020 铝型材,0.049871
+R_Cross_Right,AL-0113,右箭头,rail,2020 铝型材,0.056354
+B_Ring_N,AL-0260,后箭头,rail,2020 铝型材,0.129665
+B_Ring_S,AL-0260,后箭头,rail,2020 铝型材,0.129665
+B_Ring_W,AL-0220,后箭头,rail,2020 铝型材,0.109716
+B_Ring_E,AL-0220,后箭头,rail,2020 铝型材,0.109716
+B_Cross_Long,AL-0220,后箭头,rail,2020 铝型材,0.109716
+B_Cross_Left,AL-0100,后箭头,rail,2020 铝型材,0.049871
+B_Cross_Right,AL-0100,后箭头,rail,2020 铝型材,0.049871
 Fixed_rib_157_1,AL-0273,骨架,rail,2020 铝型材,0.136148
 Fixed_rib_157_2,AL-0273,骨架,rail,2020 铝型材,0.136148
 Fixed_rib_287_1,AL-0273,骨架,rail,2020 铝型材,0.136148
@@ -116,92 +130,14 @@ Grid_long_R_Bracket_22,ANGLE-S,骨架,join,2020 铝型材,0.002305
 Grid_long_R_Bracket_998,ANGLE,骨架,join,2020 铝型材,0.003520
 Rear_link_R_Bracket_1038,ANGLE,扶手,join,2020 铝型材,0.003520
 Rear_link_R_Bracket_1058,ANGLE,扶手,join,2020 铝型材,0.003520
-Grid_45_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_45_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_45_2_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_45_2_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_45_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_45_3_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_82_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_82_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_82_2_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_82_2_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_82_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_82_3_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_362_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_362_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_362_2_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_362_2_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_362_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_362_3_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_642_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_642_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_642_2_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_642_2_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_642_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_642_3_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_922_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_922_1_Bracket_220,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_922_2_Bracket_260,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_922_2_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_922_3_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_922_3_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_922_4_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_922_4_Bracket_630,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_922_5_Bracket_670,ANGLE,骨架,join,2020 铝型材,0.003520
-Grid_922_5_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-F_Cross_Long_Bracket_92,ANGLE,前箭头,join,2020 铝型材,0.003520
-F_Cross_Long_Bracket_352,ANGLE,前箭头,join,2020 铝型材,0.003520
-F_Cross_Left_Bracket_315,ANGLE,前箭头,join,2020 铝型材,0.003520
-F_Cross_Left_Bracket_435,ANGLE,前箭头,join,2020 铝型材,0.003520
-F_Cross_Right_Bracket_455,ANGLE,前箭头,join,2020 铝型材,0.003520
-F_Cross_Right_Bracket_575,ANGLE,前箭头,join,2020 铝型材,0.003520
-L_Cross_Long_Bracket_372,ANGLE,左箭头,join,2020 铝型材,0.003520
-L_Cross_Long_Bracket_632,ANGLE,左箭头,join,2020 铝型材,0.003520
-L_Cross_Left_Bracket_42,ANGLE,左箭头,join,2020 铝型材,0.003520
-L_Cross_Left_Bracket_155,ANGLE,左箭头,join,2020 铝型材,0.003520
-L_Cross_Right_Bracket_175,ANGLE,左箭头,join,2020 铝型材,0.003520
-L_Cross_Right_Bracket_295,ANGLE,左箭头,join,2020 铝型材,0.003520
-R_Cross_Long_Bracket_372,ANGLE,右箭头,join,2020 铝型材,0.003520
-R_Cross_Long_Bracket_632,ANGLE,右箭头,join,2020 铝型材,0.003520
-R_Cross_Left_Bracket_595,ANGLE,右箭头,join,2020 铝型材,0.003520
-R_Cross_Left_Bracket_715,ANGLE,右箭头,join,2020 铝型材,0.003520
-R_Cross_Right_Bracket_735,ANGLE,右箭头,join,2020 铝型材,0.003520
-R_Cross_Right_Bracket_848,ANGLE,右箭头,join,2020 铝型材,0.003520
-B_Cross_Long_Bracket_652,ANGLE,后箭头,join,2020 铝型材,0.003520
-B_Cross_Long_Bracket_912,ANGLE,后箭头,join,2020 铝型材,0.003520
-B_Cross_Left_Bracket_315,ANGLE,后箭头,join,2020 铝型材,0.003520
-B_Cross_Left_Bracket_435,ANGLE,后箭头,join,2020 铝型材,0.003520
-B_Cross_Right_Bracket_455,ANGLE,后箭头,join,2020 铝型材,0.003520
-B_Cross_Right_Bracket_575,ANGLE,后箭头,join,2020 铝型材,0.003520
-L_Stop_Outer_Rail_Bracket_372,ANGLE-S,左箭头,join,2020 铝型材,0.002305
-L_Stop_Outer_Rail_Bracket_632,ANGLE-S,左箭头,join,2020 铝型材,0.002305
-R_Stop_Outer_Rail_Bracket_372,ANGLE-S,右箭头,join,2020 铝型材,0.002305
-R_Stop_Outer_Rail_Bracket_632,ANGLE-S,右箭头,join,2020 铝型材,0.002305
-Fixed_rib_157_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_157_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_157_2_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_157_2_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_287_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_287_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_287_2_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_287_2_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_717_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_717_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_717_2_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_717_2_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_847_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
 Fixed_rib_847_1_Bracket_220,ANGLE,骨架,join,2020 铝型材,0.003520
 Fixed_rib_847_2_Bracket_260,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_847_2_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_847_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
 Fixed_rib_847_3_Bracket_630,ANGLE,骨架,join,2020 铝型材,0.003520
 Fixed_rib_847_4_Bracket_670,ANGLE,骨架,join,2020 铝型材,0.003520
-Fixed_rib_847_4_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
-Center_rib_450_Bracket_315,ANGLE,控制器,join,2020 铝型材,0.003520
-Center_rib_450_Bracket_575,ANGLE,控制器,join,2020 铝型材,0.003520
-Center_rib_554_Bracket_315,ANGLE,控制器,join,2020 铝型材,0.003520
-Center_rib_554_Bracket_575,ANGLE,控制器,join,2020 铝型材,0.003520
 Rear_outboard_100_Bracket_932,ANGLE,扶手,join,2020 铝型材,0.003520
 Rear_outboard_100_Bracket_1058,ANGLE,扶手,join,2020 铝型材,0.003520
 Rear_outboard_790_Bracket_932,ANGLE,扶手,join,2020 铝型材,0.003520
@@ -309,108 +245,84 @@ F_N_FSR_Carrier,FS-TR,前箭头,carrier,304 不锈钢,0.006192
 F_N_FSR_Screw,M3-F,前箭头,carrier,镀锌钢,0.000303
 F_N_FSR_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_N_FSR_Adhesive,FS-AD,前箭头,fsr,密实橡胶,0.000029
-F_N_FSR,FS-R,前箭头,fsr,柔性 FSR,0.000213
+F_N_FSR,FS-R,前箭头,fsr,柔性 FSR,0.000294
 F_N_Silicone,FS-A,前箭头,return,软硅胶,0.000104
 F_N_Return,RET,前箭头,return,微孔弹性体,0.000235
 F_N_Stop_1_1_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_N_Stop_1_1_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_N_Stop_1_2_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_N_Stop_1_2_TNut,T-M3,前箭头,join,镀锌钢,0.001812
-F_N_Solid_Stop_Backup_1,HS-BK,前箭头,rail,2020 铝型材,0.021235
-F_N_Solid_Stop_Backup_1_Upper_Screw,HS-M3,前箭头,stop,镀锌钢,0.000472
-F_N_Solid_Stop_Backup_1_Lower_Screw,HS-M4,前箭头,base,镀锌钢,0.001858
-F_N_Stop_Shim_1,HS-SH,前箭头,stopshim,304 不锈钢,0.001607
-F_N_Hard_Stop_1,HS-23,前箭头,stop,304 不锈钢,0.018433
+F_N_Stop_Shim_1,HS-SH,前箭头,stopshim,304 不锈钢,0.001621
+F_N_Hard_Stop_1,HS-23,前箭头,stop,304 不锈钢,0.018607
 F_N_Stop_2_1_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_N_Stop_2_1_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_N_Stop_2_2_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_N_Stop_2_2_TNut,T-M3,前箭头,join,镀锌钢,0.001812
-F_N_Solid_Stop_Backup_2,HS-BK,前箭头,rail,2020 铝型材,0.021235
-F_N_Solid_Stop_Backup_2_Upper_Screw,HS-M3,前箭头,stop,镀锌钢,0.000472
-F_N_Solid_Stop_Backup_2_Lower_Screw,HS-M4,前箭头,base,镀锌钢,0.001858
-F_N_Stop_Shim_2,HS-SH,前箭头,stopshim,304 不锈钢,0.001607
-F_N_Hard_Stop_2,HS-23,前箭头,stop,304 不锈钢,0.018433
+F_N_Stop_Shim_2,HS-SH,前箭头,stopshim,304 不锈钢,0.001621
+F_N_Hard_Stop_2,HS-23,前箭头,stop,304 不锈钢,0.018607
 F_N_Wear_Guide_1,LAT-E,前箭头,guide,黑色 POM,0.000890
 F_N_Wear_Guide_2,LAT-E,前箭头,guide,黑色 POM,0.000890
 F_E_FSR_Carrier,FS-TR,前箭头,carrier,304 不锈钢,0.006192
 F_E_FSR_Screw,M3-F,前箭头,carrier,镀锌钢,0.000303
 F_E_FSR_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_E_FSR_Adhesive,FS-AD,前箭头,fsr,密实橡胶,0.000029
-F_E_FSR,FS-R,前箭头,fsr,柔性 FSR,0.000213
+F_E_FSR,FS-R,前箭头,fsr,柔性 FSR,0.000294
 F_E_Silicone,FS-A,前箭头,return,软硅胶,0.000104
 F_E_Return,RET,前箭头,return,微孔弹性体,0.000235
 F_E_Stop_1_1_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_E_Stop_1_1_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_E_Stop_1_2_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_E_Stop_1_2_TNut,T-M3,前箭头,join,镀锌钢,0.001812
-F_E_Solid_Stop_Backup_1,HS-BK,前箭头,rail,2020 铝型材,0.021235
-F_E_Solid_Stop_Backup_1_Upper_Screw,HS-M3,前箭头,stop,镀锌钢,0.000472
-F_E_Solid_Stop_Backup_1_Lower_Screw,HS-M4,前箭头,base,镀锌钢,0.001858
-F_E_Stop_Shim_1,HS-SH,前箭头,stopshim,304 不锈钢,0.001607
-F_E_Hard_Stop_1,HS-23,前箭头,stop,304 不锈钢,0.018433
+F_E_Stop_Shim_1,HS-SH,前箭头,stopshim,304 不锈钢,0.001621
+F_E_Hard_Stop_1,HS-23,前箭头,stop,304 不锈钢,0.018607
 F_E_Stop_2_1_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_E_Stop_2_1_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_E_Stop_2_2_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_E_Stop_2_2_TNut,T-M3,前箭头,join,镀锌钢,0.001812
-F_E_Solid_Stop_Backup_2,HS-BK,前箭头,rail,2020 铝型材,0.021235
-F_E_Solid_Stop_Backup_2_Upper_Screw,HS-M3,前箭头,stop,镀锌钢,0.000472
-F_E_Solid_Stop_Backup_2_Lower_Screw,HS-M4,前箭头,base,镀锌钢,0.001858
-F_E_Stop_Shim_2,HS-SH,前箭头,stopshim,304 不锈钢,0.001607
-F_E_Hard_Stop_2,HS-23,前箭头,stop,304 不锈钢,0.018433
+F_E_Stop_Shim_2,HS-SH,前箭头,stopshim,304 不锈钢,0.001621
+F_E_Hard_Stop_2,HS-23,前箭头,stop,304 不锈钢,0.018607
 F_E_Wear_Guide_1,LAT,前箭头,guide,黑色 POM,0.000937
 F_E_Wear_Guide_2,LAT,前箭头,guide,黑色 POM,0.000937
 F_S_FSR_Carrier,FS-TR,前箭头,carrier,304 不锈钢,0.006192
 F_S_FSR_Screw,M3-F,前箭头,carrier,镀锌钢,0.000303
 F_S_FSR_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_S_FSR_Adhesive,FS-AD,前箭头,fsr,密实橡胶,0.000029
-F_S_FSR,FS-R,前箭头,fsr,柔性 FSR,0.000213
+F_S_FSR,FS-R,前箭头,fsr,柔性 FSR,0.000294
 F_S_Silicone,FS-A,前箭头,return,软硅胶,0.000104
 F_S_Return,RET,前箭头,return,微孔弹性体,0.000235
 F_S_Stop_1_1_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_S_Stop_1_1_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_S_Stop_1_2_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_S_Stop_1_2_TNut,T-M3,前箭头,join,镀锌钢,0.001812
-F_S_Solid_Stop_Backup_1,HS-BK,前箭头,rail,2020 铝型材,0.021235
-F_S_Solid_Stop_Backup_1_Upper_Screw,HS-M3,前箭头,stop,镀锌钢,0.000472
-F_S_Solid_Stop_Backup_1_Lower_Screw,HS-M4,前箭头,base,镀锌钢,0.001858
-F_S_Stop_Shim_1,HS-SH,前箭头,stopshim,304 不锈钢,0.001607
-F_S_Hard_Stop_1,HS-23,前箭头,stop,304 不锈钢,0.018433
+F_S_Stop_Shim_1,HS-SH,前箭头,stopshim,304 不锈钢,0.001621
+F_S_Hard_Stop_1,HS-23,前箭头,stop,304 不锈钢,0.018607
 F_S_Stop_2_1_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_S_Stop_2_1_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_S_Stop_2_2_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_S_Stop_2_2_TNut,T-M3,前箭头,join,镀锌钢,0.001812
-F_S_Solid_Stop_Backup_2,HS-BK,前箭头,rail,2020 铝型材,0.021235
-F_S_Solid_Stop_Backup_2_Upper_Screw,HS-M3,前箭头,stop,镀锌钢,0.000472
-F_S_Solid_Stop_Backup_2_Lower_Screw,HS-M4,前箭头,base,镀锌钢,0.001858
-F_S_Stop_Shim_2,HS-SH,前箭头,stopshim,304 不锈钢,0.001607
-F_S_Hard_Stop_2,HS-23,前箭头,stop,304 不锈钢,0.018433
+F_S_Stop_Shim_2,HS-SH,前箭头,stopshim,304 不锈钢,0.001621
+F_S_Hard_Stop_2,HS-23,前箭头,stop,304 不锈钢,0.018607
 F_S_Wear_Guide_1,LAT,前箭头,guide,黑色 POM,0.000937
 F_S_Wear_Guide_2,LAT,前箭头,guide,黑色 POM,0.000937
 F_W_FSR_Carrier,FS-TR,前箭头,carrier,304 不锈钢,0.006192
 F_W_FSR_Screw,M3-F,前箭头,carrier,镀锌钢,0.000303
 F_W_FSR_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_W_FSR_Adhesive,FS-AD,前箭头,fsr,密实橡胶,0.000029
-F_W_FSR,FS-R,前箭头,fsr,柔性 FSR,0.000213
+F_W_FSR,FS-R,前箭头,fsr,柔性 FSR,0.000294
 F_W_Silicone,FS-A,前箭头,return,软硅胶,0.000104
 F_W_Return,RET,前箭头,return,微孔弹性体,0.000235
 F_W_Stop_1_1_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_W_Stop_1_1_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_W_Stop_1_2_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_W_Stop_1_2_TNut,T-M3,前箭头,join,镀锌钢,0.001812
-F_W_Solid_Stop_Backup_1,HS-BK,前箭头,rail,2020 铝型材,0.021235
-F_W_Solid_Stop_Backup_1_Upper_Screw,HS-M3,前箭头,stop,镀锌钢,0.000472
-F_W_Solid_Stop_Backup_1_Lower_Screw,HS-M4,前箭头,base,镀锌钢,0.001858
-F_W_Stop_Shim_1,HS-SH,前箭头,stopshim,304 不锈钢,0.001607
-F_W_Hard_Stop_1,HS-23,前箭头,stop,304 不锈钢,0.018433
+F_W_Stop_Shim_1,HS-SH,前箭头,stopshim,304 不锈钢,0.001621
+F_W_Hard_Stop_1,HS-23,前箭头,stop,304 不锈钢,0.018607
 F_W_Stop_2_1_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_W_Stop_2_1_TNut,T-M3,前箭头,join,镀锌钢,0.001812
 F_W_Stop_2_2_Screw,M3-F,前箭头,stop,镀锌钢,0.000397
 F_W_Stop_2_2_TNut,T-M3,前箭头,join,镀锌钢,0.001812
-F_W_Solid_Stop_Backup_2,HS-BK,前箭头,rail,2020 铝型材,0.021235
-F_W_Solid_Stop_Backup_2_Upper_Screw,HS-M3,前箭头,stop,镀锌钢,0.000472
-F_W_Solid_Stop_Backup_2_Lower_Screw,HS-M4,前箭头,base,镀锌钢,0.001858
-F_W_Stop_Shim_2,HS-SH,前箭头,stopshim,304 不锈钢,0.001607
-F_W_Hard_Stop_2,HS-23,前箭头,stop,304 不锈钢,0.018433
+F_W_Stop_Shim_2,HS-SH,前箭头,stopshim,304 不锈钢,0.001621
+F_W_Hard_Stop_2,HS-23,前箭头,stop,304 不锈钢,0.018607
 F_W_Wear_Guide_1,LAT,前箭头,guide,黑色 POM,0.000937
 F_W_Wear_Guide_2,LAT,前箭头,guide,黑色 POM,0.000937
 F_Polycarbonate,AR-PC,前箭头,pc,实心透光 PC,0.899376
@@ -433,88 +345,70 @@ L_N_FSR_Carrier,FS-TR,左箭头,carrier,304 不锈钢,0.006192
 L_N_FSR_Screw,M3-F,左箭头,carrier,镀锌钢,0.000303
 L_N_FSR_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_N_FSR_Adhesive,FS-AD,左箭头,fsr,密实橡胶,0.000029
-L_N_FSR,FS-R,左箭头,fsr,柔性 FSR,0.000213
+L_N_FSR,FS-R,左箭头,fsr,柔性 FSR,0.000294
 L_N_Silicone,FS-A,左箭头,return,软硅胶,0.000104
 L_N_Return,RET,左箭头,return,微孔弹性体,0.000235
 L_N_Stop_1_1_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_N_Stop_1_1_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_N_Stop_1_2_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_N_Stop_1_2_TNut,T-M3,左箭头,join,镀锌钢,0.001812
-L_N_Solid_Stop_Backup_1,HS-BK,左箭头,rail,2020 铝型材,0.021235
-L_N_Solid_Stop_Backup_1_Upper_Screw,HS-M3,左箭头,stop,镀锌钢,0.000472
-L_N_Solid_Stop_Backup_1_Lower_Screw,HS-M4,左箭头,base,镀锌钢,0.001858
-L_N_Stop_Shim_1,HS-SH,左箭头,stopshim,304 不锈钢,0.001607
-L_N_Hard_Stop_1,HS-23,左箭头,stop,304 不锈钢,0.018433
+L_N_Stop_Shim_1,HS-SH,左箭头,stopshim,304 不锈钢,0.001621
+L_N_Hard_Stop_1,HS-23,左箭头,stop,304 不锈钢,0.018607
 L_N_Stop_2_1_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_N_Stop_2_1_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_N_Stop_2_2_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_N_Stop_2_2_TNut,T-M3,左箭头,join,镀锌钢,0.001812
-L_N_Solid_Stop_Backup_2,HS-BK,左箭头,rail,2020 铝型材,0.021235
-L_N_Solid_Stop_Backup_2_Upper_Screw,HS-M3,左箭头,stop,镀锌钢,0.000472
-L_N_Solid_Stop_Backup_2_Lower_Screw,HS-M4,左箭头,base,镀锌钢,0.001858
-L_N_Stop_Shim_2,HS-SH,左箭头,stopshim,304 不锈钢,0.001607
-L_N_Hard_Stop_2,HS-23,左箭头,stop,304 不锈钢,0.018433
+L_N_Stop_Shim_2,HS-SH,左箭头,stopshim,304 不锈钢,0.001621
+L_N_Hard_Stop_2,HS-23,左箭头,stop,304 不锈钢,0.018607
 L_N_Wear_Guide_1,LAT,左箭头,guide,黑色 POM,0.000937
 L_N_Wear_Guide_2,LAT,左箭头,guide,黑色 POM,0.000937
 L_E_FSR_Carrier,FS-TR,左箭头,carrier,304 不锈钢,0.006192
 L_E_FSR_Screw,M3-F,左箭头,carrier,镀锌钢,0.000303
 L_E_FSR_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_E_FSR_Adhesive,FS-AD,左箭头,fsr,密实橡胶,0.000029
-L_E_FSR,FS-R,左箭头,fsr,柔性 FSR,0.000213
+L_E_FSR,FS-R,左箭头,fsr,柔性 FSR,0.000294
 L_E_Silicone,FS-A,左箭头,return,软硅胶,0.000104
 L_E_Return,RET,左箭头,return,微孔弹性体,0.000235
 L_E_Stop_1_1_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_E_Stop_1_1_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_E_Stop_1_2_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_E_Stop_1_2_TNut,T-M3,左箭头,join,镀锌钢,0.001812
-L_E_Solid_Stop_Backup_1,HS-BK,左箭头,rail,2020 铝型材,0.021235
-L_E_Solid_Stop_Backup_1_Upper_Screw,HS-M3,左箭头,stop,镀锌钢,0.000472
-L_E_Solid_Stop_Backup_1_Lower_Screw,HS-M4,左箭头,base,镀锌钢,0.001858
-L_E_Stop_Shim_1,HS-SH,左箭头,stopshim,304 不锈钢,0.001607
-L_E_Hard_Stop_1,HS-23,左箭头,stop,304 不锈钢,0.018433
+L_E_Stop_Shim_1,HS-SH,左箭头,stopshim,304 不锈钢,0.001621
+L_E_Hard_Stop_1,HS-23,左箭头,stop,304 不锈钢,0.018607
 L_E_Stop_2_1_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_E_Stop_2_1_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_E_Stop_2_2_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_E_Stop_2_2_TNut,T-M3,左箭头,join,镀锌钢,0.001812
-L_E_Solid_Stop_Backup_2,HS-BK,左箭头,rail,2020 铝型材,0.021235
-L_E_Solid_Stop_Backup_2_Upper_Screw,HS-M3,左箭头,stop,镀锌钢,0.000472
-L_E_Solid_Stop_Backup_2_Lower_Screw,HS-M4,左箭头,base,镀锌钢,0.001858
-L_E_Stop_Shim_2,HS-SH,左箭头,stopshim,304 不锈钢,0.001607
-L_E_Hard_Stop_2,HS-23,左箭头,stop,304 不锈钢,0.018433
+L_E_Stop_Shim_2,HS-SH,左箭头,stopshim,304 不锈钢,0.001621
+L_E_Hard_Stop_2,HS-23,左箭头,stop,304 不锈钢,0.018607
 L_E_Wear_Guide_1,LAT,左箭头,guide,黑色 POM,0.000937
 L_E_Wear_Guide_2,LAT,左箭头,guide,黑色 POM,0.000937
 L_S_FSR_Carrier,FS-TR,左箭头,carrier,304 不锈钢,0.006192
 L_S_FSR_Screw,M3-F,左箭头,carrier,镀锌钢,0.000303
 L_S_FSR_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_S_FSR_Adhesive,FS-AD,左箭头,fsr,密实橡胶,0.000029
-L_S_FSR,FS-R,左箭头,fsr,柔性 FSR,0.000213
+L_S_FSR,FS-R,左箭头,fsr,柔性 FSR,0.000294
 L_S_Silicone,FS-A,左箭头,return,软硅胶,0.000104
 L_S_Return,RET,左箭头,return,微孔弹性体,0.000235
 L_S_Stop_1_1_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_S_Stop_1_1_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_S_Stop_1_2_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_S_Stop_1_2_TNut,T-M3,左箭头,join,镀锌钢,0.001812
-L_S_Solid_Stop_Backup_1,HS-BK,左箭头,rail,2020 铝型材,0.021235
-L_S_Solid_Stop_Backup_1_Upper_Screw,HS-M3,左箭头,stop,镀锌钢,0.000472
-L_S_Solid_Stop_Backup_1_Lower_Screw,HS-M4,左箭头,base,镀锌钢,0.001858
-L_S_Stop_Shim_1,HS-SH,左箭头,stopshim,304 不锈钢,0.001607
-L_S_Hard_Stop_1,HS-23,左箭头,stop,304 不锈钢,0.018433
+L_S_Stop_Shim_1,HS-SH,左箭头,stopshim,304 不锈钢,0.001621
+L_S_Hard_Stop_1,HS-23,左箭头,stop,304 不锈钢,0.018607
 L_S_Stop_2_1_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_S_Stop_2_1_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_S_Stop_2_2_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
 L_S_Stop_2_2_TNut,T-M3,左箭头,join,镀锌钢,0.001812
-L_S_Solid_Stop_Backup_2,HS-BK,左箭头,rail,2020 铝型材,0.021235
-L_S_Solid_Stop_Backup_2_Upper_Screw,HS-M3,左箭头,stop,镀锌钢,0.000472
-L_S_Solid_Stop_Backup_2_Lower_Screw,HS-M4,左箭头,base,镀锌钢,0.001858
-L_S_Stop_Shim_2,HS-SH,左箭头,stopshim,304 不锈钢,0.001607
-L_S_Hard_Stop_2,HS-23,左箭头,stop,304 不锈钢,0.018433
+L_S_Stop_Shim_2,HS-SH,左箭头,stopshim,304 不锈钢,0.001621
+L_S_Hard_Stop_2,HS-23,左箭头,stop,304 不锈钢,0.018607
 L_S_Wear_Guide_1,LAT,左箭头,guide,黑色 POM,0.000937
 L_S_Wear_Guide_2,LAT,左箭头,guide,黑色 POM,0.000937
 L_W_FSR_Carrier,FS-TR,左箭头,carrier,304 不锈钢,0.006192
 L_W_FSR_Screw,M3-F,左箭头,carrier,镀锌钢,0.000303
 L_W_FSR_TNut,T-M3,左箭头,join,镀锌钢,0.001812
 L_W_FSR_Adhesive,FS-AD,左箭头,fsr,密实橡胶,0.000029
-L_W_FSR,FS-R,左箭头,fsr,柔性 FSR,0.000213
+L_W_FSR,FS-R,左箭头,fsr,柔性 FSR,0.000294
 L_W_Silicone,FS-A,左箭头,return,软硅胶,0.000104
 L_W_Return,RET,左箭头,return,微孔弹性体,0.000235
 L_W_Stop_1_1_Screw,M3-F,左箭头,stop,镀锌钢,0.000397
@@ -551,34 +445,28 @@ R_N_FSR_Carrier,FS-TR,右箭头,carrier,304 不锈钢,0.006192
 R_N_FSR_Screw,M3-F,右箭头,carrier,镀锌钢,0.000303
 R_N_FSR_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_N_FSR_Adhesive,FS-AD,右箭头,fsr,密实橡胶,0.000029
-R_N_FSR,FS-R,右箭头,fsr,柔性 FSR,0.000213
+R_N_FSR,FS-R,右箭头,fsr,柔性 FSR,0.000294
 R_N_Silicone,FS-A,右箭头,return,软硅胶,0.000104
 R_N_Return,RET,右箭头,return,微孔弹性体,0.000235
 R_N_Stop_1_1_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_N_Stop_1_1_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_N_Stop_1_2_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_N_Stop_1_2_TNut,T-M3,右箭头,join,镀锌钢,0.001812
-R_N_Solid_Stop_Backup_1,HS-BK,右箭头,rail,2020 铝型材,0.021235
-R_N_Solid_Stop_Backup_1_Upper_Screw,HS-M3,右箭头,stop,镀锌钢,0.000472
-R_N_Solid_Stop_Backup_1_Lower_Screw,HS-M4,右箭头,base,镀锌钢,0.001858
-R_N_Stop_Shim_1,HS-SH,右箭头,stopshim,304 不锈钢,0.001607
-R_N_Hard_Stop_1,HS-23,右箭头,stop,304 不锈钢,0.018433
+R_N_Stop_Shim_1,HS-SH,右箭头,stopshim,304 不锈钢,0.001621
+R_N_Hard_Stop_1,HS-23,右箭头,stop,304 不锈钢,0.018607
 R_N_Stop_2_1_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_N_Stop_2_1_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_N_Stop_2_2_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_N_Stop_2_2_TNut,T-M3,右箭头,join,镀锌钢,0.001812
-R_N_Solid_Stop_Backup_2,HS-BK,右箭头,rail,2020 铝型材,0.021235
-R_N_Solid_Stop_Backup_2_Upper_Screw,HS-M3,右箭头,stop,镀锌钢,0.000472
-R_N_Solid_Stop_Backup_2_Lower_Screw,HS-M4,右箭头,base,镀锌钢,0.001858
-R_N_Stop_Shim_2,HS-SH,右箭头,stopshim,304 不锈钢,0.001607
-R_N_Hard_Stop_2,HS-23,右箭头,stop,304 不锈钢,0.018433
+R_N_Stop_Shim_2,HS-SH,右箭头,stopshim,304 不锈钢,0.001621
+R_N_Hard_Stop_2,HS-23,右箭头,stop,304 不锈钢,0.018607
 R_N_Wear_Guide_1,LAT,右箭头,guide,黑色 POM,0.000937
 R_N_Wear_Guide_2,LAT,右箭头,guide,黑色 POM,0.000937
 R_E_FSR_Carrier,FS-TR,右箭头,carrier,304 不锈钢,0.006192
 R_E_FSR_Screw,M3-F,右箭头,carrier,镀锌钢,0.000303
 R_E_FSR_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_E_FSR_Adhesive,FS-AD,右箭头,fsr,密实橡胶,0.000029
-R_E_FSR,FS-R,右箭头,fsr,柔性 FSR,0.000213
+R_E_FSR,FS-R,右箭头,fsr,柔性 FSR,0.000294
 R_E_Silicone,FS-A,右箭头,return,软硅胶,0.000104
 R_E_Return,RET,右箭头,return,微孔弹性体,0.000235
 R_E_Stop_1_1_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
@@ -599,54 +487,42 @@ R_S_FSR_Carrier,FS-TR,右箭头,carrier,304 不锈钢,0.006192
 R_S_FSR_Screw,M3-F,右箭头,carrier,镀锌钢,0.000303
 R_S_FSR_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_S_FSR_Adhesive,FS-AD,右箭头,fsr,密实橡胶,0.000029
-R_S_FSR,FS-R,右箭头,fsr,柔性 FSR,0.000213
+R_S_FSR,FS-R,右箭头,fsr,柔性 FSR,0.000294
 R_S_Silicone,FS-A,右箭头,return,软硅胶,0.000104
 R_S_Return,RET,右箭头,return,微孔弹性体,0.000235
 R_S_Stop_1_1_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_S_Stop_1_1_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_S_Stop_1_2_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_S_Stop_1_2_TNut,T-M3,右箭头,join,镀锌钢,0.001812
-R_S_Solid_Stop_Backup_1,HS-BK,右箭头,rail,2020 铝型材,0.021235
-R_S_Solid_Stop_Backup_1_Upper_Screw,HS-M3,右箭头,stop,镀锌钢,0.000472
-R_S_Solid_Stop_Backup_1_Lower_Screw,HS-M4,右箭头,base,镀锌钢,0.001858
-R_S_Stop_Shim_1,HS-SH,右箭头,stopshim,304 不锈钢,0.001607
-R_S_Hard_Stop_1,HS-23,右箭头,stop,304 不锈钢,0.018433
+R_S_Stop_Shim_1,HS-SH,右箭头,stopshim,304 不锈钢,0.001621
+R_S_Hard_Stop_1,HS-23,右箭头,stop,304 不锈钢,0.018607
 R_S_Stop_2_1_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_S_Stop_2_1_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_S_Stop_2_2_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_S_Stop_2_2_TNut,T-M3,右箭头,join,镀锌钢,0.001812
-R_S_Solid_Stop_Backup_2,HS-BK,右箭头,rail,2020 铝型材,0.021235
-R_S_Solid_Stop_Backup_2_Upper_Screw,HS-M3,右箭头,stop,镀锌钢,0.000472
-R_S_Solid_Stop_Backup_2_Lower_Screw,HS-M4,右箭头,base,镀锌钢,0.001858
-R_S_Stop_Shim_2,HS-SH,右箭头,stopshim,304 不锈钢,0.001607
-R_S_Hard_Stop_2,HS-23,右箭头,stop,304 不锈钢,0.018433
+R_S_Stop_Shim_2,HS-SH,右箭头,stopshim,304 不锈钢,0.001621
+R_S_Hard_Stop_2,HS-23,右箭头,stop,304 不锈钢,0.018607
 R_S_Wear_Guide_1,LAT,右箭头,guide,黑色 POM,0.000937
 R_S_Wear_Guide_2,LAT,右箭头,guide,黑色 POM,0.000937
 R_W_FSR_Carrier,FS-TR,右箭头,carrier,304 不锈钢,0.006192
 R_W_FSR_Screw,M3-F,右箭头,carrier,镀锌钢,0.000303
 R_W_FSR_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_W_FSR_Adhesive,FS-AD,右箭头,fsr,密实橡胶,0.000029
-R_W_FSR,FS-R,右箭头,fsr,柔性 FSR,0.000213
+R_W_FSR,FS-R,右箭头,fsr,柔性 FSR,0.000294
 R_W_Silicone,FS-A,右箭头,return,软硅胶,0.000104
 R_W_Return,RET,右箭头,return,微孔弹性体,0.000235
 R_W_Stop_1_1_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_W_Stop_1_1_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_W_Stop_1_2_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_W_Stop_1_2_TNut,T-M3,右箭头,join,镀锌钢,0.001812
-R_W_Solid_Stop_Backup_1,HS-BK,右箭头,rail,2020 铝型材,0.021235
-R_W_Solid_Stop_Backup_1_Upper_Screw,HS-M3,右箭头,stop,镀锌钢,0.000472
-R_W_Solid_Stop_Backup_1_Lower_Screw,HS-M4,右箭头,base,镀锌钢,0.001858
-R_W_Stop_Shim_1,HS-SH,右箭头,stopshim,304 不锈钢,0.001607
-R_W_Hard_Stop_1,HS-23,右箭头,stop,304 不锈钢,0.018433
+R_W_Stop_Shim_1,HS-SH,右箭头,stopshim,304 不锈钢,0.001621
+R_W_Hard_Stop_1,HS-23,右箭头,stop,304 不锈钢,0.018607
 R_W_Stop_2_1_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_W_Stop_2_1_TNut,T-M3,右箭头,join,镀锌钢,0.001812
 R_W_Stop_2_2_Screw,M3-F,右箭头,stop,镀锌钢,0.000397
 R_W_Stop_2_2_TNut,T-M3,右箭头,join,镀锌钢,0.001812
-R_W_Solid_Stop_Backup_2,HS-BK,右箭头,rail,2020 铝型材,0.021235
-R_W_Solid_Stop_Backup_2_Upper_Screw,HS-M3,右箭头,stop,镀锌钢,0.000472
-R_W_Solid_Stop_Backup_2_Lower_Screw,HS-M4,右箭头,base,镀锌钢,0.001858
-R_W_Stop_Shim_2,HS-SH,右箭头,stopshim,304 不锈钢,0.001607
-R_W_Hard_Stop_2,HS-23,右箭头,stop,304 不锈钢,0.018433
+R_W_Stop_Shim_2,HS-SH,右箭头,stopshim,304 不锈钢,0.001621
+R_W_Hard_Stop_2,HS-23,右箭头,stop,304 不锈钢,0.018607
 R_W_Wear_Guide_1,LAT,右箭头,guide,黑色 POM,0.000937
 R_W_Wear_Guide_2,LAT,右箭头,guide,黑色 POM,0.000937
 R_Polycarbonate,AR-PC,右箭头,pc,实心透光 PC,0.899376
@@ -669,112 +545,88 @@ B_N_FSR_Carrier,FS-TR,后箭头,carrier,304 不锈钢,0.006192
 B_N_FSR_Screw,M3-F,后箭头,carrier,镀锌钢,0.000303
 B_N_FSR_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_N_FSR_Adhesive,FS-AD,后箭头,fsr,密实橡胶,0.000029
-B_N_FSR,FS-R,后箭头,fsr,柔性 FSR,0.000213
+B_N_FSR,FS-R,后箭头,fsr,柔性 FSR,0.000294
 B_N_Silicone,FS-A,后箭头,return,软硅胶,0.000104
 B_N_Return,RET,后箭头,return,微孔弹性体,0.000235
 B_N_Stop_1_1_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_N_Stop_1_1_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_N_Stop_1_2_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_N_Stop_1_2_TNut,T-M3,后箭头,join,镀锌钢,0.001812
-B_N_Solid_Stop_Backup_1,HS-BK,后箭头,rail,2020 铝型材,0.021235
-B_N_Solid_Stop_Backup_1_Upper_Screw,HS-M3,后箭头,stop,镀锌钢,0.000472
-B_N_Solid_Stop_Backup_1_Lower_Screw,HS-M4,后箭头,base,镀锌钢,0.001858
-B_N_Stop_Shim_1,HS-SH,后箭头,stopshim,304 不锈钢,0.001607
-B_N_Hard_Stop_1,HS-23,后箭头,stop,304 不锈钢,0.018433
+B_N_Stop_Shim_1,HS-SH,后箭头,stopshim,304 不锈钢,0.001621
+B_N_Hard_Stop_1,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_N_Stop_2_1_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_N_Stop_2_1_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_N_Stop_2_2_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_N_Stop_2_2_TNut,T-M3,后箭头,join,镀锌钢,0.001812
-B_N_Solid_Stop_Backup_2,HS-BK,后箭头,rail,2020 铝型材,0.021235
-B_N_Solid_Stop_Backup_2_Upper_Screw,HS-M3,后箭头,stop,镀锌钢,0.000472
-B_N_Solid_Stop_Backup_2_Lower_Screw,HS-M4,后箭头,base,镀锌钢,0.001858
-B_N_Stop_Shim_2,HS-SH,后箭头,stopshim,304 不锈钢,0.001607
-B_N_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018433
+B_N_Stop_Shim_2,HS-SH,后箭头,stopshim,304 不锈钢,0.001621
+B_N_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_N_Wear_Guide_1,LAT,后箭头,guide,黑色 POM,0.000937
 B_N_Wear_Guide_2,LAT,后箭头,guide,黑色 POM,0.000937
 B_E_FSR_Carrier,FS-TR,后箭头,carrier,304 不锈钢,0.006192
 B_E_FSR_Screw,M3-F,后箭头,carrier,镀锌钢,0.000303
 B_E_FSR_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_E_FSR_Adhesive,FS-AD,后箭头,fsr,密实橡胶,0.000029
-B_E_FSR,FS-R,后箭头,fsr,柔性 FSR,0.000213
+B_E_FSR,FS-R,后箭头,fsr,柔性 FSR,0.000294
 B_E_Silicone,FS-A,后箭头,return,软硅胶,0.000104
 B_E_Return,RET,后箭头,return,微孔弹性体,0.000235
 B_E_Stop_1_1_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_E_Stop_1_1_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_E_Stop_1_2_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_E_Stop_1_2_TNut,T-M3,后箭头,join,镀锌钢,0.001812
-B_E_Solid_Stop_Backup_1,HS-BK,后箭头,rail,2020 铝型材,0.021235
-B_E_Solid_Stop_Backup_1_Upper_Screw,HS-M3,后箭头,stop,镀锌钢,0.000472
-B_E_Solid_Stop_Backup_1_Lower_Screw,HS-M4,后箭头,base,镀锌钢,0.001858
-B_E_Stop_Shim_1,HS-SH,后箭头,stopshim,304 不锈钢,0.001607
-B_E_Hard_Stop_1,HS-23,后箭头,stop,304 不锈钢,0.018433
+B_E_Stop_Shim_1,HS-SH,后箭头,stopshim,304 不锈钢,0.001621
+B_E_Hard_Stop_1,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_E_Stop_2_1_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_E_Stop_2_1_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_E_Stop_2_2_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_E_Stop_2_2_TNut,T-M3,后箭头,join,镀锌钢,0.001812
-B_E_Solid_Stop_Backup_2,HS-BK,后箭头,rail,2020 铝型材,0.021235
-B_E_Solid_Stop_Backup_2_Upper_Screw,HS-M3,后箭头,stop,镀锌钢,0.000472
-B_E_Solid_Stop_Backup_2_Lower_Screw,HS-M4,后箭头,base,镀锌钢,0.001858
-B_E_Stop_Shim_2,HS-SH,后箭头,stopshim,304 不锈钢,0.001607
-B_E_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018433
+B_E_Stop_Shim_2,HS-SH,后箭头,stopshim,304 不锈钢,0.001621
+B_E_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_E_Wear_Guide_1,LAT,后箭头,guide,黑色 POM,0.000937
 B_E_Wear_Guide_2,LAT,后箭头,guide,黑色 POM,0.000937
 B_S_FSR_Carrier,FS-TR,后箭头,carrier,304 不锈钢,0.006192
 B_S_FSR_Screw,M3-F,后箭头,carrier,镀锌钢,0.000303
 B_S_FSR_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_S_FSR_Adhesive,FS-AD,后箭头,fsr,密实橡胶,0.000029
-B_S_FSR,FS-R,后箭头,fsr,柔性 FSR,0.000213
+B_S_FSR,FS-R,后箭头,fsr,柔性 FSR,0.000294
 B_S_Silicone,FS-A,后箭头,return,软硅胶,0.000104
 B_S_Return,RET,后箭头,return,微孔弹性体,0.000235
 B_S_Stop_1_1_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_S_Stop_1_1_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_S_Stop_1_2_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_S_Stop_1_2_TNut,T-M3,后箭头,join,镀锌钢,0.001812
-B_S_Solid_Stop_Backup_1,HS-BK,后箭头,rail,2020 铝型材,0.021235
-B_S_Solid_Stop_Backup_1_Upper_Screw,HS-M3,后箭头,stop,镀锌钢,0.000472
-B_S_Solid_Stop_Backup_1_Lower_Screw,HS-M4,后箭头,base,镀锌钢,0.001858
-B_S_Stop_Shim_1,HS-SH,后箭头,stopshim,304 不锈钢,0.001607
-B_S_Hard_Stop_1,HS-23,后箭头,stop,304 不锈钢,0.018433
+B_S_Stop_Shim_1,HS-SH,后箭头,stopshim,304 不锈钢,0.001621
+B_S_Hard_Stop_1,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_S_Stop_2_1_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_S_Stop_2_1_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_S_Stop_2_2_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_S_Stop_2_2_TNut,T-M3,后箭头,join,镀锌钢,0.001812
-B_S_Solid_Stop_Backup_2,HS-BK,后箭头,rail,2020 铝型材,0.021235
-B_S_Solid_Stop_Backup_2_Upper_Screw,HS-M3,后箭头,stop,镀锌钢,0.000472
-B_S_Solid_Stop_Backup_2_Lower_Screw,HS-M4,后箭头,base,镀锌钢,0.001858
-B_S_Stop_Shim_2,HS-SH,后箭头,stopshim,304 不锈钢,0.001607
-B_S_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018433
+B_S_Stop_Shim_2,HS-SH,后箭头,stopshim,304 不锈钢,0.001621
+B_S_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_S_Wear_Guide_1,LAT-E,后箭头,guide,黑色 POM,0.000890
 B_S_Wear_Guide_2,LAT-E,后箭头,guide,黑色 POM,0.000890
 B_W_FSR_Carrier,FS-TR,后箭头,carrier,304 不锈钢,0.006192
 B_W_FSR_Screw,M3-F,后箭头,carrier,镀锌钢,0.000303
 B_W_FSR_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_W_FSR_Adhesive,FS-AD,后箭头,fsr,密实橡胶,0.000029
-B_W_FSR,FS-R,后箭头,fsr,柔性 FSR,0.000213
+B_W_FSR,FS-R,后箭头,fsr,柔性 FSR,0.000294
 B_W_Silicone,FS-A,后箭头,return,软硅胶,0.000104
 B_W_Return,RET,后箭头,return,微孔弹性体,0.000235
 B_W_Stop_1_1_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_W_Stop_1_1_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_W_Stop_1_2_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_W_Stop_1_2_TNut,T-M3,后箭头,join,镀锌钢,0.001812
-B_W_Solid_Stop_Backup_1,HS-BK,后箭头,rail,2020 铝型材,0.021235
-B_W_Solid_Stop_Backup_1_Upper_Screw,HS-M3,后箭头,stop,镀锌钢,0.000472
-B_W_Solid_Stop_Backup_1_Lower_Screw,HS-M4,后箭头,base,镀锌钢,0.001858
-B_W_Stop_Shim_1,HS-SH,后箭头,stopshim,304 不锈钢,0.001607
-B_W_Hard_Stop_1,HS-23,后箭头,stop,304 不锈钢,0.018433
+B_W_Stop_Shim_1,HS-SH,后箭头,stopshim,304 不锈钢,0.001621
+B_W_Hard_Stop_1,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_W_Stop_2_1_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_W_Stop_2_1_TNut,T-M3,后箭头,join,镀锌钢,0.001812
 B_W_Stop_2_2_Screw,M3-F,后箭头,stop,镀锌钢,0.000397
 B_W_Stop_2_2_TNut,T-M3,后箭头,join,镀锌钢,0.001812
-B_W_Solid_Stop_Backup_2,HS-BK,后箭头,rail,2020 铝型材,0.021235
-B_W_Solid_Stop_Backup_2_Upper_Screw,HS-M3,后箭头,stop,镀锌钢,0.000472
-B_W_Solid_Stop_Backup_2_Lower_Screw,HS-M4,后箭头,base,镀锌钢,0.001858
-B_W_Stop_Shim_2,HS-SH,后箭头,stopshim,304 不锈钢,0.001607
-B_W_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018433
+B_W_Stop_Shim_2,HS-SH,后箭头,stopshim,304 不锈钢,0.001621
+B_W_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_W_Wear_Guide_1,LAT,后箭头,guide,黑色 POM,0.000937
 B_W_Wear_Guide_2,LAT,后箭头,guide,黑色 POM,0.000937
 B_Polycarbonate,AR-PC,后箭头,pc,实心透光 PC,0.899376
-Base_Plywood,BASE-P,底板,base,海洋板,6.087756
+Base_Plywood,BASE-P,底板,base,海洋板,6.072826
 Base_Rubber,BASE-R,底板,floor,密实橡胶,2.192673
 Base_Screw_1,M5-B,底板,base,镀锌钢,0.002627
 Base_TNut_1,T-M5,底板,join,镀锌钢,0.001850
@@ -852,6 +704,198 @@ Base_Screw_37,M5-B,底板,base,镀锌钢,0.002627
 Base_TNut_37,T-M5,底板,join,镀锌钢,0.001850
 Base_Screw_38,M5-B,底板,base,镀锌钢,0.002627
 Base_TNut_38,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_39,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_39,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_40,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_40,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_41,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_41,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_42,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_42,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_43,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_43,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_44,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_44,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_45,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_45,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_46,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_46,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_47,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_47,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_48,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_48,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_49,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_49,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_50,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_50,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_51,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_51,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_52,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_52,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_53,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_53,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_54,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_54,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_55,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_55,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_56,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_56,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_57,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_57,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_58,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_58,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_59,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_59,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_60,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_60,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_61,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_61,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_62,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_62,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_63,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_63,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_64,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_64,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_65,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_65,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_66,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_66,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_67,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_67,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_68,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_68,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_69,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_69,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_70,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_70,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_71,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_71,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_72,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_72,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_73,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_73,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_74,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_74,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_75,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_75,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_76,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_76,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_77,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_77,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_78,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_78,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_79,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_79,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_80,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_80,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_81,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_81,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_82,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_82,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_83,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_83,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_84,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_84,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_85,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_85,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_86,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_86,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_87,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_87,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_88,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_88,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_89,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_89,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_90,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_90,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_91,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_91,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_92,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_92,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_93,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_93,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_94,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_94,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_95,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_95,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_96,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_96,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_97,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_97,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_98,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_98,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_99,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_99,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_100,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_100,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_101,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_101,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_102,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_102,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_103,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_103,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_104,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_104,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_105,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_105,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_106,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_106,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_107,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_107,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_108,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_108,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_109,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_109,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_110,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_110,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_111,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_111,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_112,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_112,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_113,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_113,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_114,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_114,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_115,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_115,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_116,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_116,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_117,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_117,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_118,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_118,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_119,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_119,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_120,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_120,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_121,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_121,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_122,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_122,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_123,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_123,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_124,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_124,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_125,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_125,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_126,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_126,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_127,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_127,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_128,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_128,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_129,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_129,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_130,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_130,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_131,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_131,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_132,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_132,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_133,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_133,T-M5,底板,join,镀锌钢,0.001850
+Base_Screw_134,M5-B,底板,base,镀锌钢,0.002627
+Base_TNut_134,T-M5,底板,join,镀锌钢,0.001850
 FL_Plywood,FX-W,左前固定格,wood,海洋板,0.590193
 FL_Stainless_Surface,FX-S,左前固定格,top,喷塑不锈钢,1.219651
 FL_Top_Screw_1,M5-D,左前固定格,fixing,镀锌钢,0.003243

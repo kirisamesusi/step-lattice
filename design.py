@@ -13,6 +13,7 @@ WOOD_BOTTOM, WOOD_TOP, DECK = 30, 42, 44
 PC_SIZE, PC_Z, PC_TOP = 274, 33, 43
 PC_CORNER_CUT = 8
 RAIL_Z, RAIL_TOP = 10, 30
+RING_V = 120  # arrow center to the center of its inner ring rail
 STOP_TOP = 32.5
 POSTS, POST_Y, GRIP = (240, 650), 1018, 964
 ARROWS = {"F": (445, 222), "L": (165, 502), "R": (725, 502), "B": (445, 782)}
@@ -169,14 +170,27 @@ def frame():
             zones = [(22,220),(260,295),(315,575),(595,630),(670,868)]
         for i,(a,b) in enumerate(zones):
             rail(f"Grid_{y}_{i+1}","X",a,b,y)
-    for k,(x,y) in ARROWS.items():
-        rail(f"{k}_Cross_Long","Y",y-130,y+130,x,k)
-        left = {165:42,445:315,725:595}[x]
-        right = {165:295,445:575,725:848}[x]
-        rail(f"{k}_Cross_Left","X",left,x-10,y,k)
-        rail(f"{k}_Cross_Right","X",x+10,right,y,k)
     rail("L_Stop_Outer_Rail","Y",372,632,32,"L")
     rail("R_Stop_Outer_Rail","Y",372,632,858,"R")
+    for k,(x,y) in ARROWS.items():
+        # A second 2020 lies against every grid rail inside the arrow cell, so each
+        # panel edge, its stops and its sensor seat rest on extrusion of one height.
+        # The outer edges of L and R already have their doubled rail above.
+        left = 42 if k=="L" else x-130
+        right = 848 if k=="R" else x+130
+        for tag,cy in (("N",y-RING_V),("S",y+RING_V)):
+            rail(f"{k}_Ring_{tag}","X",left,right,cy,k)
+        west = left if k=="L" else x-RING_V-10
+        east = right if k=="R" else x+RING_V+10
+        if k!="L":
+            rail(f"{k}_Ring_W","Y",y-RING_V+10,y+RING_V-10,x-RING_V,k)
+            west = x-RING_V+10
+        if k!="R":
+            rail(f"{k}_Ring_E","Y",y-RING_V+10,y+RING_V-10,x+RING_V,k)
+            east = x+RING_V-10
+        rail(f"{k}_Cross_Long","Y",y-RING_V+10,y+RING_V-10,x,k)
+        rail(f"{k}_Cross_Left","X",west,x-10,y,k)
+        rail(f"{k}_Cross_Right","X",x+10,east,y,k)
     for y in (157,287,717,847):
         zones = [(22,295),(595,868)]
         if y == 847:
@@ -312,16 +326,8 @@ DECK_SCREWS = {
     "Edge_B1": [(x,982) for x in (100,305,585,790)],
     "Edge_B2": [(x,1068) for x in (82,260,445,630,806)],
 }
-BASE_FIX = (
-    [(x,y) for x in (12,878) for y in (80,243,501,773,1023)]
-    + [(x,y) for x in (305,585) for y in (105,340,580,811,981)]
-    + [(x,y) for x in (150,445,740) for y in (12,1068)]
-    + [(x,y) for x,y in ARROWS.values()]
-    + [(32,500),(858,500),(100,157),(790,157),(102,847),(788,847),
-       (365,450),(525,554)]
-)
 USB_Y = 322
-WOOD_RELIEFS, STEEL_RELIEFS, SUPPORT_BORES = [], [], []
+WOOD_RELIEFS, STEEL_RELIEFS = [], []
 
 def nut_top(x,y):
     return remove(rect(x,y,10,10,25.7,28.65),[cyl(x,y,2.53,25.5,28.8)])
@@ -345,7 +351,7 @@ def rail_hardware_items():
     item("M5-D", "踏面和边带沉头螺钉", "M5×18 起选，90° 头", "购买",
          "304 M5 18 十字/内六角沉头", "5", "实配槽腔末端。选低头内六角，板件孔按实物刀型。")
     item("M5-B", "底板沉头螺钉", "M5×14，90° 头", "购买",
-         "M5×14 90度沉头 螺丝", "5", "木面沉头齐平，装前在型材试螺纹和孔深。")
+         "M5×14 90度沉头 螺丝", "5", "每根型材由底板螺钉定位锁紧。木面沉头齐平，装前在型材试螺纹和孔深。")
     item("M5-S", "侧板沉头螺钉", "M5×6 或实配短牙，90° 头", "购买",
          "M5×6 平头沉头螺钉 短螺丝", "4", "2 mm 壁需验证锥孔，必要时改低矮圆头并记录壳外尺寸。")
     item("M3-F", "托片与挡块齐平螺钉", "M3 沉头 90°，长 5/6 按叠厚选", "购买",
@@ -353,9 +359,9 @@ def rail_hardware_items():
     item("T-M3", "2020 槽螺母 M3", "包络 10×9×2.9", "购买",
          "国标/欧标 2020 槽6 M3 薄滑块螺母", "8", "按实际槽型选。")
     item("ANGLE-S", "2020 紧凑角件", "双翼 12×15，名义壁厚 3", "购买/小批机加工",
-         "2020 12mm 小内角件 M4 窄翼", "2", "用于前围 13 mm 净空，先实配工具与螺帽。")
+         "2020 12mm 小内角件 M4 窄翼", "2", "用于前围 13 mm 净空的外框和长梁端头，先实配工具与螺帽。")
     item("ANGLE", "2020 内藏角件", "双翼 17×15，名义壁厚 3", "购买/实配",
-         "欧标2020 17mm 小内角件 槽6 M4", "5", "位置为几何包络；按实物确认扳手和螺钉。后架对铝材衔接另见装配说明。")
+         "欧标2020 17mm 小内角件 槽6 M4", "5", "只用于外框、长梁端头和钢副架周围，其余型材由底板螺钉定位。位置为几何包络；按实物确认扳手和螺钉。")
     consumable("ANGLE-FIX",0,"2020 小角件锁紧硬件","每件 2 个配套连接位","随角件购买",
                "2020 角件配套 T 螺母 螺栓","10","采购量按对应角件的两倍，线下实配。")
 
@@ -386,19 +392,46 @@ def filt_cuts(body,cuts):
 def pocketed(body,cuts):
     return remove(body,filt_cuts(body,cuts))
 
+def base_fix_points():
+    # The routed base is the jig for the frame. Every rail is located and held by
+    # screws from below: one for a stub, two for a cell-length rail, about every
+    # 250 mm on the long ones. Stations stay clear of the inlaid steel plates.
+    plates = [(x-35,x+35,710,1060) for x in POSTS]
+    points = []
+    for name,axis,start,end,cross,_,_ in RAILS:
+        length = end-start
+        if length < 140:
+            stations = [(start+end)/2]
+        elif length <= 300:
+            stations = [start+30,end-30]
+        else:
+            n = round(length/250)+1
+            stations = [start+40+i*(length-80)/(n-1) for i in range(n)]
+        for s in stations:
+            # A stub beside a backing plate takes its screw at the far end instead.
+            for station in (s,start+10,end-10):
+                point = (round(station),cross) if axis=="X" else (cross,round(station))
+                if not any(a-6<point[0]<b+6 and c-6<point[1]<e+6 for a,b,c,e in plates):
+                    break
+            else:
+                raise ValueError(f"no base screw station for {name}")
+            points.append(point)
+    return points
+
 def base():
     item("BASE-P", "一体底板", "886×1076×10", "CNC/自制",
-         "10mm 海洋胶合板 外用桦木船板", "", "背板局部反面铣深3；封边防潮。先试加工垫片位及沉孔。")
+         "10mm 海洋胶合板 外用桦木船板", "", "全部型材定位孔由 CNC 一次打出，底板即骨架治具。背板局部反面铣深3；封边防潮。")
     item("BASE-R", "满铺密实防滑底橡胶", "886×1076×2", "自制裁切",
          "2mm 密实防滑橡胶片 耐磨 平整", "", "地面 z−2。实际摩擦和地面平整度需测试。")
     bottom = [bevel_rect(x-35.12,x+35.12,709.88,1060.12,-1,3,4.12) for x in POSTS]
     bottom.extend(cyl(x,y,4.4,-1,11) for x,y in BASE_BOLTS)
-    for x,y in BASE_FIX:
+    fix = base_fix_points()
+    CHECKS["base_screws_per_rail"] = len(fix)/len(RAILS)
+    for x,y in fix:
         bottom += [cyl(x,y,2.75,-1,10.1),tip(x,y,5,2.75,0,2.35)]
-    bottom.extend(SUPPORT_BORES)
     add("Base_Plywood","BASE-P",remove(box(2,888,2,1078,0,10),bottom),"ply","base","Base")
     add("Base_Rubber","BASE-R",box(2,888,2,1078,-2,0),"rubber","floor","Base")
-    for i,(x,y) in enumerate(BASE_FIX,1):
+    for i,(x,y) in enumerate(fix,1):
         screw = tip(x,y,4.9,2.5,0,2.4).fuse(cyl(x,y,2.5,2.4,14)).clean()
         add(f"Base_Screw_{i}","M5-B",screw,"zinc","base","Base",(0,0,-90))
         add(f"Base_TNut_{i}","T-M5",nut_bottom(x,y),"zinc","join","Base")
@@ -426,8 +459,8 @@ def make_arrow_items():
          "304 0.8mm 薄板 激光切割 沉孔","3","齐平螺钉偏开传感圆；木板下铣让位。")
     item("FS-AD","FSR 粘贴定位膜","0.10，外径18 背胶","自制裁切",
          "0.1mm 薄双面胶 PET 离型带","8","只粘背面。避免夹紧敏感区及封死通气路径。")
-    item("FS-R","FSR402B 短尾圆片","Ø18 / 有效区约 Ø14.7，厚 0.375","购买",
-         "FSR402B 短尾 18mm 圆形 薄膜 压力传感器","4–8","圆心居各边中轴，尾片名义斜向 45° 入梁间腔。短尾包络按下单件校核。")
+    item("FS-R","FSR402 标准长尾圆片","Ø18 / 有效区约 Ø14.7，厚 0.375，圆心到尾端约 47","购买",
+         "FSR402 长尾 18mm 圆形 薄膜 压力传感器","4–8","圆心居各边中轴，尾片名义斜向 45° 平躺越过并轨型材顶面，焊脚落在梁间腔。尾长按下单件校核。")
     item("FS-A","软硅胶压头","Ø9.5→8.2，高1.5","成品/裁切",
          "软硅胶圆点 Ø9 1.5mm 无背胶 30A 40A","8","与有效区同心，压头硬度以触发回差和力校。安装方式与有效高度实测。")
     item("RET","独立回位件","16×14×3，自粘微孔弹性体","自制裁切",
@@ -435,13 +468,9 @@ def make_arrow_items():
     item("HS-CROSS", "十字撑二级限挠钢垫", "30×18×1.9，有 5.9 宽导向舌", "外包铣削 / 实配",
          "304 精铣 钢垫片 槽6 导向", "4", "留 1.1 mm 空载间隙；名义全行程 0.5 后再留 0.6 mm 板挠，做样级标定。")
     item("HS-23","钢硬挡块","40×26×2.30，4 角 R1","外包切割研磨",
-         "304 精密薄板 2.3mm 磨平 齐平 M3","4","8/箭头；单点先接触验算。上边打圆；螺钉只定位，压力靠平接触。")
+         "304 精密薄板 2.3mm 磨平 齐平 M3","4","8/箭头；整块落在格线型材和并轨型材顶面。上边打圆；螺钉只定位，压力靠平接触。")
     item("HS-SH","硬挡块独立钢垫片","40×26×0.20（名义），独立可调","购买片材/切割",
          "不锈钢调整垫片 0.05 0.1 0.2 mm","1 套","模型每挡 1 片，备多档。不能用松动叠片横跨铝槽承受冲击。")
-    item("HS-BK","挡块贴梁铝实撑","40×10×20，6061-T6","标准方料锯切/攻牙",
-         "6061 铝扁条 10×20 矩形实心料","3","高20与2020齐平承压。实配高度和平面度，上下端分别固定。")
-    item("HS-M4","实撑底部 M4沉头螺钉","M4×16","购买","M4×16 沉头 90度","4")
-    item("HS-M3","硬挡到实撑 M3沉头螺钉","M3×8","购买","M3×8 微头沉头 90度","4")
     item("LAT","侧向定位垫","16×5.2×8 黑色 POM，PC 面距格线 2.2","自制/加工",
          "POM 耐磨条 低摩擦 定位垫","8","按可换口袋实配，名义每侧 0.8 间隙。接触面倒边，先测试热胀。")
     item("LAT-E","外围低位定位垫","16×5.2×7.6，黑色 POM","自制/加工",
@@ -468,25 +497,6 @@ def make_arrow_items():
          "欧标2020 槽6 M4 薄型 T 螺母","4","装配前按实际槽型和端部距离试装。")
     item("ANTI-B","压片沉头螺钉","M4×20，头与压片齐平","购买",
          "M4×20 低头 沉头螺丝","4","垫片与压片合装后校核槽螺母咬合和螺端净空。")
-
-
-def stop_backer(module,side,index,u,stop,shim):
-    v=15
-    identification=f"{module}_{side}_Solid_Stop_Backup_{index}"
-    blank=bevel_rect(u-20,u+20,10,20,10,30,.6)
-    backer=remove(blank,[cyl(u,v,1.54,24,30.2),cyl(u,v,2.08,9.9,16.2)])
-    stop=remove(stop,drill_cs(u,v,3.2,4.8,29.8,31.65,32.6))
-    shim=remove(shim,[cyl(u,v,1.65,29.9,30.3)])
-    top=screw_model(u,v,3,24.5,31.7,32.5,4.6)
-    bottom=cyl(u,v,2,2,16).fuse(tip(u,v,4.1,2,0,2)).clean()
-    SUPPORT_BORES.extend(local(hole,module,side) for hole in [
-        cyl(u,v,2.22,-1,10.1),tip(u,v,4.21,2.22,0,2.15)])
-    add(identification,"HS-BK",local(backer,module,side),"al","rail",module)
-    add(identification+"_Upper_Screw","HS-M3",local(top,module,side),"zinc","stop",module,(0,0,174))
-    add(identification+"_Lower_Screw","HS-M4",local(bottom,module,side),"zinc",
-        "base",module,(0,0,-90))
-    return stop,shim
-
 
 
 def cross_backstops(module,x,y):
@@ -622,7 +632,7 @@ def arrow_modules():
             glue = cyl(0,SENSOR_V,9,30.8,30.9)
             disc = cyl(0,SENSOR_V,9,30.9,FSR_TOP)
             # The head stays on the edge centerline while its tail runs toward the open bay.
-            tail = rect(0,SENSOR_V+16,7.5,22,30.9,FSR_TOP)
+            tail = rect(0,SENSOR_V+26,7.5,42,30.9,FSR_TOP)
             tail = tail.rotate((0,SENSOR_V,0),(0,SENSOR_V,1),FSR_TAIL_ANGLE)
             add(f"{module}_{side}_FSR_Adhesive","FS-AD",transform(glue),"rubber","fsr",module,(0,0,115))
             add(f"{module}_{side}_FSR","FS-R",transform(disc.fuse(tail).clean()),"fsr","fsr",module)
@@ -640,8 +650,6 @@ def arrow_modules():
                     stop = remove(stop,drill_cs(a,b,3.2,4.8,29.99,31.7,32.6))
                     shim = remove(shim,[cyl(a,b,1.65,29.9,30.3)])
                     module_hardware(module,side,f"Stop_{i}_{j}",a,b,STOP_TOP,174)
-                if slot_v == 0:
-                    stop, shim = stop_backer(module, side, i, u, stop, shim)
                 add(f"{module}_{side}_Stop_Shim_{i}","HS-SH",transform(shim),"304","stopshim",module)
                 add(f"{module}_{side}_Hard_Stop_{i}","HS-23",transform(stop),"304","stop",module)
                 WOOD_RELIEFS.append(transform(rect(u,4,40.4,26.5,29.99,32.8)))
@@ -793,6 +801,9 @@ def frame_joiners():
             mates = [r for r in occupied+rear_members if r[0]<p[0]<r[1] and r[2]<p[1]<r[3]]
             if not mates:
                 continue
+            against_steel = any(m in rear_members for m in mates)
+            if not (name.startswith(("Outer_","Grid_long")) or group=="Rear" or against_steel):
+                continue
             bracket_sizes = ((12,1),(12,-1)) if "Stop_Outer_Rail" in name else ((17,1),(17,-1),(12,1),(12,-1))
             for width,other_side in bracket_sizes:
                 def at(u,v):
@@ -802,7 +813,6 @@ def frame_joiners():
                 envelope = (min(xs),max(xs),min(ys),max(ys))
                 if not (2 <= envelope[0] and envelope[1] <= 888 and 2 <= envelope[2] and envelope[3] <= 1078):
                     continue
-                against_steel = mates[0] in rear_members
                 if any(box_overlap(envelope,r) for r in occupied+rear_members+taken):
                     continue
                 cutters = []
@@ -843,7 +853,7 @@ def electronics():
          "TI TMUX1204 4:1 analog multiplexer 转接 载板","1","4 个 IC，每 IC 采一键的 4 FSR。")
     cradle = led_cradle()
     for module,(x,y) in ARROWS.items():
-        for i,(dx,dy) in enumerate([(a,b) for a in (-68,68) for b in (-67,67)],1):
+        for i,(dx,dy) in enumerate([(a,b) for a in (-68,68) for b in (-61,61)],1):
             ox,oy=x+dx,y+dy
             add(f"{module}_LED_Tray_{i}","LIGHT-TR",translate(cradle,ox,oy,10),"petg","led",module)
             add(f"{module}_LED_Strip_{i}","LIGHT-LED",rect(ox,oy,10,83.33,11.7,13.2),"led","led",module,(0,0,73))
@@ -864,7 +874,7 @@ def electronics():
     consumable("PCB-FIX",8,"中格托板上下固定螺钉","M3短螺钉×4，木用固定×4","购买",
                "M3 尼龙隔柱固定 短 M3 螺丝 木螺丝","4")
     consumable("WIRE-F",16,"FSR 尾部软连接/引线","柔性尾片连接 2线；防呆标线","购买",
-               "FSR 402 短尾2P 配套插座 28AWG","4")
+               "FSR 402 长尾2P 配套插座 28AWG","4")
     consumable("WIRE-L",1,"灯光电源/数据分支线束","24AWG 信号/分支，电源线按电流定","购买自制",
                "5V WS2812B 线束 硅胶线 防拔","")
     consumable("WIRE-CL",1,"线束护线与应力释放","一套小 P 夹、薄胶带、开边护套","购买",

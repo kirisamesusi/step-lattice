@@ -196,7 +196,6 @@ def record_checks():
         "anti_lift": round(d.RETAINER_BOTTOM-d.PC_TOP,3), "LED_at_flat_stops": d.STOP_TOP-16,
     }
     report["stop_support"] = {}
-    rails_and_backers = rails + [p for p in d.PARTS if p.sku=="HS-BK"]
     for p in d.PARTS:
         if p.layer!="stopshim":
             continue
@@ -204,7 +203,7 @@ def record_checks():
         # Sample a 0.02 mm slice just below the bridge, at the plane of both bearing lands.
         patch = d.box(x0+.015,x1-.015,y0+.015,y1-.015,z0-.02,z0)
         matches = []
-        for rail in rails_and_backers:
+        for rail in rails:
             a0,a1,b0,b1,_,_=solid_bounds(rail.shape)
             if a0>=x1 or a1<=x0 or b0>=y1 or b1<=y0:
                 continue

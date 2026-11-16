@@ -20,7 +20,7 @@ assert all(int(item["模型数量"])==model_quantities.pop(item["料号"],0)
            and int(item["装机数量"])>=int(item["模型数量"]) for item in bom)
 assert not model_quantities
 cuts=rows("2020-cut-list.csv")
-assert len(cuts)==53 and sum(int(c["定长_mm"]) for c in cuts)==15168
+assert len(cuts)==67 and sum(int(c["定长_mm"]) for c in cuts)==18260
 checks=json.loads((root/"out/geometry-check.json").read_text(encoding="utf-8"))
 steps=json.loads((root/"out/STEP-readback.json").read_text(encoding="utf-8"))
 assert checks["part_count"]==len(index)
