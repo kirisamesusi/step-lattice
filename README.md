@@ -1,11 +1,11 @@
 # 踏格 · StepLattice
 
-踏格是一台参考 DDR 街机布局的 DIY 单人四键脚台，使用 2020 铝型材骨架、四块可拆的 PC 箭头板和独立的低位钢制扶手副架。R1 已完成数字装配和几何检查，下一步是单格打样、踩踏冲击和扶手稳定性验证。
+踏格是一台参考 DDR 街机布局的 DIY 单人四键脚台，使用 2020 铝型材骨架、四块可拆的 PC 箭头板和独立的低位钢制扶手副架。这一版基于 Claude 的并轨骨架，增加宽孔距扶手脚座。R1 已完成数字装配和几何检查，下一步是单格打样、踩踏冲击和扶手稳定性验证。
 
 | 文件 | 内容 |
 | --- | --- |
 | [交互式 3D 预览](DDR-R1-3D.html) | 下载后用浏览器打开。可离线拖转、缩放、点选零件，并切换完整和爆炸视图。 |
-| [完整装配](out/DDR-R1-assembly.step) · [爆炸装配](out/DDR-R1-exploded.step) · [单箭头装配](out/DDR-R1-arrow-F.step) | 带部件名称和颜色的 STEP 模型。 |
+| [完整装配](out/DDR-R1-assembly.step) · [爆炸装配](out/DDR-R1-exploded.step) · [单箭头装配](out/DDR-R1-arrow-F.step) · [扶手节点](out/DDR-R1-handrail.step) | 带部件名称和颜色的 STEP 模型。 |
 | [零件清单](BOM-octagon.csv) · [2020 切割表](2020-cut-list.csv) | 材料、购买规格、数量、加工方式及铝型材定长。 |
 | [工程设计说明](DESIGN.md) · [设计取舍](DESIGN-NOTES.md) | 叠高、安装、抗串键、承重路径、扶手与打样验证。 |
 | [参数化 CAD](design.py) · [导出脚本](deliver.py) · [灯带托槽 STL](print/LED-tray.stl) | 用 Python 3.12 和 CadQuery 2.8.0 再生成装配、清单和预览。 |

@@ -143,6 +143,57 @@ def arrow_step_parts():
     return selected
 
 
+def check_handrail_mount(parts):
+    crossmember = parts["Rear_Steel_Crossmember"].shape
+    cross = solid_bounds(crossmember)
+    for x in d.REAR_M6_X:
+        gauge = d.side_turn(d.cyl(0,0,d.REAR_M6_HOLE_D/2-.05,0,d.REAR_BACK-d.REAR_FRONT),
+                            (x,d.REAR_FRONT,d.REAR_M6_Z),"F")
+        assert gauge.intersect(crossmember).Volume()<.001, x
+    rear_frame = solid_bounds(parts["Outer_B"].shape)
+    left_rail = solid_bounds(parts["Rear_outboard_100"].shape)
+    right_rail = solid_bounds(parts["Rear_outboard_790"].shape)
+    edge_gaps = rounded((rear_frame[2]-cross[3],cross[0]-left_rail[1],right_rail[0]-cross[1]))
+    assert edge_gaps == [0.,0.,0.], edge_gaps
+    tube = parts["Handrail_Bent_Tube"].shape
+    # The split covers lift along the two straight posts after their M5 screws are removed.
+    cover_lift = 16
+    for i,direction in ((1,-1),(2,1)):
+        for layer in ("Plywood","Top"):
+            cover = parts[f"Edge_B{i}_{layer}"].shape.translate((0,0,cover_lift))
+            assert cover.intersect(tube).Volume()<.001, (i,layer)
+            assert cover.translate((0,direction*26,0)).intersect(tube).Volume()<.001, (i,layer)
+    floor = [parts[name].shape for name in ("Base_Steel_Sheet","Base_Rubber")]
+    head_depths = []
+    for i,(x,y) in enumerate(d.FLANGE_BOLTS,1):
+        bolt_top = solid_bounds(parts[f"Handrail_Flange_Screw_{i}"].shape)[-1]
+        head_depths.append(d.DECK-bolt_top)
+        tool_path = d.cyl(x,y,10,bolt_top,d.DECK+10)
+        assert tool_path.intersect(tube).Volume()<.001, (x,y)
+
+    for i,(x,y) in enumerate(d.BASE_BOLTS,1):
+        access = d.cyl(x,y,9.5,-2.1,d.BASE_STEEL)
+        assert all(access.intersect(shape).Volume()<.001 for shape in floor), (x,y)
+        backing_index = d.POSTS.index(x)+1
+        backing_top = solid_bounds(parts[f"Backing_Plate_{backing_index}"].shape)[-1]
+        spacer_bottom,spacer_top = solid_bounds(parts[f"Base_Steel_Spacer_{i}"].shape)[-2:]
+        sleeve_bottom = solid_bounds(parts[f"Base_Crush_Sleeve_{i}"].shape)[-2]
+        assert abs(spacer_bottom-backing_top)<.001 and abs(sleeve_bottom-spacer_top)<.001, (x,y)
+
+    return {
+        "crossmember_edge_gaps_mm": dict(zip(("rear","left","right"),edge_gaps)),
+        "rear_frame_m6_hole_x_mm": list(d.REAR_M6_X),
+        "rear_frame_m6_hole_z_mm": d.REAR_M6_Z,
+        "rear_frame_m6_hole_diameter_mm": d.REAR_M6_HOLE_D,
+        "flange_row_spacing_mm": d.FLANGE_ROWS[1]-d.FLANGE_ROWS[0],
+        "flange_min_head_depth_mm": round(min(head_depths),3),
+        "checked_cover_lift_mm": cover_lift,
+        "checked_top_tool_diameter_mm": 20,
+        "checked_bottom_tool_diameter_mm": 19,
+        "checked_spacer_stacks": len(d.BASE_BOLTS),
+    }
+
+
 def record_checks():
     report = dict(d.CHECKS)
     all_names = {p.name:p for p in d.PARTS}
@@ -150,6 +201,7 @@ def record_checks():
     report["part_count"] = len(d.PARTS)
     report["solid_count"] = sum(len(p.shape.Solids()) for p in d.PARTS)
     report["rail_count"] = len(rails)
+    report["handrail_mount"] = check_handrail_mount(all_names)
     report["rail_bounds_mm"] = bounds(rails)
     report["body_bounds_mm"] = bounds([p for p in d.PARTS if p.layer!="handrail"])
     report["full_bounds_mm"] = bounds(d.PARTS)
@@ -196,7 +248,6 @@ def record_checks():
         "anti_lift": round(d.RETAINER_BOTTOM-d.PC_TOP,3), "LED_at_flat_stops": d.STOP_TOP-16,
     }
     report["stop_support"] = {}
-    rails_and_backers = rails + [p for p in d.PARTS if p.sku=="HS-BK"]
     for p in d.PARTS:
         if p.layer!="stopshim":
             continue
@@ -204,7 +255,7 @@ def record_checks():
         # Sample a 0.02 mm slice just below the bridge, at the plane of both bearing lands.
         patch = d.box(x0+.015,x1-.015,y0+.015,y1-.015,z0-.02,z0)
         matches = []
-        for rail in rails_and_backers:
+        for rail in rails:
             a0,a1,b0,b1,_,_=solid_bounds(rail.shape)
             if a0>=x1 or a1<=x0 or b0>=y1 or b1<=y0:
                 continue
@@ -373,5 +424,8 @@ def run(mode):
         step("DDR_R1_Exploded","DDR-R1-exploded.step",d.PARTS,True)
         module=arrow_step_parts()
         step("DDR_R1_Arrow_F","DDR-R1-arrow-F.step",module)
+        handrail = [p for p in d.PARTS if p.group=="Rear"
+                    and p.layer in ("rear","rearHardware","base","handrail","flange","fixing")]
+        step("DDR_R1_Handrail","DDR-R1-handrail.step",handrail)
         d.led_cradle().exportStl(str(DIST / "LED-tray.stl"),tolerance=.08,angularTolerance=.14)
         preview()

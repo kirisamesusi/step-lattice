@@ -1,7 +1,7 @@
 {
   "DDR-R1-assembly.step": {
-    "assembly_components": 1122,
-    "readback_solids": 1122,
+    "assembly_components": 1063,
+    "readback_solids": 1063,
     "bounds_mm": [
       -0.0,
       890.0,
@@ -12,27 +12,39 @@
     ]
   },
   "DDR-R1-exploded.step": {
-    "assembly_components": 1122,
-    "readback_solids": 1122,
+    "assembly_components": 1063,
+    "readback_solids": 1063,
     "bounds_mm": [
       -294.0,
       1184.0,
       -285.6,
       1374.0,
-      -145.0,
+      -144.0,
       1294.0
     ]
   },
   "DDR-R1-arrow-F.step": {
-    "assembly_components": 198,
-    "readback_solids": 198,
+    "assembly_components": 172,
+    "readback_solids": 172,
     "bounds_mm": [
       267.0,
       623.0,
       44.0,
       400.0,
-      0.0,
+      10.0,
       44.5
+    ]
+  },
+  "DDR-R1-handrail.step": {
+    "assembly_components": 72,
+    "readback_solids": 72,
+    "bounds_mm": [
+      110.0,
+      780.0,
+      710.0,
+      1062.0,
+      1.0,
+      964.0
     ]
   }
 }
