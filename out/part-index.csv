@@ -130,10 +130,34 @@ Grid_long_R_Bracket_22,ANGLE-S,骨架,join,2020 铝型材,0.002305
 Grid_long_R_Bracket_998,ANGLE,骨架,join,2020 铝型材,0.003520
 Rear_link_R_Bracket_1038,ANGLE,扶手,join,2020 铝型材,0.003520
 Rear_link_R_Bracket_1058,ANGLE,扶手,join,2020 铝型材,0.003520
+Grid_82_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_82_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_82_2_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_82_2_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_82_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_82_3_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_362_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_362_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_362_2_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_362_2_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_362_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_362_3_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_642_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_642_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_642_2_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_642_2_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_642_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_642_3_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_922_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_922_1_Bracket_220,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_922_2_Bracket_260,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_922_2_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_922_3_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_922_3_Bracket_575,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_922_4_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_922_4_Bracket_630,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_922_5_Bracket_670,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_922_5_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
 Fixed_rib_847_1_Bracket_220,ANGLE,骨架,join,2020 铝型材,0.003520
 Fixed_rib_847_2_Bracket_260,ANGLE,骨架,join,2020 铝型材,0.003520
 Fixed_rib_847_3_Bracket_630,ANGLE,骨架,join,2020 铝型材,0.003520
@@ -142,6 +166,12 @@ Rear_outboard_100_Bracket_932,ANGLE,扶手,join,2020 铝型材,0.003520
 Rear_outboard_100_Bracket_1058,ANGLE,扶手,join,2020 铝型材,0.003520
 Rear_outboard_790_Bracket_932,ANGLE,扶手,join,2020 铝型材,0.003520
 Rear_outboard_790_Bracket_1058,ANGLE,扶手,join,2020 铝型材,0.003520
+Grid_45_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_45_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_45_2_Bracket_315,ANGLE-S,骨架,join,2020 铝型材,0.002305
+Grid_45_2_Bracket_575,ANGLE-S,骨架,join,2020 铝型材,0.002305
+Grid_45_3_Bracket_595,ANGLE,骨架,join,2020 铝型材,0.003520
+Grid_45_3_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
 Corner_305_82_Cover,ANTI-E,交点方压片,clip,304 不锈钢,0.001171
 Corner_305_82_Foot,ANTI-EF,交点方压片,clipshim,304 不锈钢,0.003745
 Corner_305_82_Post,ANTI-EP,交点方压片,clipshim,镀锌钢,0.001781
@@ -626,7 +656,7 @@ B_W_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_W_Wear_Guide_1,LAT,后箭头,guide,黑色 POM,0.000937
 B_W_Wear_Guide_2,LAT,后箭头,guide,黑色 POM,0.000937
 B_Polycarbonate,AR-PC,后箭头,pc,实心透光 PC,0.899376
-Base_Plywood,BASE-P,底板,base,海洋板,6.080708
+Base_Plywood,BASE-P,底板,base,海洋板,6.085343
 Base_Rubber,BASE-R,底板,floor,密实橡胶,2.192673
 Base_Screw_1,M5-B,底板,base,镀锌钢,0.002627
 Base_TNut_1,T-M5,底板,join,镀锌钢,0.001850
@@ -748,48 +778,6 @@ Base_Screw_59,M5-B,底板,base,镀锌钢,0.002627
 Base_TNut_59,T-M5,底板,join,镀锌钢,0.001850
 Base_Screw_60,M5-B,底板,base,镀锌钢,0.002627
 Base_TNut_60,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_61,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_61,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_62,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_62,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_63,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_63,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_64,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_64,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_65,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_65,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_66,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_66,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_67,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_67,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_68,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_68,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_69,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_69,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_70,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_70,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_71,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_71,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_72,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_72,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_73,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_73,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_74,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_74,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_75,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_75,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_76,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_76,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_77,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_77,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_78,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_78,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_79,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_79,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_80,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_80,T-M5,底板,join,镀锌钢,0.001850
-Base_Screw_81,M5-B,底板,base,镀锌钢,0.002627
-Base_TNut_81,T-M5,底板,join,镀锌钢,0.001850
 FL_Plywood,FX-W,左前固定格,wood,海洋板,0.590193
 FL_Stainless_Surface,FX-S,左前固定格,top,喷塑不锈钢,1.219651
 FL_Top_Screw_1,M5-D,左前固定格,fixing,镀锌钢,0.003243

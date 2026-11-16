@@ -328,6 +328,7 @@ DECK_SCREWS = {
 }
 USB_Y = 322
 WOOD_RELIEFS, STEEL_RELIEFS = [], []
+BRACKETED = Counter()
 
 def nut_top(x,y):
     return remove(rect(x,y,10,10,25.7,28.65),[cyl(x,y,2.53,25.5,28.8)])
@@ -351,7 +352,7 @@ def rail_hardware_items():
     item("M5-D", "踏面和边带沉头螺钉", "M5×18 起选，90° 头", "购买",
          "304 M5 18 十字/内六角沉头", "5", "实配槽腔末端。选低头内六角，板件孔按实物刀型。")
     item("M5-B", "底板沉头螺钉", "M5×14，90° 头", "购买",
-         "M5×14 90度沉头 螺丝", "5", "每根短型材 1 颗、长型材 3–4 颗，压住型材并防滑移。木面沉头齐平，装前在型材试螺纹和孔深。")
+         "M5×14 90度沉头 螺丝", "5", "格内型材每根 1 颗、长型材 3–4 颗，两端有角件的短料不用。木面沉头齐平，装前在型材试螺纹和孔深。")
     item("M5-S", "侧板沉头螺钉", "M5×6 或实配短牙，90° 头", "购买",
          "M5×6 平头沉头螺钉 短螺丝", "4", "2 mm 壁需验证锥孔，必要时改低矮圆头并记录壳外尺寸。")
     item("M3-F", "托片与挡块齐平螺钉", "M3 沉头 90°，长 5/6 按叠厚选", "购买",
@@ -359,9 +360,9 @@ def rail_hardware_items():
     item("T-M3", "2020 槽螺母 M3", "包络 10×9×2.9", "购买",
          "国标/欧标 2020 槽6 M3 薄滑块螺母", "8", "按实际槽型选。")
     item("ANGLE-S", "2020 紧凑角件", "双翼 12×15，名义壁厚 3", "购买/小批机加工",
-         "2020 12mm 小内角件 M4 窄翼", "2", "用于前围 13 mm 净空的外框和长梁端头，先实配工具与螺帽。")
+         "2020 12mm 小内角件 M4 窄翼", "2", "用于前围 13 mm 净空等窄位，先实配工具与螺帽。")
     item("ANGLE", "2020 内藏角件", "双翼 17×15，名义壁厚 3", "购买/实配",
-         "欧标2020 17mm 小内角件 槽6 M4", "5", "只用于外框、长梁端头和钢副架周围，其余型材由底板螺钉定位。位置为几何包络；按实物确认扳手和螺钉。")
+         "欧标2020 17mm 小内角件 槽6 M4", "5", "用于外框、格线主骨架和钢副架周围，格内型材由底板螺钉压住。位置为几何包络；按实物确认扳手和螺钉。")
     consumable("ANGLE-FIX",0,"2020 小角件锁紧硬件","每件 2 个配套连接位","随角件购买",
                "2020 角件配套 T 螺母 螺栓","10","采购量按对应角件的两倍，线下实配。")
 
@@ -393,14 +394,17 @@ def pocketed(body,cuts):
     return remove(body,filt_cuts(body,cuts))
 
 def base_fix_points():
-    # Butted rails set each other's position, so the base only has to hold them
-    # down and stop them sliding: one screw at mid-length for every rail up to a
-    # cell long, three or four on the long ones, all through 6 mm clearance holes
-    # that can be drilled by hand. Stations stay clear of the inlaid steel plates.
+    # The bracketed lattice keeps its own shape, so the base is a replaceable cover.
+    # Rails inside a cell butt against the lattice and get one screw at mid-length to
+    # hold them down; the long rails get three or four to carry the base. Short rails
+    # bracketed at both ends need none. Holes are 6 mm clearance, drilled by hand.
+    # Stations stay clear of the inlaid steel plates.
     plates = [(x-35,x+35,710,1060) for x in POSTS]
     points = []
     for name,axis,start,end,cross,_,_ in RAILS:
         length = end-start
+        if length <= 300 and BRACKETED[name] >= 2:
+            continue
         if length <= 300:
             stations = [(start+end)/2]
         else:
@@ -419,13 +423,13 @@ def base_fix_points():
 
 def base():
     item("BASE-P", "一体底板", "886×1076×10", "CNC/自制",
-         "10mm 海洋胶合板 外用桦木船板", "", "型材螺钉孔为 Ø6 过孔带沉头，可手钻；型材位置由互相顶靠决定。背板局部反面铣深3；封边防潮。")
+         "10mm 海洋胶合板 外用桦木船板", "", "型材螺钉孔为 Ø6 过孔带沉头，可手钻。铝骨架靠角件自立，底板可单独更换。背板局部反面铣深3；两面和四边封漆防潮。")
     item("BASE-R", "满铺密实防滑底橡胶", "886×1076×2", "自制裁切",
          "2mm 密实防滑橡胶片 耐磨 平整", "", "地面 z−2。实际摩擦和地面平整度需测试。")
     bottom = [bevel_rect(x-35.12,x+35.12,709.88,1060.12,-1,3,4.12) for x in POSTS]
     bottom.extend(cyl(x,y,4.4,-1,11) for x,y in BASE_BOLTS)
     fix = base_fix_points()
-    CHECKS["base_screws_per_rail"] = len(fix)/len(RAILS)
+    CHECKS["base_screw_count"] = len(fix)
     for x,y in fix:
         bottom += [cyl(x,y,3,-1,10.1),tip(x,y,5.2,3,0,2.2)]
     add("Base_Plywood","BASE-P",remove(box(2,888,2,1078,0,10),bottom),"ply","base","Base")
@@ -794,16 +798,22 @@ def frame_joiners():
     rear_members = [(120,770,998,1038)]+[(x-20,x+20,748,998) for x in POSTS]
     rear_members += [(min(x for x,y in p),max(x for x,y in p),958,998) for p in GUSSETS]
     taken, joints, blocked = [], [], []
-    for name,axis,start,end,cross,_,group in RAILS:
+    # The y=82 rail takes the only free side beside the front arrow before y=45 does.
+    for name,axis,start,end,cross,_,group in sorted(RAILS,key=lambda r:r[0].startswith("Grid_45")):
         for point,sign in ((start,1),(end,-1)):
             p = (point-sign*0.03,cross) if axis=="X" else (cross,point-sign*0.03)
             mates = [r for r in occupied+rear_members if r[0]<p[0]<r[1] and r[2]<p[1]<r[3]]
             if not mates:
                 continue
             against_steel = any(m in rear_members for m in mates)
-            if not (name.startswith(("Outer_","Grid_long")) or group=="Rear" or against_steel):
+            # The nine-cell lattice is bracketed into one self-supporting frame. Rails
+            # inside a cell are held by the base screws instead.
+            if not (name.startswith(("Outer_","Grid_")) or group=="Rear" or against_steel):
                 continue
             bracket_sizes = ((12,1),(12,-1)) if "Stop_Outer_Rail" in name else ((17,1),(17,-1),(12,1),(12,-1))
+            if name == "Grid_long_L":
+                # Mirror the right spine: its brackets sit outboard, clear of the front arrow bay.
+                bracket_sizes = ((17,-1),(17,1),(12,-1),(12,1))
             for width,other_side in bracket_sizes:
                 def at(u,v):
                     return (point+sign*v,cross+other_side*u) if axis=="X" else (cross+other_side*u,point+sign*v)
@@ -824,6 +834,7 @@ def frame_joiners():
                 add(f"{name}_Bracket_{point}","ANGLE" if width==17 else "ANGLE-S",bracket,"al","join",group)
                 taken.append(envelope)
                 joints.append((name,point,"钢侧螺纹连接待实配" if against_steel else "双槽螺母"))
+                BRACKETED[name] += 1
                 break
             else:
                 blocked.append((name,point))
