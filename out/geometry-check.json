@@ -27,18 +27,8 @@
     ],
     [
       "Grid_long_L",
-      998,
+      1018,
       "钢侧螺纹连接待实配"
-    ],
-    [
-      "Rear_link_L",
-      1038,
-      "钢侧螺纹连接待实配"
-    ],
-    [
-      "Rear_link_L",
-      1058,
-      "双槽螺母"
     ],
     [
       "Grid_long_R",
@@ -47,18 +37,8 @@
     ],
     [
       "Grid_long_R",
-      998,
+      1018,
       "钢侧螺纹连接待实配"
-    ],
-    [
-      "Rear_link_R",
-      1038,
-      "钢侧螺纹连接待实配"
-    ],
-    [
-      "Rear_link_R",
-      1058,
-      "双槽螺母"
     ],
     [
       "Grid_82_1",
@@ -280,9 +260,30 @@
     "Edge_B1": 0,
     "Edge_B2": 0
   },
-  "part_count": 1049,
-  "solid_count": 1049,
-  "rail_count": 67,
+  "part_count": 1063,
+  "solid_count": 1063,
+  "rail_count": 65,
+  "handrail_mount": {
+    "crossmember_edge_gaps_mm": {
+      "rear": 0.0,
+      "left": 0.0,
+      "right": 0.0
+    },
+    "rear_frame_m6_hole_x_mm": [
+      160,
+      360,
+      470,
+      750
+    ],
+    "rear_frame_m6_hole_z_mm": 20.0,
+    "rear_frame_m6_hole_diameter_mm": 6.6,
+    "flange_row_spacing_mm": 50,
+    "flange_min_head_depth_mm": 6.0,
+    "checked_cover_lift_mm": 16,
+    "checked_top_tool_diameter_mm": 20,
+    "checked_bottom_tool_diameter_mm": 19,
+    "checked_spacer_stacks": 8
+  },
   "rail_bounds_mm": [
     2.0,
     888.0,
@@ -317,37 +318,37 @@
   ],
   "invalid_parts": [],
   "mass_kg": {
-    "base": 6.772,
-    "basesteel": 7.458,
+    "base": 7.458,
+    "basesteel": 7.453,
     "carrier": 0.104,
     "clip": 0.03,
     "clipshim": 0.071,
     "diff": 0.028,
     "electronics": 0.054,
-    "fixing": 0.373,
-    "flange": 0.37,
-    "floor": 2.17,
+    "fixing": 0.366,
+    "flange": 0.973,
+    "floor": 2.167,
     "fsr": 0.005,
     "guide": 0.03,
-    "handrail": 5.58,
-    "join": 0.638,
+    "handrail": 5.559,
+    "join": 0.624,
     "led": 0.118,
     "pc": 3.598,
     "rail": 9.106,
-    "rear": 2.937,
-    "rearHardware": 0.411,
+    "rear": 3.293,
+    "rearHardware": 0.498,
     "return": 0.005,
     "skin": 2.723,
     "stop": 0.813,
     "stopshim": 0.052,
-    "top": 9.84,
-    "wood": 4.744
+    "top": 9.868,
+    "wood": 4.701
   },
-  "total_geom_mass_kg": 58.03,
+  "total_geom_mass_kg": 59.697,
   "cg_mm": [
-    444.95,
-    613.59,
-    73.66
+    444.94,
+    625.59,
+    72.1
   ],
   "rigid_pc_travel": [
     {
@@ -1166,8 +1167,8 @@
     "B_W_Hard_Stop_1": 599.6,
     "B_W_Hard_Stop_2": 599.6
   },
-  "assembled_candidate_pairs": 1852,
+  "assembled_candidate_pairs": 1880,
   "assembled_overlap_mm3": [],
-  "exploded_candidate_pairs": 4,
+  "exploded_candidate_pairs": 10,
   "exploded_overlap_mm3": []
 }

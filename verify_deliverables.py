@@ -20,10 +20,22 @@ assert all(int(item["模型数量"])==model_quantities.pop(item["料号"],0)
            and int(item["装机数量"])>=int(item["模型数量"]) for item in bom)
 assert not model_quantities
 cuts=rows("2020-cut-list.csv")
-assert len(cuts)==67 and sum(int(c["定长_mm"]) for c in cuts)==18260
+assert len(cuts)==65 and sum(int(c["定长_mm"]) for c in cuts)==18260
 checks=json.loads((root/"out/geometry-check.json").read_text(encoding="utf-8"))
 steps=json.loads((root/"out/STEP-readback.json").read_text(encoding="utf-8"))
 assert checks["part_count"]==len(index)
+mount=checks["handrail_mount"]
+assert mount["flange_row_spacing_mm"]==50 and mount["flange_min_head_depth_mm"]>=6
+assert mount["checked_spacer_stacks"]==8
+assert mount["crossmember_edge_gaps_mm"]=={"rear":0,"left":0,"right":0}
+assert mount["rear_frame_m6_hole_x_mm"]==[160,360,470,750]
+assert mount["rear_frame_m6_hole_z_mm"]==20 and mount["rear_frame_m6_hole_diameter_mm"]==6.6
+for sku in ("REAR-M6","REAR-W6","REAR-T6"):
+    assert sum(part["料号"]==sku for part in index)==4
+assert sum(p["料号"]=="RHS-W" for p in index)==4
+handrail=steps["DDR-R1-handrail.step"]
+assert handrail["assembly_components"]==handrail["readback_solids"]
+assert "NEXT_ASSEMBLY_USAGE_OCCURRENCE" in (root/"out/DDR-R1-handrail.step").read_text(encoding="utf-8")
 assert len(checks["stop_support"])==32 and all(checks["stop_support"].values())
 assert checks["pc_corner_cut_leg_mm"]==8
 assert len(checks["pc_plate_thickness_mm"])==4 and set(checks["pc_plate_thickness_mm"].values())=={10}

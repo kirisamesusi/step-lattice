@@ -16,7 +16,7 @@ RAIL_Z, RAIL_TOP = 10, 30
 BASE_STEEL = 1  # floor-side steel sheet under the 9 mm plywood
 RING_V = 120  # arrow center to the center of its inner ring rail
 STOP_TOP = 32.5
-POSTS, POST_Y, GRIP = (240, 650), 1018, 964
+POSTS, POST_Y, GRIP = (240, 650), 1038, 964
 ARROWS = {"F": (445, 222), "L": (165, 502), "R": (725, 502), "B": (445, 782)}
 FIXED = {"FL": (165, 222), "FR": (725, 222), "C": (445, 502),
          "BL": (165, 782), "BR": (725, 782)}
@@ -164,8 +164,7 @@ def frame():
     for tag,y in (("F",12),("B",1068)):
         rail(f"Outer_{tag}","X",22,868,y)
     for tag,x in (("L",305),("R",585)):
-        rail(f"Grid_long_{tag}","Y",22,998,x)
-        rail(f"Rear_link_{tag}","Y",1038,1058,x,"Rear")
+        rail(f"Grid_long_{tag}","Y",22,REAR_FRONT,x)
     for y in (45,82,362,642,922):
         zones = [(22,295),(315,575),(595,868)]
         if y == 922:
@@ -202,14 +201,27 @@ def frame():
     for y in (450,554):
         rail(f"Center_rib_{y}","X",315,575,y,"Center")
     for x in (100,790):
-        rail(f"Rear_outboard_{x}","Y",932,1058,x,"Rear")
+        rail(f"Rear_outboard_{x}","Y",932,REAR_BACK,x,"Rear")
     # Front band screw seats on the perimeter and y=82 rail.
     # Side edge screws use the perimeter rail. The steel crossmember supports the rear band.
 
-ARM_Y0, REAR_FRONT, REAR_BACK = 748, 998, 1038
-BASE_BOLTS = [(x,y) for x in POSTS for y in (768,870,962,1018)]
-FLANGE_BOLTS = [(x+dx,POST_Y+dy) for x in POSTS for dx in (-33,33) for dy in (-11,11)]
-GUSSETS = [[(x+s*20,958),(x+s*20,998),(x+s*52,998)] for x in POSTS for s in (-1,1)]
+ARM_Y0, REAR_FRONT, REAR_BACK = 748, POST_Y-20, POST_Y+20
+REAR_LEFT, REAR_RIGHT = 110, 780
+REAR_M6_X = (160, 360, 470, 750)
+REAR_M6_Z = (RAIL_Z+RAIL_TOP)/2
+REAR_M6_HOLE_D = 6.6
+BASE_BOLTS = [(x,y) for x in POSTS for y in (768,870,946,POST_Y)]
+SEAT_FRONT, SEAT_LENGTH = REAR_FRONT-40, 32
+FLANGE_FRONT, FLANGE_BACK, FLANGE_TOP = POST_Y-61, POST_Y+23, RAIL_TOP+8
+FLANGE_ROWS = (REAR_FRONT-25, POST_Y+5)
+FLANGE_BOLTS = [(x+dx,y) for x in POSTS for dx in (-33,33) for y in FLANGE_ROWS]
+SEAT_STUBS = [bounds for x in POSTS for bounds in
+              ((x-20-SEAT_LENGTH,x-20),(x+20,x+20+SEAT_LENGTH))]
+BACKING_TOP = BASE_STEEL+5
+M8_HEAD_R = 16.43/2
+M8_SEAT_R = 16.6/2
+M8_HOLE_R = 8.6/2
+BASE_ACCESS_D = 20
 
 def steel_rhs_x(x0, x1, y, holes):
     body = box(x0,x1,y-20,y+20,10,30)
@@ -221,41 +233,87 @@ def steel_rhs_y(y0, y1, x, holes):
     return remove(box(x-20,x+20,y0,y1,10,30),
                   [core]+[cyl(xx,y,r,9,31) for xx,y,r in holes])
 
+def m8_countersink(x,y,mouth_z,from_below=False):
+    depth = M8_SEAT_R-M8_HOLE_R
+    cone = tip(x,y,M8_HOLE_R,M8_SEAT_R,mouth_z-depth,mouth_z)
+    if from_below:
+        return cone.rotate((x,y,mouth_z),(x+1,y,mouth_z),180)
+    return cone
+
+
+def m8_flat_head(x,y,head_z,length,shank_r,from_below=False):
+    shoulder = head_z-(M8_HEAD_R-4)
+    head = tip(x,y,4,M8_HEAD_R,shoulder,head_z)
+    bolt = cyl(x,y,shank_r,head_z-length,shoulder).fuse(head).clean()
+    if from_below:
+        return bolt.rotate((x,y,head_z),(x+1,y,head_z),180)
+    return bolt
+
+
 def rear_frame():
-    item("RHS-L", "共用后横管", "40×20×3，长度 650，20 高", "外包焊接",
-         "Q235B 矩形钢管 40 20 3", "", "位于 x120–770。焊接副架、轴套后检查扭曲和套管端面齐平。")
-    item("RHS-A", "前伸副架纵臂", "40×20×3，长度 250，20 高", "外包焊接",
-         "Q235B 矩形钢管 40 20 3", "", "x240/650，y748–998。")
-    item("RHS-G", "副架角部平面加劲", "32×40 直角三角，厚 6", "外包切割焊接",
-         "Q235B 6 mm 三角加劲板", "", "模型位于 z17–23。")
+    item("RHS-L", "共用后横管", f"40×20×3，长度 {REAR_RIGHT-REAR_LEFT}，20 高", "外包焊接",
+         "Q235B 矩形钢管 40 20 3", "", "后面贴后框，两端贴铝纵支。4 处 Ø6.6 横向通孔，两壁对钻，孔中心 z20；距横管左端 50、250、360、640。")
+    item("REAR-M6", "后横管连接螺钉", "M6×45 初选，内六角圆柱头", "购买",
+         "M6×45 内六角圆柱头全牙", "1", "按槽螺母与垫圈的实物深度复核长度，拧紧前检查有效咬合且端部不顶槽底。轻贴锁紧，避免把空心管壁夹凹。")
+    item("REAR-W6", "后横管连接平垫圈", "Ø6.4／Ø12×1，钢", "购买",
+         "M6 薄平垫圈 内径6.4 外径12 厚1 钢", "1", "各一只装在钢管前面螺钉头下；按实物通孔、头径和厚度核对。")
+    item("REAR-T6", "后边框 M6 槽螺母", "槽6，实配 2020 槽口", "购买",
+         "欧标 2020 槽6 M6 钢制槽螺母", "1", "四只先装入后边框朝踏板的内槽。实配槽唇和螺钉拧入深度。")
+    item("RHS-A", "前伸副架纵臂", f"40×20×3，长度 {REAR_FRONT-ARM_Y0}，20 高", "外包焊接",
+         "Q235B 矩形钢管 40 20 3", "", f"x240/650，y{ARM_Y0}–{REAR_FRONT}。")
+    item("RHS-W", "扶手法兰前排短支座", f"40×20×3，直切长 {SEAT_LENGTH}，20 高", "直切/钻孔焊接",
+         "Q235B 矩形钢管 40 20 3", "", "每脚两段，分别贴焊纵臂和后横管。"
+         "两壁同轴 Ø14.2，孔中心距管前边 15、距贴纵臂的切口 13；焊入同款 M8 螺纹套。")
     item("SL-8", "落地穿栓抗压套管", "Ø12 / Ø8.5 × 20", "外包车/切管焊接",
          "钢隔套 12 8.5", "1", "实配管壁孔和穿栓，焊后铣平或磨平。")
-    item("TH-8", "扶手法兰 M8 焊接螺纹套", "外径 14 × 20，M8 内螺纹", "外包车件焊接",
-         "钢制焊接螺纹套 M8 长 20", "1", "另核实攻牙有效长度。模型为螺纹中径包络。")
-    item("BP-3", "底板钢背板", "70×350×3，两端 R4", "外包加工",
-         "3 mm 钢板激光切割 钻沉孔", "", "嵌入各立柱线下方九厘板反面，下面由 1 mm 底钢板盖住，底钢板在穿栓处开检修孔。")
+    item("TH-8", "扶手法兰 M8 焊接螺纹套", "外径 14 × 20，M8 通牙", "标准件或圆料直切钻攻/焊接",
+         "钢制焊接螺纹套 M8 长 20", "1", "实配套外径和管壁孔，焊后端面齐平。核实有效牙和防焊渣。模型为螺纹中径包络。")
+    item("BP-5", "底板钢背板", "70×350×5，两端 R4，4×Ø8.6", "激光切割/钻沉孔",
+         "5 mm Q235B 钢板激光切割 钻沉孔", "", "反面 90° 沉头按实物配，头齐平；木芯反面铣 5 mm 嵌槽。")
+    item("SP-8", "木芯让位处厚钢垫圈", "DIN 7349 M8，Ø8.4 / Ø21 × 4", "购买",
+         "DIN 7349 M8 21 4 钢厚垫圈", "2", "装在钢背板与副架抗压套之间，木芯开 Ø23 让位；"
+         "实测涂装后间隙并配平，使钢件顶实。")
     item("BR-M8", "副架底部沉头穿栓", "M8×40 初选，配垫圈/防松螺母", "购买",
-         "ISO 10642 M8 40 10.9 沉头螺钉", "2", "从底部穿入，内腔侧锁。长度及沉孔深度按实物。")
+         "ISO 10642 M8 40 010.9 沉头螺钉", "2", "从底部穿入，上侧锁；按供应商的沉头规格校核承载和拧紧。")
     item("BR-N8", "副架防松螺母和垫圈包络", "M8，合计高 9", "购买",
-         "M8 全金属锁紧螺母 平垫圈", "2", "木板仅被夹持。若压陷则采用适配限压衬套和背板。")
+         "M8 全金属锁紧螺母 平垫圈", "2", "预紧经抗压套、厚钢垫圈、钢背板闭合。")
     bh = [(x,y,6.1) for x,y in BASE_BOLTS if y==POST_Y]
-    fh = [(x,y,7.1) for x,y in FLANGE_BOLTS]
-    add("Rear_Steel_Crossmember","RHS-L",steel_rhs_x(120,770,POST_Y,bh+fh),"steel","rear","Rear")
+    fh = [(x,y,7.1) for x,y in FLANGE_BOLTS if y>REAR_FRONT]
+    cross = steel_rhs_x(REAR_LEFT,REAR_RIGHT,POST_Y,bh+fh)
+    bores = [side_turn(cyl(0,0,REAR_M6_HOLE_D/2,-1,REAR_BACK-REAR_FRONT+1),
+                       (x,REAR_FRONT,REAR_M6_Z),"F") for x in REAR_M6_X]
+    add("Rear_Steel_Crossmember","RHS-L",remove(cross,bores),"steel","rear","Rear")
+    for i,x in enumerate(REAR_M6_X,1):
+        front = (x,REAR_FRONT,REAR_M6_Z)
+        rear = (x,REAR_BACK,REAR_M6_Z)
+        screw = cyl(0,0,3,-1,44).fuse(cyl(0,0,5,-7,-1)).clean()
+        washer = remove(cyl(0,0,6,-1,0),[cyl(0,0,3.2,-1.1,.1)])
+        nut = remove(rect(0,0,10,10,1.3,3.9),[cyl(0,0,3.05,1,4.1)])
+        add(f"Rear_Frame_M6_Screw_{i}","REAR-M6",side_turn(screw,front,"F"),
+            "zinc","fixing","Rear",(0,-145,76))
+        add(f"Rear_Frame_M6_Washer_{i}","REAR-W6",side_turn(washer,front,"F"),
+            "zinc","rearHardware","Rear",(0,-72,57))
+        add(f"Rear_Frame_M6_TNut_{i}","REAR-T6",side_turn(nut,rear,"F"),
+            "zinc","rearHardware","Rear",(0,18,75))
+    for i,(x0,x1) in enumerate(SEAT_STUBS,1):
+        holes = [(x,y,7.1) for x,y in FLANGE_BOLTS if x0<x<x1 and y<REAR_FRONT]
+        stub = steel_rhs_x(x0,x1,SEAT_FRONT+20,holes)
+        add(f"Rear_Steel_Seat_Stub_{i}","RHS-W",stub,"steel","rear","Rear")
     for i,x in enumerate(POSTS,1):
         holes = [(x,y,6.1) for px,y in BASE_BOLTS if x==px and y!=POST_Y]
         add(f"Rear_Steel_Arm_{i}","RHS-A",steel_rhs_y(ARM_Y0,REAR_FRONT,x,holes),"steel","rear","Rear")
-        plate = bevel_rect(x-35,x+35,710,1060,BASE_STEEL,BASE_STEEL+3,4)
+        plate = bevel_rect(x-35,x+35,710,1060,BASE_STEEL,BACKING_TOP,4)
         for px,y in BASE_BOLTS:
             if px == x:
-                plate = remove(plate,[cyl(x,y,4.25,BASE_STEEL-1,BASE_STEEL+4),
-                                      tip(x,y,8.1,4.25,BASE_STEEL,BASE_STEEL+3)])
-        add(f"Backing_Plate_{i}","BP-3",plate,"steel","base","Rear",(0,0,-29))
-    for i,points in enumerate(GUSSETS,1):
-        add(f"Rear_Steel_Gusset_{i}","RHS-G",poly(points,17,23),"steel","rear","Rear")
+                plate = remove(plate,[cyl(x,y,M8_HOLE_R,BASE_STEEL-1,BACKING_TOP+1),
+                                      m8_countersink(x,y,BASE_STEEL,from_below=True)])
+        add(f"Backing_Plate_{i}","BP-5",plate,"steel","base","Rear",(0,0,-29))
     for i,(x,y) in enumerate(BASE_BOLTS,1):
         sleeve = remove(cyl(x,y,6,10,30),[cyl(x,y,4.25,9,31)])
         add(f"Base_Crush_Sleeve_{i}","SL-8",sleeve,"steel","rearHardware","Rear")
-        screw = cyl(x,y,4,BASE_STEEL+3,BASE_STEEL+40).fuse(tip(x,y,8,4,BASE_STEEL,BASE_STEEL+3)).clean()
+        spacer = remove(cyl(x,y,10.5,BACKING_TOP,RAIL_Z),[cyl(x,y,4.2,BACKING_TOP-1,RAIL_Z+1)])
+        add(f"Base_Steel_Spacer_{i}","SP-8",spacer,"steel","rearHardware","Rear",(0,0,-13))
+        screw = m8_flat_head(x,y,BASE_STEEL,40,4,from_below=True)
         add(f"Base_Through_Bolt_{i}","BR-M8",screw,"zinc","rearHardware","Rear",(0,0,-145))
         nut_z = 30
         nut = cq.Workplane("XY",origin=(x,y,nut_z+1.5)).polygon(6,15).extrude(7.5).val()
@@ -265,15 +323,17 @@ def rear_frame():
         bung = remove(cyl(x,y,7,10,30),[cyl(x,y,3.6,9,31)])
         add(f"Handrail_Welded_Bung_{i}","TH-8",bung,"steel","rearHardware","Rear")
     item("HAND", "倒 U 扶手钢管", "Ø38×3，CLR 90，中心距 410，外宽 448", "外包弯管/焊接",
-         "Q235B 圆管 Ø38×3 数控弯管 CLR90", "", "中心线展开约 2155，按弯管机补偿和试折确立下料。")
-    item("FLG", "扶手脚法兰", "100×64×4，角 R5，4×Ø8.6", "外包切割焊接",
-         "4 mm 钢板 激光切割 法兰", "", "焊到圆管，法兰下面与横管贴合。保持两法兰共面。")
-    item("RA-M8", "扶手可拆内六角螺钉", "M8×20，配 Ø16×1.6 垫圈", "购买",
-         "ISO 4762 M8 20 8.8 平垫圈", "2", "实配咬合长度、内六角工具和防松。")
+         "Q235B 圆管 Ø38×3 数控弯管 CLR90", "", "中心线展开约 2147，按弯管机补偿和试折确立下料。")
+    item("FLG", "扶手脚法兰", "100×84×8，R5，孔距 66×50，4×Ø8.6", "激光切割/钻沉孔/焊接",
+         "8 mm Q235B 钢板 激光切割 法兰", "", "90° 沉头按实物配，头齐平；法兰横跨短支座与横管。"
+         "立柱中心距法兰前边 61，焊后两脚共面。")
+    item("RA-M8", "扶手可拆内六角沉头螺钉", "M8×20，90°，每脚 4 颗", "购买",
+         "ISO 10642 M8 20 010.9 沉头螺钉", "2", "按供应商的沉头规格校核承载和拧紧。"
+         "模型名义深入螺纹套 12 mm，试装确认有效咬合及防松。")
     points = [
-        (240,POST_Y,34),(240,POST_Y,855),
+        (240,POST_Y,FLANGE_TOP),(240,POST_Y,855),
         (330,POST_Y,945),(560,POST_Y,945),
-        (650,POST_Y,855),(650,POST_Y,34),
+        (650,POST_Y,855),(650,POST_Y,FLANGE_TOP),
     ]
     a,b,c,d,e,f = map(cq.Vector,points)
     delta = 90/sqrt(2)
@@ -287,14 +347,17 @@ def rear_frame():
     tube = cq.Workplane("XY",origin=points[0]).circle(19).circle(16).sweep(path).val()
     add("Handrail_Bent_Tube","HAND",tube,"steel","handrail","Rear")
     for i,x in enumerate(POSTS,1):
-        flange = bevel_rect(x-50,x+50,POST_Y-32,POST_Y+32,30,34,5)
-        flange = remove(flange,[cyl(px,y,4.3,29,35) for px,y in FLANGE_BOLTS if abs(px-x)<40])
-        flange = remove(flange,[cyl(x,POST_Y,9.1,29,35)])
+        flange = bevel_rect(x-50,x+50,FLANGE_FRONT,FLANGE_BACK,RAIL_TOP,FLANGE_TOP,5)
+        holes = [cyl(x,POST_Y,9.1,RAIL_TOP-1,FLANGE_TOP+1)]
+        for px,y in FLANGE_BOLTS:
+            if abs(px-x)<40:
+                holes.extend([cyl(px,y,M8_HOLE_R,RAIL_TOP-1,FLANGE_TOP+1),
+                              m8_countersink(px,y,FLANGE_TOP)])
+        flange = remove(flange,holes)
         add(f"Handrail_Flange_{i}","FLG",flange,"steel","flange","Rear")
     for i,(x,y) in enumerate(FLANGE_BOLTS,1):
-        bolt = cyl(x,y,3.55,15.6,35.6).fuse(cyl(x,y,6.5,35.6,43.6))
-        washer = remove(cyl(x,y,8,34,35.6),[cyl(x,y,3.6,33,36)])
-        add(f"Handrail_Flange_Screw_{i}","RA-M8",bolt.fuse(washer).clean(),"zinc",
+        bolt = m8_flat_head(x,y,FLANGE_TOP,20,3.55)
+        add(f"Handrail_Flange_Screw_{i}","RA-M8",bolt,"zinc",
             "fixing","Rear",(0,138,400))
 
 
@@ -426,19 +489,19 @@ def base_fix_points():
 
 def base():
     item("BASE-P", "底板木芯", "886×1076×9", "裁切/自制",
-         "9mm 九厘海洋胶合板 外用桦木船板", "", "叠在底钢板上面，照钢板的孔钻 Ø6 过孔。与钢板只用螺钉连接，不整面胶合。背板位反面铣深 3；两面和四边封漆防潮。")
+         "9mm 九厘海洋胶合板 外用桦木船板", "", "叠在底钢板上面，照钢板的孔钻 Ø6 过孔。与钢板只用螺钉连接，不整面胶合。背板位反面铣深 5，八个厚垫圈位置开 Ø23 让位孔；两面和四边封漆防潮。")
     item("BASE-S", "底钢板", "886×1076×1，全部孔位激光切出", "外包激光切割喷塑",
-         "1mm 镀锌钢板 激光切割 喷塑", "", "朝地面一侧，挡潮气并承接螺钉头。孔位由激光切割保证，兼作木芯钻孔模板。穿栓处开 Ø17 检修孔。")
+         "1mm 镀锌钢板 激光切割 喷塑", "", "朝地面一侧，挡潮气并承接螺钉头。孔位由激光切割保证，兼作木芯钻孔模板。副架 M8 穿栓处开 Ø20 检修孔。")
     item("BASE-R", "满铺密实防滑底橡胶", "886×1076×2", "自制裁切",
          "2mm 密实防滑橡胶片 耐磨 平整", "", "地面 z−2，贴在底钢板下面。螺钉头和穿栓处冲孔让位。实际摩擦和地面平整度需测试。")
-    bottom = [bevel_rect(x-35.12,x+35.12,709.88,1060.12,-1,BASE_STEEL+3,4.12) for x in POSTS]
-    bottom.extend(cyl(x,y,4.4,-1,11) for x,y in BASE_BOLTS)
+    bottom = [bevel_rect(x-35.12,x+35.12,709.88,1060.12,-1,BACKING_TOP,4.12) for x in POSTS]
+    bottom.extend(cyl(x,y,11.5,-1,11) for x,y in BASE_BOLTS)
     fix = base_fix_points()
     CHECKS["base_screw_count"] = len(fix)
     bottom.extend(cyl(x,y,3,-1,10.1) for x,y in fix)
     # Screw heads bear on the steel sheet and hide inside the rubber thickness.
-    sheet = [cyl(x,y,2.75,-1,2) for x,y in fix]+[cyl(x,y,8.6,-1,2) for x,y in BASE_BOLTS]
-    pad = [cyl(x,y,6.5,-3,1) for x,y in fix]+[cyl(x,y,9,-3,1) for x,y in BASE_BOLTS]
+    sheet = [cyl(x,y,2.75,-1,2) for x,y in fix]+[cyl(x,y,BASE_ACCESS_D/2,-1,2) for x,y in BASE_BOLTS]
+    pad = [cyl(x,y,6.5,-3,1) for x,y in fix]+[cyl(x,y,11,-3,1) for x,y in BASE_BOLTS]
     add("Base_Plywood","BASE-P",remove(box(2,888,2,1078,BASE_STEEL,10),bottom),"ply","base","Base")
     add("Base_Steel_Sheet","BASE-S",remove(box(2,888,2,1078,0,BASE_STEEL),sheet),"galv","basesteel","Base")
     add("Base_Rubber","BASE-R",remove(box(2,888,2,1078,-2,0),pad),"rubber","floor","Base")
@@ -690,16 +753,16 @@ def top_deck():
          "12mm 海洋板 封边","","前导轨和 y56 补横梁作支承；两侧留 0.5 缝。")
     item("BD-S-F","前上边带钢面","841×78.5×2","外包切割喷塑",
          "304 2mm 细纹防滑 条板")
-    item("BD-W-R1","后上边带前半木芯","841×95×12","CNC/自制",
+    item("BD-W-R1","后上边带前半木芯","841×115×12","CNC/自制",
          "12mm 海洋板 扶手孔 仿形铣槽")
-    item("BD-W-R2","后上边带后半木芯","841×59.25×12","CNC/自制",
+    item("BD-W-R2","后上边带后半木芯","841×39.25×12","CNC/自制",
          "12mm 海洋板 扶手孔 仿形铣槽")
-    item("BD-S-R1","后上边带前半钢面","841×95×2","外包切割喷塑",
+    item("BD-S-R1","后上边带前半钢面","841×115×2","外包切割喷塑",
          "304 2mm 细纹防滑 扶手孔")
-    item("BD-S-R2","后上边带后半钢面","841×59.25×2","外包切割喷塑",
+    item("BD-S-R2","后上边带后半钢面","841×39.25×2","外包切割喷塑",
          "304 2mm 细纹防滑 扶手孔")
-    item("EYE", "底板穿栓检修塞", "低头 Ø18，搭接式", "购买/实配",
-         "18mm 黑色橡胶封孔塞 齐平 薄板","4","只验配后部露孔；内侧上盖拆卸后检查。")
+    item("EYE", "底板穿栓检修塞（选配）", "适配 Ø20 薄板孔，低头", "购买/实配",
+         "20mm 黑色橡胶封孔塞 齐平 薄板","4","塞顶需藏在橡胶厚度内，按实物选配。")
     UNMODELED["EYE"] = 8
     # At each M8 anchor the board relief keeps the preload path through metal.
     for x,y in BASE_BOLTS:
@@ -720,19 +783,15 @@ def top_deck():
         add_deck_hardware(k,DECK_SCREWS[k])
     rear_wood, rear_steel = [], []
     for x in POSTS:
-        rear_wood.extend([bevel_rect(x-51,x+51,985,1051,29.9,34.3,5.5),
-                          cyl(x,POST_Y,21,29.9,44.2)])
-        rear_steel.append(cyl(x,POST_Y,21,41.9,44.2))
-    for x,y in FLANGE_BOLTS:
-        hole = cyl(x,y,9,29.9,44.1)
-        rear_wood.append(hole)
-        rear_steel.append(hole)
+        rear_wood.extend([bevel_rect(x-51,x+51,FLANGE_FRONT-1,FLANGE_BACK+1,29.9,FLANGE_TOP+.4,5.5),
+                          cyl(x,POST_Y,25,29.9,44.2)])
+        rear_steel.append(cyl(x,POST_Y,22,41.9,44.2))
     profiles = {
         "Edge_L":((2,24,2,1078),"BD-W-S","BD-S-S"),
         "Edge_R":((866,888,2,1078),"BD-W-S","BD-S-S"),
         "Edge_F":((24.5,865.5,2.5,81),"BD-W-F","BD-S-F"),
-        "Edge_B1":((24.5,865.5,922.75,1017.75),"BD-W-R1","BD-S-R1"),
-        "Edge_B2":((24.5,865.5,1018.25,1077.5),"BD-W-R2","BD-S-R2"),
+        "Edge_B1":((24.5,865.5,922.75,POST_Y-.25),"BD-W-R1","BD-S-R1"),
+        "Edge_B2":((24.5,865.5,POST_Y+.25,1077.5),"BD-W-R2","BD-S-R2"),
     }
     for group,(bounds,wsku,ssku) in profiles.items():
         wh,sh = deck_holes(DECK_SCREWS[group])
@@ -803,8 +862,9 @@ def box_overlap(bounds, other):
 
 def frame_joiners():
     occupied = [r[5] for r in RAILS]
-    rear_members = [(120,770,998,1038)]+[(x-20,x+20,748,998) for x in POSTS]
-    rear_members += [(min(x for x,y in p),max(x for x,y in p),958,998) for p in GUSSETS]
+    rear_members = [(REAR_LEFT,REAR_RIGHT,REAR_FRONT,REAR_BACK)]
+    rear_members += [(x-20,x+20,ARM_Y0,REAR_FRONT) for x in POSTS]
+    rear_members += [(x0,x1,SEAT_FRONT,REAR_FRONT) for x0,x1 in SEAT_STUBS]
     taken, joints, blocked = [], [], []
     # The y=82 rail takes the only free side beside the front arrow before y=45 does.
     for name,axis,start,end,cross,_,group in sorted(RAILS,key=lambda r:r[0].startswith("Grid_45")):

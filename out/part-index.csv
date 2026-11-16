@@ -3,10 +3,8 @@ Outer_L,AL-1076,骨架,rail,2020 铝型材,0.536612
 Outer_R,AL-1076,骨架,rail,2020 铝型材,0.536612
 Outer_F,AL-0846,骨架,rail,2020 铝型材,0.421909
 Outer_B,AL-0846,骨架,rail,2020 铝型材,0.421909
-Grid_long_L,AL-0976,骨架,rail,2020 铝型材,0.486741
-Rear_link_L,AL-0020,扶手,rail,2020 铝型材,0.009974
-Grid_long_R,AL-0976,骨架,rail,2020 铝型材,0.486741
-Rear_link_R,AL-0020,扶手,rail,2020 铝型材,0.009974
+Grid_long_L,AL-0996,骨架,rail,2020 铝型材,0.496715
+Grid_long_R,AL-0996,骨架,rail,2020 铝型材,0.496715
 Grid_45_1,AL-0273,骨架,rail,2020 铝型材,0.136148
 Grid_45_2,AL-0260,骨架,rail,2020 铝型材,0.129665
 Grid_45_3,AL-0273,骨架,rail,2020 铝型材,0.136148
@@ -66,38 +64,58 @@ Center_rib_450,AL-0260,控制器,rail,2020 铝型材,0.129665
 Center_rib_554,AL-0260,控制器,rail,2020 铝型材,0.129665
 Rear_outboard_100,AL-0126,扶手,rail,2020 铝型材,0.062837
 Rear_outboard_790,AL-0126,扶手,rail,2020 铝型材,0.062837
-Rear_Steel_Crossmember,RHS-L,扶手,rear,碳钢,1.577549
-Rear_Steel_Arm_1,RHS-A,扶手,rear,碳钢,0.619332
-Backing_Plate_1,BP-3,扶手,base,碳钢,0.565002
-Rear_Steel_Arm_2,RHS-A,扶手,rear,碳钢,0.619332
-Backing_Plate_2,BP-3,扶手,base,碳钢,0.565002
-Rear_Steel_Gusset_1,RHS-G,扶手,rear,碳钢,0.030144
-Rear_Steel_Gusset_2,RHS-G,扶手,rear,碳钢,0.030144
-Rear_Steel_Gusset_3,RHS-G,扶手,rear,碳钢,0.030144
-Rear_Steel_Gusset_4,RHS-G,扶手,rear,碳钢,0.030144
+Rear_Steel_Crossmember,RHS-L,扶手,rear,碳钢,1.656784
+Rear_Frame_M6_Screw_1,REAR-M6,扶手,fixing,镀锌钢,0.013687
+Rear_Frame_M6_Washer_1,REAR-W6,扶手,rearHardware,镀锌钢,0.000635
+Rear_Frame_M6_TNut_1,REAR-T6,扶手,rearHardware,镀锌钢,0.001445
+Rear_Frame_M6_Screw_2,REAR-M6,扶手,fixing,镀锌钢,0.013687
+Rear_Frame_M6_Washer_2,REAR-W6,扶手,rearHardware,镀锌钢,0.000635
+Rear_Frame_M6_TNut_2,REAR-T6,扶手,rearHardware,镀锌钢,0.001445
+Rear_Frame_M6_Screw_3,REAR-M6,扶手,fixing,镀锌钢,0.013687
+Rear_Frame_M6_Washer_3,REAR-W6,扶手,rearHardware,镀锌钢,0.000635
+Rear_Frame_M6_TNut_3,REAR-T6,扶手,rearHardware,镀锌钢,0.001445
+Rear_Frame_M6_Screw_4,REAR-M6,扶手,fixing,镀锌钢,0.013687
+Rear_Frame_M6_Washer_4,REAR-W6,扶手,rearHardware,镀锌钢,0.000635
+Rear_Frame_M6_TNut_4,REAR-T6,扶手,rearHardware,镀锌钢,0.001445
+Rear_Steel_Seat_Stub_1,RHS-W,扶手,rear,碳钢,0.073930
+Rear_Steel_Seat_Stub_2,RHS-W,扶手,rear,碳钢,0.073930
+Rear_Steel_Seat_Stub_3,RHS-W,扶手,rear,碳钢,0.073930
+Rear_Steel_Seat_Stub_4,RHS-W,扶手,rear,碳钢,0.073930
+Rear_Steel_Arm_1,RHS-A,扶手,rear,碳钢,0.670200
+Backing_Plate_1,BP-5,扶手,base,碳钢,0.943075
+Rear_Steel_Arm_2,RHS-A,扶手,rear,碳钢,0.670200
+Backing_Plate_2,BP-5,扶手,base,碳钢,0.943075
 Base_Crush_Sleeve_1,SL-8,扶手,rearHardware,碳钢,0.008847
-Base_Through_Bolt_1,BR-M8,扶手,rearHardware,镀锌钢,0.017362
+Base_Steel_Spacer_1,SP-8,扶手,rearHardware,碳钢,0.009136
+Base_Through_Bolt_1,BR-M8,扶手,rearHardware,镀锌钢,0.018152
 Base_Nut_Washer_1,BR-N8,扶手,rearHardware,镀锌钢,0.007331
 Base_Crush_Sleeve_2,SL-8,扶手,rearHardware,碳钢,0.008847
-Base_Through_Bolt_2,BR-M8,扶手,rearHardware,镀锌钢,0.017362
+Base_Steel_Spacer_2,SP-8,扶手,rearHardware,碳钢,0.009136
+Base_Through_Bolt_2,BR-M8,扶手,rearHardware,镀锌钢,0.018152
 Base_Nut_Washer_2,BR-N8,扶手,rearHardware,镀锌钢,0.007331
 Base_Crush_Sleeve_3,SL-8,扶手,rearHardware,碳钢,0.008847
-Base_Through_Bolt_3,BR-M8,扶手,rearHardware,镀锌钢,0.017362
+Base_Steel_Spacer_3,SP-8,扶手,rearHardware,碳钢,0.009136
+Base_Through_Bolt_3,BR-M8,扶手,rearHardware,镀锌钢,0.018152
 Base_Nut_Washer_3,BR-N8,扶手,rearHardware,镀锌钢,0.007331
 Base_Crush_Sleeve_4,SL-8,扶手,rearHardware,碳钢,0.008847
-Base_Through_Bolt_4,BR-M8,扶手,rearHardware,镀锌钢,0.017362
+Base_Steel_Spacer_4,SP-8,扶手,rearHardware,碳钢,0.009136
+Base_Through_Bolt_4,BR-M8,扶手,rearHardware,镀锌钢,0.018152
 Base_Nut_Washer_4,BR-N8,扶手,rearHardware,镀锌钢,0.007331
 Base_Crush_Sleeve_5,SL-8,扶手,rearHardware,碳钢,0.008847
-Base_Through_Bolt_5,BR-M8,扶手,rearHardware,镀锌钢,0.017362
+Base_Steel_Spacer_5,SP-8,扶手,rearHardware,碳钢,0.009136
+Base_Through_Bolt_5,BR-M8,扶手,rearHardware,镀锌钢,0.018152
 Base_Nut_Washer_5,BR-N8,扶手,rearHardware,镀锌钢,0.007331
 Base_Crush_Sleeve_6,SL-8,扶手,rearHardware,碳钢,0.008847
-Base_Through_Bolt_6,BR-M8,扶手,rearHardware,镀锌钢,0.017362
+Base_Steel_Spacer_6,SP-8,扶手,rearHardware,碳钢,0.009136
+Base_Through_Bolt_6,BR-M8,扶手,rearHardware,镀锌钢,0.018152
 Base_Nut_Washer_6,BR-N8,扶手,rearHardware,镀锌钢,0.007331
 Base_Crush_Sleeve_7,SL-8,扶手,rearHardware,碳钢,0.008847
-Base_Through_Bolt_7,BR-M8,扶手,rearHardware,镀锌钢,0.017362
+Base_Steel_Spacer_7,SP-8,扶手,rearHardware,碳钢,0.009136
+Base_Through_Bolt_7,BR-M8,扶手,rearHardware,镀锌钢,0.018152
 Base_Nut_Washer_7,BR-N8,扶手,rearHardware,镀锌钢,0.007331
 Base_Crush_Sleeve_8,SL-8,扶手,rearHardware,碳钢,0.008847
-Base_Through_Bolt_8,BR-M8,扶手,rearHardware,镀锌钢,0.017362
+Base_Steel_Spacer_8,SP-8,扶手,rearHardware,碳钢,0.009136
+Base_Through_Bolt_8,BR-M8,扶手,rearHardware,镀锌钢,0.018152
 Base_Nut_Washer_8,BR-N8,扶手,rearHardware,镀锌钢,0.007331
 Handrail_Welded_Bung_1,TH-8,扶手,rearHardware,碳钢,0.017776
 Handrail_Welded_Bung_2,TH-8,扶手,rearHardware,碳钢,0.017776
@@ -107,29 +125,25 @@ Handrail_Welded_Bung_5,TH-8,扶手,rearHardware,碳钢,0.017776
 Handrail_Welded_Bung_6,TH-8,扶手,rearHardware,碳钢,0.017776
 Handrail_Welded_Bung_7,TH-8,扶手,rearHardware,碳钢,0.017776
 Handrail_Welded_Bung_8,TH-8,扶手,rearHardware,碳钢,0.017776
-Handrail_Bent_Tube,HAND,扶手,handrail,碳钢,5.579617
-Handrail_Flange_1,FLG,扶手,flange,碳钢,0.184821
-Handrail_Flange_2,FLG,扶手,flange,碳钢,0.184821
-Handrail_Flange_Screw_1,RA-M8,扶手,fixing,镀锌钢,0.016565
-Handrail_Flange_Screw_2,RA-M8,扶手,fixing,镀锌钢,0.016565
-Handrail_Flange_Screw_3,RA-M8,扶手,fixing,镀锌钢,0.016565
-Handrail_Flange_Screw_4,RA-M8,扶手,fixing,镀锌钢,0.016565
-Handrail_Flange_Screw_5,RA-M8,扶手,fixing,镀锌钢,0.016565
-Handrail_Flange_Screw_6,RA-M8,扶手,fixing,镀锌钢,0.016565
-Handrail_Flange_Screw_7,RA-M8,扶手,fixing,镀锌钢,0.016565
-Handrail_Flange_Screw_8,RA-M8,扶手,fixing,镀锌钢,0.016565
+Handrail_Bent_Tube,HAND,扶手,handrail,碳钢,5.558901
+Handrail_Flange_1,FLG,扶手,flange,碳钢,0.486352
+Handrail_Flange_2,FLG,扶手,flange,碳钢,0.486352
+Handrail_Flange_Screw_1,RA-M8,扶手,fixing,镀锌钢,0.008937
+Handrail_Flange_Screw_2,RA-M8,扶手,fixing,镀锌钢,0.008937
+Handrail_Flange_Screw_3,RA-M8,扶手,fixing,镀锌钢,0.008937
+Handrail_Flange_Screw_4,RA-M8,扶手,fixing,镀锌钢,0.008937
+Handrail_Flange_Screw_5,RA-M8,扶手,fixing,镀锌钢,0.008937
+Handrail_Flange_Screw_6,RA-M8,扶手,fixing,镀锌钢,0.008937
+Handrail_Flange_Screw_7,RA-M8,扶手,fixing,镀锌钢,0.008937
+Handrail_Flange_Screw_8,RA-M8,扶手,fixing,镀锌钢,0.008937
 Outer_F_Bracket_22,ANGLE-S,骨架,join,2020 铝型材,0.002305
 Outer_F_Bracket_868,ANGLE-S,骨架,join,2020 铝型材,0.002305
 Outer_B_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
 Outer_B_Bracket_868,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_long_L_Bracket_22,ANGLE-S,骨架,join,2020 铝型材,0.002305
-Grid_long_L_Bracket_998,ANGLE,骨架,join,2020 铝型材,0.003520
-Rear_link_L_Bracket_1038,ANGLE,扶手,join,2020 铝型材,0.003520
-Rear_link_L_Bracket_1058,ANGLE,扶手,join,2020 铝型材,0.003520
+Grid_long_L_Bracket_1018,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_long_R_Bracket_22,ANGLE-S,骨架,join,2020 铝型材,0.002305
-Grid_long_R_Bracket_998,ANGLE,骨架,join,2020 铝型材,0.003520
-Rear_link_R_Bracket_1038,ANGLE,扶手,join,2020 铝型材,0.003520
-Rear_link_R_Bracket_1058,ANGLE,扶手,join,2020 铝型材,0.003520
+Grid_long_R_Bracket_1018,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_82_1_Bracket_22,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_82_1_Bracket_295,ANGLE,骨架,join,2020 铝型材,0.003520
 Grid_82_2_Bracket_315,ANGLE,骨架,join,2020 铝型材,0.003520
@@ -656,9 +670,9 @@ B_W_Hard_Stop_2,HS-23,后箭头,stop,304 不锈钢,0.018607
 B_W_Wear_Guide_1,LAT,后箭头,guide,黑色 POM,0.000937
 B_W_Wear_Guide_2,LAT,后箭头,guide,黑色 POM,0.000937
 B_Polycarbonate,AR-PC,后箭头,pc,实心透光 PC,0.899376
-Base_Plywood,BASE-P,底板,base,海洋板,5.469307
-Base_Steel_Sheet,BASE-S,底板,basesteel,镀锌钢板喷塑,7.457906
-Base_Rubber,BASE-R,底板,floor,密实橡胶,2.169674
+Base_Plywood,BASE-P,底板,base,海洋板,5.398639
+Base_Steel_Sheet,BASE-S,底板,basesteel,镀锌钢板喷塑,7.452768
+Base_Rubber,BASE-R,底板,floor,密实橡胶,2.167361
 Base_Screw_1,M5-B,底板,base,镀锌钢,0.002881
 Base_TNut_1,T-M5,底板,join,镀锌钢,0.001850
 Base_Screw_2,M5-B,底板,base,镀锌钢,0.002881
@@ -891,8 +905,8 @@ Edge_F_Top_Screw_9,M5-D,前边带,fixing,镀锌钢,0.003243
 Edge_F_Top_TNut_9,T-M5,前边带,join,镀锌钢,0.001850
 Edge_F_Top_Screw_10,M5-D,前边带,fixing,镀锌钢,0.003243
 Edge_F_Top_TNut_10,T-M5,前边带,join,镀锌钢,0.001850
-Edge_B1_Plywood,BD-W-R1,后边带前半,wood,海洋板,0.586142
-Edge_B1_Top,BD-S-R1,后边带前半,top,喷塑不锈钢,1.226070
+Edge_B1_Plywood,BD-W-R1,后边带前半,wood,海洋板,0.674688
+Edge_B1_Top,BD-S-R1,后边带前半,top,喷塑不锈钢,1.506852
 Edge_B1_Top_Screw_1,M5-D,后边带前半,fixing,镀锌钢,0.003243
 Edge_B1_Top_TNut_1,T-M5,后边带前半,join,镀锌钢,0.001850
 Edge_B1_Top_Screw_2,M5-D,后边带前半,fixing,镀锌钢,0.003243
@@ -901,8 +915,8 @@ Edge_B1_Top_Screw_3,M5-D,后边带前半,fixing,镀锌钢,0.003243
 Edge_B1_Top_TNut_3,T-M5,后边带前半,join,镀锌钢,0.001850
 Edge_B1_Top_Screw_4,M5-D,后边带前半,fixing,镀锌钢,0.003243
 Edge_B1_Top_TNut_4,T-M5,后边带前半,join,镀锌钢,0.001850
-Edge_B2_Plywood,BD-W-R2,后边带后半,wood,海洋板,0.357210
-Edge_B2_Top,BD-S-R2,后边带后半,top,喷塑不锈钢,0.748409
+Edge_B2_Plywood,BD-W-R2,后边带后半,wood,海洋板,0.225588
+Edge_B2_Top,BD-S-R2,后边带后半,top,喷塑不锈钢,0.495661
 Edge_B2_Top_Screw_1,M5-D,后边带后半,fixing,镀锌钢,0.003243
 Edge_B2_Top_TNut_1,T-M5,后边带后半,join,镀锌钢,0.001850
 Edge_B2_Top_Screw_2,M5-D,后边带后半,fixing,镀锌钢,0.003243
