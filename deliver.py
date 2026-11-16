@@ -2,7 +2,7 @@
 import csv
 import json
 from collections import Counter
-from math import sqrt
+from math import hypot, sqrt
 from pathlib import Path
 
 import cadquery as cq
@@ -146,9 +146,9 @@ def arrow_step_parts():
 def check_handrail_mount(parts):
     crossmember = parts["Rear_Steel_Crossmember"].shape
     cross = solid_bounds(crossmember)
-    for x in d.REAR_M6_X:
-        gauge = d.side_turn(d.cyl(0,0,d.REAR_M6_HOLE_D/2-.05,0,d.REAR_BACK-d.REAR_FRONT),
-                            (x,d.REAR_FRONT,d.REAR_M6_Z),"F")
+    for x in d.REAR_TIE_X:
+        gauge = d.side_turn(d.cyl(0,0,d.REAR_TIE_HOLE_D/2-.05,0,d.REAR_BACK-d.REAR_FRONT),
+                            (x,d.REAR_FRONT,d.REAR_TIE_Z),"F")
         assert gauge.intersect(crossmember).Volume()<.001, x
     rear_frame = solid_bounds(parts["Outer_B"].shape)
     left_rail = solid_bounds(parts["Rear_outboard_100"].shape)
@@ -180,11 +180,21 @@ def check_handrail_mount(parts):
         sleeve_bottom = solid_bounds(parts[f"Base_Crush_Sleeve_{i}"].shape)[-2]
         assert abs(spacer_bottom-backing_top)<.001 and abs(sleeve_bottom-spacer_top)<.001, (x,y)
 
+    for i,(x,y) in enumerate(d.PLATE_SCREWS,1):
+        post = min(d.POSTS,key=lambda p:abs(p-x))
+        plate = solid_bounds(parts[f"Backing_Plate_{d.POSTS.index(post)+1}"].shape)
+        screw = solid_bounds(parts[f"Backing_Plate_Screw_{i}"].shape)
+        # Each screw stays inside its plate with at least 5 mm of edge and ends flush with the plate top.
+        assert plate[0]+5<=screw[0] and screw[1]<=plate[1]-5 and plate[2]+5<=screw[2] and screw[3]<=plate[3]-5, (x,y)
+        assert abs(screw[5]-plate[5])<.001, (x,y)
+        assert all(hypot(x-bx,y-by)>=20 for bx,by in d.BASE_BOLTS), (x,y)
+
     return {
+        "backing_plate_sheet_screws": len(d.PLATE_SCREWS),
         "crossmember_edge_gaps_mm": dict(zip(("rear","left","right"),edge_gaps)),
-        "rear_frame_m6_hole_x_mm": list(d.REAR_M6_X),
-        "rear_frame_m6_hole_z_mm": d.REAR_M6_Z,
-        "rear_frame_m6_hole_diameter_mm": d.REAR_M6_HOLE_D,
+        "rear_frame_tie_hole_x_mm": list(d.REAR_TIE_X),
+        "rear_frame_tie_hole_z_mm": d.REAR_TIE_Z,
+        "rear_frame_tie_hole_diameter_mm": d.REAR_TIE_HOLE_D,
         "flange_row_spacing_mm": d.FLANGE_ROWS[1]-d.FLANGE_ROWS[0],
         "flange_min_head_depth_mm": round(min(head_depths),3),
         "checked_cover_lift_mm": cover_lift,
