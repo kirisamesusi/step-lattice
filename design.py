@@ -13,6 +13,7 @@ WOOD_BOTTOM, WOOD_TOP, DECK = 30, 42, 44
 PC_SIZE, PC_Z, PC_TOP = 274, 33, 43
 PC_CORNER_CUT = 8
 RAIL_Z, RAIL_TOP = 10, 30
+BASE_STEEL = 1  # floor-side steel sheet under the 9 mm plywood
 RING_V = 120  # arrow center to the center of its inner ring rail
 STOP_TOP = 32.5
 POSTS, POST_Y, GRIP = (240, 650), 1018, 964
@@ -30,6 +31,7 @@ MATERIALS = {
     "pc": ("实心透光 PC", "#66a9ff", 1200),
     "pc2": ("实心透光 PC", "#ee619d", 1200),
     "rubber": ("密实橡胶", "#27292f", 1150),
+    "galv": ("镀锌钢板喷塑", "#46525f", 7850),
     "spring": ("微孔弹性体", "#b974ee", 350),
     "silicone": ("软硅胶", "#ffd77e", 1120),
     "fsr": ("柔性 FSR", "#ee9a36", 1450),
@@ -42,7 +44,7 @@ MATERIALS = {
     "diff": ("乳白扩散片", "#eef5e9", 1200),
 }
 LAYERS = {
-    "floor": (0, 0, -50), "base": (0, 0, -13),
+    "floor": (0, 0, -50), "basesteel": (0, 0, -37), "base": (0, 0, -13),
     "rail": (0, 0, 30), "join": (0, 0, 52), "rear": (0, 0, 30),
     "rearHardware": (0, 0, 58), "skin": (0, 0, 0),
     "electronics": (0, 0, 86), "led": (0, 0, 65), "diff": (0, 0, 83),
@@ -231,7 +233,7 @@ def rear_frame():
     item("TH-8", "扶手法兰 M8 焊接螺纹套", "外径 14 × 20，M8 内螺纹", "外包车件焊接",
          "钢制焊接螺纹套 M8 长 20", "1", "另核实攻牙有效长度。模型为螺纹中径包络。")
     item("BP-3", "底板钢背板", "70×350×3，两端 R4", "外包加工",
-         "3 mm 钢板激光切割 钻沉孔", "", "嵌入各立柱线下方木底反面，背板沉头齐平。")
+         "3 mm 钢板激光切割 钻沉孔", "", "嵌入各立柱线下方九厘板反面，下面由 1 mm 底钢板盖住，底钢板在穿栓处开检修孔。")
     item("BR-M8", "副架底部沉头穿栓", "M8×40 初选，配垫圈/防松螺母", "购买",
          "ISO 10642 M8 40 10.9 沉头螺钉", "2", "从底部穿入，内腔侧锁。长度及沉孔深度按实物。")
     item("BR-N8", "副架防松螺母和垫圈包络", "M8，合计高 9", "购买",
@@ -242,17 +244,18 @@ def rear_frame():
     for i,x in enumerate(POSTS,1):
         holes = [(x,y,6.1) for px,y in BASE_BOLTS if x==px and y!=POST_Y]
         add(f"Rear_Steel_Arm_{i}","RHS-A",steel_rhs_y(ARM_Y0,REAR_FRONT,x,holes),"steel","rear","Rear")
-        plate = bevel_rect(x-35,x+35,710,1060,0,3,4)
+        plate = bevel_rect(x-35,x+35,710,1060,BASE_STEEL,BASE_STEEL+3,4)
         for px,y in BASE_BOLTS:
             if px == x:
-                plate = remove(plate,[cyl(x,y,4.25,-1,4),tip(x,y,8.1,4.25,0,3)])
+                plate = remove(plate,[cyl(x,y,4.25,BASE_STEEL-1,BASE_STEEL+4),
+                                      tip(x,y,8.1,4.25,BASE_STEEL,BASE_STEEL+3)])
         add(f"Backing_Plate_{i}","BP-3",plate,"steel","base","Rear",(0,0,-29))
     for i,points in enumerate(GUSSETS,1):
         add(f"Rear_Steel_Gusset_{i}","RHS-G",poly(points,17,23),"steel","rear","Rear")
     for i,(x,y) in enumerate(BASE_BOLTS,1):
         sleeve = remove(cyl(x,y,6,10,30),[cyl(x,y,4.25,9,31)])
         add(f"Base_Crush_Sleeve_{i}","SL-8",sleeve,"steel","rearHardware","Rear")
-        screw = cyl(x,y,4,3,40).fuse(tip(x,y,8,4,0,3)).clean()
+        screw = cyl(x,y,4,BASE_STEEL+3,BASE_STEEL+40).fuse(tip(x,y,8,4,BASE_STEEL,BASE_STEEL+3)).clean()
         add(f"Base_Through_Bolt_{i}","BR-M8",screw,"zinc","rearHardware","Rear",(0,0,-145))
         nut_z = 30
         nut = cq.Workplane("XY",origin=(x,y,nut_z+1.5)).polygon(6,15).extrude(7.5).val()
@@ -351,8 +354,8 @@ def rail_hardware_items():
          "欧标 2020 槽6 M5 薄 T 型螺母", "12", "先用手头实物确认槽唇承压、不能旋脱及装配路径。")
     item("M5-D", "踏面和边带沉头螺钉", "M5×18 起选，90° 头", "购买",
          "304 M5 18 十字/内六角沉头", "5", "实配槽腔末端。选低头内六角，板件孔按实物刀型。")
-    item("M5-B", "底板沉头螺钉", "M5×14，90° 头", "购买",
-         "M5×14 90度沉头 螺丝", "5", "格内型材每根 1 颗、长型材 3–4 颗，两端有角件的短料不用。木面沉头齐平，装前在型材试螺纹和孔深。")
+    item("M5-B", "底板超薄头螺钉", "M5×14，头高约 1.3、头径约 9.5", "购买",
+         "M5×14 超薄头 大扁头 内六角螺钉", "5", "格内型材每根 1 颗、长型材 3–4 颗，两端有角件的短料不用。头压在底钢板上并藏进 2 mm 橡胶厚度内，装前在型材试螺纹和孔深。")
     item("M5-S", "侧板沉头螺钉", "M5×6 或实配短牙，90° 头", "购买",
          "M5×6 平头沉头螺钉 短螺丝", "4", "2 mm 壁需验证锥孔，必要时改低矮圆头并记录壳外尺寸。")
     item("M3-F", "托片与挡块齐平螺钉", "M3 沉头 90°，长 5/6 按叠厚选", "购买",
@@ -422,20 +425,25 @@ def base_fix_points():
     return points
 
 def base():
-    item("BASE-P", "一体底板", "886×1076×10", "CNC/自制",
-         "10mm 海洋胶合板 外用桦木船板", "", "型材螺钉孔为 Ø6 过孔带沉头，可手钻。铝骨架靠角件自立，底板可单独更换。背板局部反面铣深3；两面和四边封漆防潮。")
+    item("BASE-P", "底板木芯", "886×1076×9", "裁切/自制",
+         "9mm 九厘海洋胶合板 外用桦木船板", "", "叠在底钢板上面，照钢板的孔钻 Ø6 过孔。与钢板只用螺钉连接，不整面胶合。背板位反面铣深 3；两面和四边封漆防潮。")
+    item("BASE-S", "底钢板", "886×1076×1，全部孔位激光切出", "外包激光切割喷塑",
+         "1mm 镀锌钢板 激光切割 喷塑", "", "朝地面一侧，挡潮气并承接螺钉头。孔位由激光切割保证，兼作木芯钻孔模板。穿栓处开 Ø17 检修孔。")
     item("BASE-R", "满铺密实防滑底橡胶", "886×1076×2", "自制裁切",
-         "2mm 密实防滑橡胶片 耐磨 平整", "", "地面 z−2。实际摩擦和地面平整度需测试。")
-    bottom = [bevel_rect(x-35.12,x+35.12,709.88,1060.12,-1,3,4.12) for x in POSTS]
+         "2mm 密实防滑橡胶片 耐磨 平整", "", "地面 z−2，贴在底钢板下面。螺钉头和穿栓处冲孔让位。实际摩擦和地面平整度需测试。")
+    bottom = [bevel_rect(x-35.12,x+35.12,709.88,1060.12,-1,BASE_STEEL+3,4.12) for x in POSTS]
     bottom.extend(cyl(x,y,4.4,-1,11) for x,y in BASE_BOLTS)
     fix = base_fix_points()
     CHECKS["base_screw_count"] = len(fix)
-    for x,y in fix:
-        bottom += [cyl(x,y,3,-1,10.1),tip(x,y,5.2,3,0,2.2)]
-    add("Base_Plywood","BASE-P",remove(box(2,888,2,1078,0,10),bottom),"ply","base","Base")
-    add("Base_Rubber","BASE-R",box(2,888,2,1078,-2,0),"rubber","floor","Base")
+    bottom.extend(cyl(x,y,3,-1,10.1) for x,y in fix)
+    # Screw heads bear on the steel sheet and hide inside the rubber thickness.
+    sheet = [cyl(x,y,2.75,-1,2) for x,y in fix]+[cyl(x,y,8.6,-1,2) for x,y in BASE_BOLTS]
+    pad = [cyl(x,y,6.5,-3,1) for x,y in fix]+[cyl(x,y,9,-3,1) for x,y in BASE_BOLTS]
+    add("Base_Plywood","BASE-P",remove(box(2,888,2,1078,BASE_STEEL,10),bottom),"ply","base","Base")
+    add("Base_Steel_Sheet","BASE-S",remove(box(2,888,2,1078,0,BASE_STEEL),sheet),"galv","basesteel","Base")
+    add("Base_Rubber","BASE-R",remove(box(2,888,2,1078,-2,0),pad),"rubber","floor","Base")
     for i,(x,y) in enumerate(fix,1):
-        screw = tip(x,y,4.9,2.5,0,2.4).fuse(cyl(x,y,2.5,2.4,14)).clean()
+        screw = cyl(x,y,4.75,-1.3,0).fuse(cyl(x,y,2.5,0,14)).clean()
         add(f"Base_Screw_{i}","M5-B",screw,"zinc","base","Base",(0,0,-90))
         add(f"Base_TNut_{i}","T-M5",nut_bottom(x,y),"zinc","join","Base")
 
