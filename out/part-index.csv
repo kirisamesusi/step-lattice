@@ -64,27 +64,35 @@ Center_rib_450,AL-0260,控制器,rail,2020 铝型材,0.129665
 Center_rib_554,AL-0260,控制器,rail,2020 铝型材,0.129665
 Rear_outboard_100,AL-0126,扶手,rail,2020 铝型材,0.062837
 Rear_outboard_790,AL-0126,扶手,rail,2020 铝型材,0.062837
-Rear_Steel_Crossmember,RHS-L,扶手,rear,碳钢,1.656784
-Rear_Frame_M6_Screw_1,REAR-M6,扶手,fixing,镀锌钢,0.013687
-Rear_Frame_M6_Washer_1,REAR-W6,扶手,rearHardware,镀锌钢,0.000635
-Rear_Frame_M6_TNut_1,REAR-T6,扶手,rearHardware,镀锌钢,0.001445
-Rear_Frame_M6_Screw_2,REAR-M6,扶手,fixing,镀锌钢,0.013687
-Rear_Frame_M6_Washer_2,REAR-W6,扶手,rearHardware,镀锌钢,0.000635
-Rear_Frame_M6_TNut_2,REAR-T6,扶手,rearHardware,镀锌钢,0.001445
-Rear_Frame_M6_Screw_3,REAR-M6,扶手,fixing,镀锌钢,0.013687
-Rear_Frame_M6_Washer_3,REAR-W6,扶手,rearHardware,镀锌钢,0.000635
-Rear_Frame_M6_TNut_3,REAR-T6,扶手,rearHardware,镀锌钢,0.001445
-Rear_Frame_M6_Screw_4,REAR-M6,扶手,fixing,镀锌钢,0.013687
-Rear_Frame_M6_Washer_4,REAR-W6,扶手,rearHardware,镀锌钢,0.000635
-Rear_Frame_M6_TNut_4,REAR-T6,扶手,rearHardware,镀锌钢,0.001445
+Rear_Steel_Crossmember,RHS-L,扶手,rear,碳钢,1.658754
+Rear_Frame_M5_Screw_1,REAR-M5,扶手,fixing,镀锌钢,0.009163
+Rear_Frame_M5_Washer_1,REAR-W5,扶手,rearHardware,镀锌钢,0.000443
+Rear_Frame_M5_TNut_1,T-M5,扶手,rearHardware,镀锌钢,0.001850
+Rear_Frame_M5_Screw_2,REAR-M5,扶手,fixing,镀锌钢,0.009163
+Rear_Frame_M5_Washer_2,REAR-W5,扶手,rearHardware,镀锌钢,0.000443
+Rear_Frame_M5_TNut_2,T-M5,扶手,rearHardware,镀锌钢,0.001850
+Rear_Frame_M5_Screw_3,REAR-M5,扶手,fixing,镀锌钢,0.009163
+Rear_Frame_M5_Washer_3,REAR-W5,扶手,rearHardware,镀锌钢,0.000443
+Rear_Frame_M5_TNut_3,T-M5,扶手,rearHardware,镀锌钢,0.001850
+Rear_Frame_M5_Screw_4,REAR-M5,扶手,fixing,镀锌钢,0.009163
+Rear_Frame_M5_Washer_4,REAR-W5,扶手,rearHardware,镀锌钢,0.000443
+Rear_Frame_M5_TNut_4,T-M5,扶手,rearHardware,镀锌钢,0.001850
 Rear_Steel_Seat_Stub_1,RHS-W,扶手,rear,碳钢,0.073930
 Rear_Steel_Seat_Stub_2,RHS-W,扶手,rear,碳钢,0.073930
 Rear_Steel_Seat_Stub_3,RHS-W,扶手,rear,碳钢,0.073930
 Rear_Steel_Seat_Stub_4,RHS-W,扶手,rear,碳钢,0.073930
 Rear_Steel_Arm_1,RHS-A,扶手,rear,碳钢,0.670200
-Backing_Plate_1,BP-5,扶手,base,碳钢,0.943075
+Backing_Plate_1,BP-5,扶手,base,碳钢,0.939918
 Rear_Steel_Arm_2,RHS-A,扶手,rear,碳钢,0.670200
-Backing_Plate_2,BP-5,扶手,base,碳钢,0.943075
+Backing_Plate_2,BP-5,扶手,base,碳钢,0.939918
+Backing_Plate_Screw_1,BP-M5,扶手,base,镀锌钢,0.001648
+Backing_Plate_Screw_2,BP-M5,扶手,base,镀锌钢,0.001648
+Backing_Plate_Screw_3,BP-M5,扶手,base,镀锌钢,0.001648
+Backing_Plate_Screw_4,BP-M5,扶手,base,镀锌钢,0.001648
+Backing_Plate_Screw_5,BP-M5,扶手,base,镀锌钢,0.001648
+Backing_Plate_Screw_6,BP-M5,扶手,base,镀锌钢,0.001648
+Backing_Plate_Screw_7,BP-M5,扶手,base,镀锌钢,0.001648
+Backing_Plate_Screw_8,BP-M5,扶手,base,镀锌钢,0.001648
 Base_Crush_Sleeve_1,SL-8,扶手,rearHardware,碳钢,0.008847
 Base_Steel_Spacer_1,SP-8,扶手,rearHardware,碳钢,0.009136
 Base_Through_Bolt_1,BR-M8,扶手,rearHardware,镀锌钢,0.018152
@@ -671,8 +679,8 @@ B_W_Wear_Guide_1,LAT,后箭头,guide,黑色 POM,0.000937
 B_W_Wear_Guide_2,LAT,后箭头,guide,黑色 POM,0.000937
 B_Polycarbonate,AR-PC,后箭头,pc,实心透光 PC,0.899376
 Base_Plywood,BASE-P,底板,base,海洋板,5.398639
-Base_Steel_Sheet,BASE-S,底板,basesteel,镀锌钢板喷塑,7.452768
-Base_Rubber,BASE-R,底板,floor,密实橡胶,2.167361
+Base_Steel_Sheet,BASE-S,底板,basesteel,镀锌钢板喷塑,7.451276
+Base_Rubber,BASE-R,底板,floor,密实橡胶,2.164919
 Base_Screw_1,M5-B,底板,base,镀锌钢,0.002881
 Base_TNut_1,T-M5,底板,join,镀锌钢,0.001850
 Base_Screw_2,M5-B,底板,base,镀锌钢,0.002881

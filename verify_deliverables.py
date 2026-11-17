@@ -28,10 +28,12 @@ mount=checks["handrail_mount"]
 assert mount["flange_row_spacing_mm"]==50 and mount["flange_min_head_depth_mm"]>=6
 assert mount["checked_spacer_stacks"]==8
 assert mount["crossmember_edge_gaps_mm"]=={"rear":0,"left":0,"right":0}
-assert mount["rear_frame_m6_hole_x_mm"]==[160,360,470,750]
-assert mount["rear_frame_m6_hole_z_mm"]==20 and mount["rear_frame_m6_hole_diameter_mm"]==6.6
-for sku in ("REAR-M6","REAR-W6","REAR-T6"):
+assert mount["rear_frame_tie_hole_x_mm"]==[160,360,470,750]
+assert mount["rear_frame_tie_hole_z_mm"]==20 and mount["rear_frame_tie_hole_diameter_mm"]==5.5
+for sku in ("REAR-M5","REAR-W5"):
     assert sum(part["料号"]==sku for part in index)==4
+assert sum(part["装配件名"].startswith("Rear_Frame_M5_TNut_") and part["料号"]=="T-M5" for part in index)==4
+assert mount["backing_plate_sheet_screws"]==8 and sum(part["料号"]=="BP-M5" for part in index)==8
 assert sum(p["料号"]=="RHS-W" for p in index)==4
 handrail=steps["DDR-R1-handrail.step"]
 assert handrail["assembly_components"]==handrail["readback_solids"]

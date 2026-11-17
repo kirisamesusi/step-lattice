@@ -260,23 +260,24 @@
     "Edge_B1": 0,
     "Edge_B2": 0
   },
-  "part_count": 1063,
-  "solid_count": 1063,
+  "part_count": 1071,
+  "solid_count": 1071,
   "rail_count": 65,
   "handrail_mount": {
+    "backing_plate_sheet_screws": 8,
     "crossmember_edge_gaps_mm": {
       "rear": 0.0,
       "left": 0.0,
       "right": 0.0
     },
-    "rear_frame_m6_hole_x_mm": [
+    "rear_frame_tie_hole_x_mm": [
       160,
       360,
       470,
       750
     ],
-    "rear_frame_m6_hole_z_mm": 20.0,
-    "rear_frame_m6_hole_diameter_mm": 6.6,
+    "rear_frame_tie_hole_z_mm": 20.0,
+    "rear_frame_tie_hole_diameter_mm": 5.5,
     "flange_row_spacing_mm": 50,
     "flange_min_head_depth_mm": 6.0,
     "checked_cover_lift_mm": 16,
@@ -318,16 +319,16 @@
   ],
   "invalid_parts": [],
   "mass_kg": {
-    "base": 7.458,
-    "basesteel": 7.453,
+    "base": 7.465,
+    "basesteel": 7.451,
     "carrier": 0.104,
     "clip": 0.03,
     "clipshim": 0.071,
     "diff": 0.028,
     "electronics": 0.054,
-    "fixing": 0.366,
+    "fixing": 0.348,
     "flange": 0.973,
-    "floor": 2.167,
+    "floor": 2.165,
     "fsr": 0.005,
     "guide": 0.03,
     "handrail": 5.559,
@@ -335,8 +336,8 @@
     "led": 0.118,
     "pc": 3.598,
     "rail": 9.106,
-    "rear": 3.293,
-    "rearHardware": 0.498,
+    "rear": 3.295,
+    "rearHardware": 0.499,
     "return": 0.005,
     "skin": 2.723,
     "stop": 0.813,
@@ -344,11 +345,11 @@
     "top": 9.868,
     "wood": 4.701
   },
-  "total_geom_mass_kg": 59.697,
+  "total_geom_mass_kg": 59.685,
   "cg_mm": [
     444.94,
-    625.59,
-    72.1
+    625.5,
+    72.11
   ],
   "rigid_pc_travel": [
     {
@@ -1167,7 +1168,7 @@
     "B_W_Hard_Stop_1": 599.6,
     "B_W_Hard_Stop_2": 599.6
   },
-  "assembled_candidate_pairs": 1880,
+  "assembled_candidate_pairs": 1912,
   "assembled_overlap_mm3": [],
   "exploded_candidate_pairs": 10,
   "exploded_overlap_mm3": []

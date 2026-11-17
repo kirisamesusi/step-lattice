@@ -207,10 +207,12 @@ def frame():
 
 ARM_Y0, REAR_FRONT, REAR_BACK = 748, POST_Y-20, POST_Y+20
 REAR_LEFT, REAR_RIGHT = 110, 780
-REAR_M6_X = (160, 360, 470, 750)
-REAR_M6_Z = (RAIL_Z+RAIL_TOP)/2
-REAR_M6_HOLE_D = 6.6
+REAR_TIE_X = (160, 360, 470, 750)
+REAR_TIE_Z = (RAIL_Z+RAIL_TOP)/2
+REAR_TIE_HOLE_D = 5.5
 BASE_BOLTS = [(x,y) for x in POSTS for y in (768,870,946,POST_Y)]
+# Thin-head M5 screws through the floor sheet into threads in each backing plate.
+PLATE_SCREWS = [(x+dx,y) for x in POSTS for dx in (-25,25) for y in (725,1045)]
 SEAT_FRONT, SEAT_LENGTH = REAR_FRONT-40, 32
 FLANGE_FRONT, FLANGE_BACK, FLANGE_TOP = POST_Y-61, POST_Y+23, RAIL_TOP+8
 FLANGE_ROWS = (REAR_FRONT-25, POST_Y+5)
@@ -252,24 +254,26 @@ def m8_flat_head(x,y,head_z,length,shank_r,from_below=False):
 
 def rear_frame():
     item("RHS-L", "共用后横管", f"40×20×3，长度 {REAR_RIGHT-REAR_LEFT}，20 高", "外包焊接",
-         "Q235B 矩形钢管 40 20 3", "", "后面贴后框，两端贴铝纵支。4 处 Ø6.6 横向通孔，两壁对钻，孔中心 z20；距横管左端 50、250、360、640。")
-    item("REAR-M6", "后横管连接螺钉", "M6×45 初选，内六角圆柱头", "购买",
-         "M6×45 内六角圆柱头全牙", "1", "按槽螺母与垫圈的实物深度复核长度，拧紧前检查有效咬合且端部不顶槽底。轻贴锁紧，避免把空心管壁夹凹。")
-    item("REAR-W6", "后横管连接平垫圈", "Ø6.4／Ø12×1，钢", "购买",
-         "M6 薄平垫圈 内径6.4 外径12 厚1 钢", "1", "各一只装在钢管前面螺钉头下；按实物通孔、头径和厚度核对。")
-    item("REAR-T6", "后边框 M6 槽螺母", "槽6，实配 2020 槽口", "购买",
-         "欧标 2020 槽6 M6 钢制槽螺母", "1", "四只先装入后边框朝踏板的内槽。实配槽唇和螺钉拧入深度。")
+         "Q235B 矩形钢管 40 20 3", "", "后面贴后框，两端贴铝纵支。4 处 Ø5.5 横向通孔，两壁对钻，孔中心 z20；距横管左端 50、250、360、640。")
+    item("REAR-M5", "后横管连接螺钉", "M5×45 初选，内六角圆柱头", "购买",
+         "M5×45 内六角圆柱头全牙", "1", "配后边框内槽里的 T-M5 槽螺母，与底板螺钉同款。按槽螺母与垫圈的实物深度复核长度，拧紧前检查有效咬合且端部不顶槽底。轻贴锁紧，避免把空心管壁夹凹。")
+    item("REAR-W5", "后横管连接平垫圈", "Ø5.3／Ø10×1，钢", "购买",
+         "M5 平垫圈 内径5.3 外径10 厚1 钢", "1", "各一只装在钢管前面螺钉头下；按实物通孔、头径和厚度核对。")
     item("RHS-A", "前伸副架纵臂", f"40×20×3，长度 {REAR_FRONT-ARM_Y0}，20 高", "外包焊接",
          "Q235B 矩形钢管 40 20 3", "", f"x240/650，y{ARM_Y0}–{REAR_FRONT}。")
     item("RHS-W", "扶手法兰前排短支座", f"40×20×3，直切长 {SEAT_LENGTH}，20 高", "直切/钻孔焊接",
          "Q235B 矩形钢管 40 20 3", "", "每脚两段，分别贴焊纵臂和后横管。"
          "两壁同轴 Ø14.2，孔中心距管前边 15、距贴纵臂的切口 13；焊入同款 M8 螺纹套。")
     item("SL-8", "落地穿栓抗压套管", "Ø12 / Ø8.5 × 20", "外包车/切管焊接",
-         "钢隔套 12 8.5", "1", "实配管壁孔和穿栓，焊后铣平或磨平。")
+         "钢隔套 12 8.5", "1", "实配管壁孔和穿栓，焊后铣平或磨平。配焊：先用穿栓把钢背板和钢套串在纵臂上，再点焊钢套。")
     item("TH-8", "扶手法兰 M8 焊接螺纹套", "外径 14 × 20，M8 通牙", "标准件或圆料直切钻攻/焊接",
-         "钢制焊接螺纹套 M8 长 20", "1", "实配套外径和管壁孔，焊后端面齐平。核实有效牙和防焊渣。模型为螺纹中径包络。")
+         "钢制焊接螺纹套 M8 长 20", "1", "实配套外径和管壁孔，焊后端面齐平。核实有效牙和防焊渣。模型为螺纹中径包络。配焊：先把法兰用螺钉拧在四个螺纹套上，再点焊螺纹套，不按划线定位。")
     item("BP-5", "底板钢背板", "70×350×5，两端 R4，4×Ø8.6", "激光切割/钻沉孔",
-         "5 mm Q235B 钢板激光切割 钻沉孔", "", "反面 90° 沉头按实物配，头齐平；木芯反面铣 5 mm 嵌槽。")
+         "5 mm Q235B 钢板激光切割 钻沉孔", "", "反面 90° 沉头按实物配，头齐平；木芯反面铣 5 mm 嵌槽。"
+         "另攻 4 个 M5 通牙，距长边 10、距两端 15，由底钢板下面的螺钉拧入。")
+    item("BP-M5", "背板挂底钢板螺钉", "M5×6，超薄头", "购买",
+         "M5×6 超薄头 大扁头 内六角螺钉", "2", "每块背板 4 颗，从底钢板下面拧进背板的 M5 牙，头藏在橡胶厚度内。"
+         "扶手的上抬力由此直接传到整张底钢板。")
     item("SP-8", "木芯让位处厚钢垫圈", "DIN 7349 M8，Ø8.4 / Ø21 × 4", "购买",
          "DIN 7349 M8 21 4 钢厚垫圈", "2", "装在钢背板与副架抗压套之间，木芯开 Ø23 让位；"
          "实测涂装后间隙并配平，使钢件顶实。")
@@ -280,20 +284,20 @@ def rear_frame():
     bh = [(x,y,6.1) for x,y in BASE_BOLTS if y==POST_Y]
     fh = [(x,y,7.1) for x,y in FLANGE_BOLTS if y>REAR_FRONT]
     cross = steel_rhs_x(REAR_LEFT,REAR_RIGHT,POST_Y,bh+fh)
-    bores = [side_turn(cyl(0,0,REAR_M6_HOLE_D/2,-1,REAR_BACK-REAR_FRONT+1),
-                       (x,REAR_FRONT,REAR_M6_Z),"F") for x in REAR_M6_X]
+    bores = [side_turn(cyl(0,0,REAR_TIE_HOLE_D/2,-1,REAR_BACK-REAR_FRONT+1),
+                       (x,REAR_FRONT,REAR_TIE_Z),"F") for x in REAR_TIE_X]
     add("Rear_Steel_Crossmember","RHS-L",remove(cross,bores),"steel","rear","Rear")
-    for i,x in enumerate(REAR_M6_X,1):
-        front = (x,REAR_FRONT,REAR_M6_Z)
-        rear = (x,REAR_BACK,REAR_M6_Z)
-        screw = cyl(0,0,3,-1,44).fuse(cyl(0,0,5,-7,-1)).clean()
-        washer = remove(cyl(0,0,6,-1,0),[cyl(0,0,3.2,-1.1,.1)])
-        nut = remove(rect(0,0,10,10,1.3,3.9),[cyl(0,0,3.05,1,4.1)])
-        add(f"Rear_Frame_M6_Screw_{i}","REAR-M6",side_turn(screw,front,"F"),
+    for i,x in enumerate(REAR_TIE_X,1):
+        front = (x,REAR_FRONT,REAR_TIE_Z)
+        rear = (x,REAR_BACK,REAR_TIE_Z)
+        screw = cyl(0,0,2.5,-1,44).fuse(cyl(0,0,4.25,-6,-1)).clean()
+        washer = remove(cyl(0,0,5,-1,0),[cyl(0,0,2.65,-1.1,.1)])
+        nut = remove(rect(0,0,10,10,1.35,4.3),[cyl(0,0,2.53,1,4.5)])
+        add(f"Rear_Frame_M5_Screw_{i}","REAR-M5",side_turn(screw,front,"F"),
             "zinc","fixing","Rear",(0,-145,76))
-        add(f"Rear_Frame_M6_Washer_{i}","REAR-W6",side_turn(washer,front,"F"),
+        add(f"Rear_Frame_M5_Washer_{i}","REAR-W5",side_turn(washer,front,"F"),
             "zinc","rearHardware","Rear",(0,-72,57))
-        add(f"Rear_Frame_M6_TNut_{i}","REAR-T6",side_turn(nut,rear,"F"),
+        add(f"Rear_Frame_M5_TNut_{i}","T-M5",side_turn(nut,rear,"F"),
             "zinc","rearHardware","Rear",(0,18,75))
     for i,(x0,x1) in enumerate(SEAT_STUBS,1):
         holes = [(x,y,7.1) for x,y in FLANGE_BOLTS if x0<x<x1 and y<REAR_FRONT]
@@ -307,7 +311,12 @@ def rear_frame():
             if px == x:
                 plate = remove(plate,[cyl(x,y,M8_HOLE_R,BASE_STEEL-1,BACKING_TOP+1),
                                       m8_countersink(x,y,BASE_STEEL,from_below=True)])
+        plate = remove(plate,[cyl(px,y,2.53,BASE_STEEL-1,BACKING_TOP+1)
+                              for px,y in PLATE_SCREWS if abs(px-x)<35])
         add(f"Backing_Plate_{i}","BP-5",plate,"steel","base","Rear",(0,0,-29))
+    for i,(x,y) in enumerate(PLATE_SCREWS,1):
+        screw = cyl(x,y,4.75,-1.3,0).fuse(cyl(x,y,2.5,0,BACKING_TOP)).clean()
+        add(f"Backing_Plate_Screw_{i}","BP-M5",screw,"zinc","base","Rear",(0,0,-90))
     for i,(x,y) in enumerate(BASE_BOLTS,1):
         sleeve = remove(cyl(x,y,6,10,30),[cyl(x,y,4.25,9,31)])
         add(f"Base_Crush_Sleeve_{i}","SL-8",sleeve,"steel","rearHardware","Rear")
@@ -491,7 +500,7 @@ def base():
     item("BASE-P", "底板木芯", "886×1076×9", "裁切/自制",
          "9mm 九厘海洋胶合板 外用桦木船板", "", "叠在底钢板上面，照钢板的孔钻 Ø6 过孔。与钢板只用螺钉连接，不整面胶合。背板位反面铣深 5，八个厚垫圈位置开 Ø23 让位孔；两面和四边封漆防潮。")
     item("BASE-S", "底钢板", "886×1076×1，全部孔位激光切出", "外包激光切割喷塑",
-         "1mm 镀锌钢板 激光切割 喷塑", "", "朝地面一侧，挡潮气并承接螺钉头。孔位由激光切割保证，兼作木芯钻孔模板。副架 M8 穿栓处开 Ø20 检修孔。")
+         "1mm 镀锌钢板 激光切割 喷塑", "", "朝地面一侧，挡潮气并承接螺钉头。孔位由激光切割保证，兼作木芯钻孔模板。副架 M8 穿栓处开 Ø20 检修孔，每块钢背板下另有 4 个 Ø5.5 孔。")
     item("BASE-R", "满铺密实防滑底橡胶", "886×1076×2", "自制裁切",
          "2mm 密实防滑橡胶片 耐磨 平整", "", "地面 z−2，贴在底钢板下面。螺钉头和穿栓处冲孔让位。实际摩擦和地面平整度需测试。")
     bottom = [bevel_rect(x-35.12,x+35.12,709.88,1060.12,-1,BACKING_TOP,4.12) for x in POSTS]
@@ -500,8 +509,9 @@ def base():
     CHECKS["base_screw_count"] = len(fix)
     bottom.extend(cyl(x,y,3,-1,10.1) for x,y in fix)
     # Screw heads bear on the steel sheet and hide inside the rubber thickness.
-    sheet = [cyl(x,y,2.75,-1,2) for x,y in fix]+[cyl(x,y,BASE_ACCESS_D/2,-1,2) for x,y in BASE_BOLTS]
-    pad = [cyl(x,y,6.5,-3,1) for x,y in fix]+[cyl(x,y,11,-3,1) for x,y in BASE_BOLTS]
+    small = fix+PLATE_SCREWS
+    sheet = [cyl(x,y,2.75,-1,2) for x,y in small]+[cyl(x,y,BASE_ACCESS_D/2,-1,2) for x,y in BASE_BOLTS]
+    pad = [cyl(x,y,6.5,-3,1) for x,y in small]+[cyl(x,y,11,-3,1) for x,y in BASE_BOLTS]
     add("Base_Plywood","BASE-P",remove(box(2,888,2,1078,BASE_STEEL,10),bottom),"ply","base","Base")
     add("Base_Steel_Sheet","BASE-S",remove(box(2,888,2,1078,0,BASE_STEEL),sheet),"galv","basesteel","Base")
     add("Base_Rubber","BASE-R",remove(box(2,888,2,1078,-2,0),pad),"rubber","floor","Base")
